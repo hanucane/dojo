@@ -1,0 +1,43 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.background {
+	background-color: rgb(211,212,173);
+	height: 850px;
+	width: 900px;
+	padding-left: 10px;
+}
+.header {
+	height: 120px;
+	width: 800px;
+	text-align: center;
+	padding-top: 20px;
+}
+.banner {
+	display: inline-block;
+}
+.bluebox {
+	height: 150px;
+	width: 150px;
+	background-color: rgb(121,177,240);
+	margin-left: 10px;
+	margin-top: 10px;
+	border: 5px solid black;
+	display: inline-block;
+}
+.redbox {
+	height: 150px;
+	width: 150px;
+	background-color: rgb(255,83,101);
+	margin-left: 10px;
+	margin-top: 10px;
+	border: 5px solid black;
+	display: inline-block;
+}
+.img {
+	margin-top: 15px;
+	margin-left: 15px;
+	height: 120px;
+	width: 120px;
+}

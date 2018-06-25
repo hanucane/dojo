@@ -1,0 +1,181 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    margin: 0px 10px;
+    background-color: #1A1A1A;
+    padding: 5px;
+}
+h4 {
+    display: inline-block;
+    vertical-align: top;
+    color: #CECFCF;
+    padding: 35px 5px 0px 490px;
+}
+ul {
+    background-color: #363636;
+    min-height: 15px;
+    margin: 0px 10px;
+}
+li {
+    color: #9D9D9D;
+    display: inline-block;
+    padding: 10px 15px;
+}
+footer {
+    background-color: #1A1A1A;
+    text-align: right;
+}
+footer a {
+    color: #55605E;
+    text-decoration: none;
+    font-size: 8pt;
+    padding: 15px 20px 0px 0px;
+    font-weight: bold;
+}
+.selected {
+    color: #DBDBDB;
+}
+.menu {
+    margin: 10px 0px;
+    border-right: 2px solid #515151;
+}
+.menu span {
+    font-size: 8pt;
+    top: 50%;    
+}
+.menu-contact {
+    border-right: 2px solid #515151;
+    padding-right: 330px;
+}
+.row {
+    width: 100%;
+}
+.panel {
+    padding: 25px 0px 15px 15px;
+    width: 230px;
+    min-height: 110px;
+    display: inline-block;
+    background-color: #1A1A1A; 
+    margin-left: -5px;
+    border-top: 5px solid #3B3B3B;
+    vertical-align: top;
+}
+.panel img {
+    display: inline-block;
+    align-content: top;
+    vertical-align: top;
+    padding-left: 5px;
+}
+.panel h3 {
+    color: #FE7700;
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14pt;
+    padding: 5px 0px 0px 5px;
+    width: 160px;
+}
+.panel p {
+    color: rgb(255,255,255);
+    width: 155px;
+    vertical-align: top;
+    padding: 5px 0px 0px 5px;
+    font-size: 9pt;
+    line-height: 1.5;
+}
+.panel div {
+    display: inline-block;
+}
+.banner-msg {
+    width: 70%;
+    min-height: 80px;
+    color: #F2F2F2;
+    padding: 35px 0px 30px 35px;
+    display: inline-block;
+}
+.banner-msg h2 {
+    font-weight: normal;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    font-size: 18pt;
+}
+.banner-msg p {
+    font-size: 10pt;
+    line-height: 1.5;
+}
+.buy-btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 12px 30px;
+    background: linear-gradient(#FF9344,#FF8526,#FF9344);
+    color: whitesmoke;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 45px 0px 0px 80px;
+    font-size: 14pt;
+}
+.portfolio {
+    background-color: #1A1A1A;
+}
+.portfolio h2 {
+    display: inline-block;
+    vertical-align: top;
+    padding: 40px 730px 0px 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    color: whitesmoke;
+}
+.portfolio a {
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    text-decoration: none;
+    color: #EC5100;
+    padding-top: 40px;
+    font-size: 10pt;
+    font-style: italic;
+}
+.portfolio-panel {
+    display: inline-block;
+    vertical-align: top;
+    width: 240px;
+}
+.portfolio-panel img {
+    border: 3px solid #363636;
+    margin: 20px 0px 0px 30px;
+    height: 135px;
+    width: 200px;
+}
+.portfolio-panel h5 {
+    color: #FE7700;
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    padding: 10px 0px 10px 35px;
+}
+.portfolio-txt {
+    color: whitesmoke;
+    padding: 0px 0px 10px 35px;
+    font-size: 8pt;
+    line-height: 1.5;
+}
+#background {
+    min-height: 1100px;
+    width: 1000px;
+    background: repeating-linear-gradient(
+        -50deg,
+        #050505,
+        #050505 2px,
+        #222 5px,
+        #222 5px
+      );
+}
+#content {
+    margin: 0px 10px;
+}
+
+

@@ -1,0 +1,124 @@
+<head>
+    <meta charset="utf-8">
+    <title>Soto Dojo Blog</title>
+    <meta name="description" content="The Soto Dojo Blog is a custom made profile for web development practice." >
+</head>
+<body>
+	<div name="main">
+		<h1>Soto Dojo Blog</h1>
+		<img src="https://pbs.twimg.com/profile_images/797995442399084544/o0DswMVv.jpg" alt="Bermuda" width="200" height="200">
+		<img src="https://static.wixstatic.com/media/4eebd8_a26692c1b5e84afab019893464dae93f~mv2_d_2522_2244_s_2.jpg/v1/fill/w_630,h_561,al_c,q_80,usm_0.66_1.00_0.01/4eebd8_a26692c1b5e84afab019893464dae93f~mv2_d_2522_2244_s_2.webp" alt="Saracens" width="200" height="200">
+		<p>
+			Eric Soto is a rugby player based in Seattle, WA. He plays with a local <a href="http://www.bcrugby.com/" target="_blank">British Columbia Premiership</a> team, the <a href="https://www.seattlesaracensrugby.com/" target="_blank">Seattle Saracens</a>. He is a graduate of SUNY Stony Brook University with a B.S. in Athletic Training. He is currently working to join the computer science community by gaining a more thorough understanding of coding languages.
+		</p>
+		<p>
+			An exceptional athlete on the field, Soto has had some memorable performances. <a href="https://www.seattlesaracensrugby.com/single-post/2017/10/02/Saracens-Run-Over-Meraloma" target="_blank">Click here to read more.</a> Constantly adapting to the global sports market, he joined forces with LikeAPro. <a href="https://www.likeapro.com/athletes/eric-soto" target="_blank">Click here for his LikeAPro profile.</a>
+		</p>
+		<iframe width="480" height="310" src="https://www.youtube.com/embed/M9OmMOy_OJE?rel=0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+	</div>
+	<div name="combo">
+		<div class ='left-block' name="stats">
+			<table name="stats" border="1px solid-black" width="400px">
+    			<thead>
+        			<tr>
+           				<th>2017 Fall Statistics</th>
+           				<th>Total</th>
+       				</tr>
+   				</thead>
+   				<tbody align="center">
+       				<tr>
+       					<td>Games Played</td>
+       					<td>9</td>
+        			</tr>
+        			<tr>
+            			<td>Tries</td>
+            			<td>4</td>
+        			</tr>
+        			<tr>
+            			<td>Points</td>
+            			<td>20</td>
+        			</tr>
+        			<tr>
+        				<td>Tackles</td>
+        				<td>46</td>
+        			</tr>
+       				<tr>
+       					<td>Line Breaks</td>
+       					<td>14</td>
+       				</tr>
+       				<tr>
+      					<td>Off-loads</td>
+       					<td>5</td>
+       				</tr>
+   				</tbody>
+   			</table>
+   		</div>
+   		<div class='right-box' name="awards">
+			<ul><b>Awards and Championships</b>
+				<li>2010-2011 Stony Brook Seawolves Most Improved Player</li>
+				<li>2011-2012 Stony Brook Seawolves Most Valuable Forward</li>
+				<li>2011-2012 Empire State Conference Champions</li>
+				<li>2013-2014 Miami RFC Florida State USA Rugby Division 2 Champions</li>
+				<li>2014-2015 Seattle Saracens BC Rugby Division 1 Champions</li>
+			</ul>
+		</div>
+	</div>	
+<!-- How do I style div combo so that the div stats and div awards are in the same horizontal span?? I want to recreate bootstrap where each div effectively takes up half of their respective columns of the page. Does my question make sense? -->
+
+	<div name="survey">
+		<h2>Dojo Survey</h2>
+		<h4>Please complete this short survey!</h4>
+		<form>
+			<p>
+				<label for="email">E-mail:</label>
+				<input type="text" id="email" name="email">
+			</p>
+			<p>Would you like to subscribe to updates from this blog?<br>
+				<input type="radio" id="allow" name="updates" value="allow">
+				<label for="allow">Yes, please subscribe me!</label>
+
+				<input type="radio" id="deny" name="updates" value="deny">
+				<label for="deny">No thank you.</label>
+			</p>
+			<p>Which is your favorite sport?<br>
+				<select name="sport">
+					<option value="rugby">Rugby</option>
+					<option value="football">Football</option>
+					<option value="soccer">Soccer</option>
+					<option value="basketball">Basketball</option>
+					<option value="baseball">Baseball</option>
+				</select>
+			</p>
+			<p>How often do you watch sports?<br>
+				<input type="radio" id="none" name="consume" value="none">
+				<label for="none">Never</label>
+					
+				<input type="radio" id="min" name="consume" value="min">
+				<label for="min">1-2 Days</label>			
+					
+				<input type="radio" id="med" name="consume" value="med">
+				<label for="med">3-5 Days</label>
+
+				<input type="radio" id="max" name="consume" value="max">
+				<label for="max">6-7 Days</label>
+			</p>
+			<p>How did you find out about this page? (check all that apply)<br>
+				<input type="checkbox" id="codedojo" name="landing" value="codedojo">
+				<label for="codedojo">Coding Dojo</label><br>
+
+				<input type="checkbox" id="google" name="landing" value="google">
+				<label for="google">Google</label><br>
+
+				<input type="checkbox" id="reddit" name="landing" value="reddit">
+				<label for="reddit">Reddit</label><br>
+
+				<input type="checkbox" id="other" name="landing" value="other">
+				<label for="other">Other</label>
+				<input type="text" id="other" name="other"><br>
+			</p>
+			<p>
+				<input type="submit" value="Submit">
+			</p>
+		</form>
+	</div>
+</body>
