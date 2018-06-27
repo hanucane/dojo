@@ -1,0 +1,232 @@
+<html>
+<head>
+	<title>Rick and Morty Man</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		h2 {
+			text-align: center;
+			height: 30px;
+			width: 200px;
+			background-color: orange;
+		}
+		.wall {
+			height: 40px;
+			width: 40px;
+			display: inline-block;
+			background-color: blue;
+		}
+		.halzinger {
+			height: 40px;
+			width: 40px;
+			display: inline-block;
+			background-color: black;
+			background-image: url('img/halzinger.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+		}
+		.mega_seed {
+			height: 40px;
+			width: 40px;
+			display: inline-block;
+			background-color: black;
+			background-image: url('img/mega_seed.png');
+			background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+		}
+		.red {
+			height: 40px;
+			width: 40px;
+			display: inline-block;
+			background-color: black;
+			background-image: url('img/red.gif');
+			background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+		}
+		.blank {
+			height: 40px;
+			width: 40px;
+			display: inline-block;
+			background-color: black;
+		}
+		#rick {
+
+			display: inline-block;
+			background-image: url('img/rick.gif');
+			background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+		}
+		#points {
+			height: 30px;
+			width: 200px;
+			background-color: green;
+			text-align: center;
+		}
+		#lives {
+			height: 30px;
+			width: 200px;
+			background-color: purple;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id='world'></div>
+	<div id='rick'></div>
+	<div>
+		<h2>Points</h2>
+		<h2 id='points'></h2>
+	</div>
+	<div>
+		<h2>Lives</h2>
+		<h2 id='lives'></h2>
+	</div>
+</body>
+<script type="text/javascript">
+	var world = [
+		[1,1,1,1,1,1,1,1,1],
+		[1,0,4,2,1,3,2,2,1],
+		[1,2,1,2,1,2,1,3,1],
+		[1,2,2,2,2,2,2,2,1],
+		[1,2,1,2,1,2,1,2,1],
+		[1,2,1,2,1,2,1,2,1],
+		[1,2,2,3,2,2,2,3,1],
+		[1,2,1,2,1,2,1,2,1],
+		[1,2,1,2,1,2,1,2,1],
+		[1,3,2,2,2,2,2,2,1],
+		[1,2,1,2,1,2,1,2,1],
+		[1,2,2,2,3,2,2,2,1],
+		[1,1,1,1,1,1,1,1,1],
+	];
+	var worldDict = {
+		0: 'blank',
+		1: 'wall',
+		2: 'halzinger',
+		3: 'mega_seed',
+		4: 'red',
+		10: 'rick', 
+	};
+	
+	
+	
+	function drawWorld(){
+		output = "";
+
+		for(var row = 0; row < world.length; row++){
+			output += "<div class = 'row'>"
+			for(var x = 0; x < world[row].length; x++){
+				output += "<div class = '" + worldDict[world[row][x]] +"'></div>"
+			}
+			output += "</div>"
+		}
+
+		document.getElementById('world').innerHTML = output;
+	}
+	drawWorld(); // World generation
+
+	var rick = {
+		x: 1,
+		y: 1
+	}
+
+	
+
+	function drawrick(){
+    	document.getElementById('rick').style.left = rick.x * 40 + 'px'
+    	document.getElementById('rick').style.top = rick.y * 40 + 'px'
+	}
+	drawrick()
+
+	var score = 0;
+
+	function drawscore(){
+		document.getElementById('points').innerHTML = score;
+	}
+	drawscore()
+
+	var lives = 3;
+
+	function drawlives(){
+		document.getElementById('lives').innerHTML = lives;
+	}
+	drawlives()
+
+	// function drawdeath(){
+	// 	if (worldDict[4] === world[rick.y][rick.x]){
+	// 		lives = lives - 1;
+	// }
+
+    document.onkeydown = function(e){
+    		console.log(e);
+    		if (e.keyCode == 37) { // LEFT 
+    			// Scoring
+    			if (world[rick.y][rick.x-1] === 2){
+					score = score + 10;
+				}
+				else if (world[rick.y][rick.x-1] === 3){
+					score = score + 25;
+				}
+    			// Movement
+    			if(world[rick.y][rick.x - 1] != 1){
+    				rick.x--;
+    			}
+            }
+    		if (e.keyCode == 39) { // RIGHT
+    			// Scoring
+    			if (world[rick.y][rick.x+1] === 2){
+					score = score + 10;
+					
+				}
+				else if (world[rick.y][rick.x+1] === 3){
+					score = score + 25;
+				}
+				// Movement
+    			if(world[rick.y][rick.x + 1] != 1){
+    				rick.x++;
+    			}  
+            }
+    		if (e.keyCode == 40) { // DOWN
+    			// Scoring
+    			if (world[rick.y+1][rick.x] === 2){
+					score = score + 10;	
+				}
+				else if (world[rick.y+1][rick.x] === 3){
+					score = score + 25;
+				}
+    			// Movement
+    			if(world[rick.y + 1][rick.x] != 1){
+					rick.y++;
+				}
+			}
+			if (e.keyCode == 38) { // UP
+				// Scoring
+				if (world[rick.y-1][rick.x] === 2){
+					score = score + 10;	
+				}
+				else if (world[rick.y-1][rick.x] === 3){
+					score = score + 25;
+				}
+				// Movement
+    			if(world[rick.y - 1][rick.x] != 1){
+					rick.y--;
+				}
+			}
+	
+
+			world[rick.y][rick.x] = 0;
+			
+            drawrick(); // Rick move
+            drawWorld(); // World render after halzinger is eaten
+            drawscore(); // Update score
+            // drawdeath(); // Death
+        }
+
+</script>
+</html>

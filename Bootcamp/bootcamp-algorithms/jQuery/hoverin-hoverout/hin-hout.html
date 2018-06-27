@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hover In, Hover Out</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    img {
+        height: 300px;
+        width: 400px;
+    }
+    </style>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('img.first').hover(function(){
+			$(this).attr('src', 'img/Bermuda1.JPG');
+            }, function(){
+            $(this).attr('src', 'img/Bermuda2.JPG');
+            });
+        })
+        $(document).ready(function(){
+            $('img.second').hover(function(){
+			$(this).attr('src', 'img/trytime.jpg');
+            }, function(){
+            $(this).attr('src', 'img/littleboy.jpg');
+            });
+        })
+        $(document).ready(function(){
+            $('img.third').hover(function(){
+			$(this).attr('src', 'img/linebreak.jpg');
+            }, function(){
+            $(this).attr('src', 'img/linehit.jpg');
+            });
+        })
+        $(document).ready(function(){
+            $('img.fourth').hover(function(){
+			$(this).attr('src', 'img/Bermuda4.jpg');
+            }, function(){
+            $(this).attr('src', 'img/Bermuda3.jpg');
+            });
+        })
+    </script>
+</head>
+<body>
+    <img class="first" src="img/Bermuda1.JPG">
+    <img class="second" src="img/littleboy.jpg"><br>
+    <img class="third" src="img/linehit.jpg">
+    <img class="fourth" src="img/Bermuda3.jpg">
+</body>
+</html>

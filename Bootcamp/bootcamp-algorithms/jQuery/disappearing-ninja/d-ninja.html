@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>jQuery Practice</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $( "img" ).attr({
+            src: "ninja.png",
+            title: "ninja",
+            alt: "Ninja Logo",
+            height: "200px",
+            width: "160px"
+            });
+            $( "div" ).text( $( "img" ).attr( "alt" ) );
+        });
+        $(document).ready(function(){
+            $('img').click(function(){
+                $(this).hide();
+            });
+        });
+        $(document).ready(function(){
+            $('a').click(function(){
+                location.reload();
+            });
+        })
+        </script>
+</head>
+<body>
+    <img>
+    <img>
+    <img>
+    <img><br>
+    <img>
+    <img>
+    <img>
+    <img><br><br>
+    <a href="#" style="background-color: blue; color: yellow; width: 150px; padding: 10px 30px; border-radius: 5px; margin: 20px 0px 0px 50px; text-align: center;">Click here to restore</a>
+
+</body>
+</html>

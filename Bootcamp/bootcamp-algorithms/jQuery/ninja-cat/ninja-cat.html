@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ninja to Cat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.toggle').click(function(){
+                $('img',this).toggle();
+            })
+        })
+    </script>
+</head>
+<body>
+    <span class="toggle">
+        <img src="img/ninja0.png">
+        <img style="display:none;" src="img/cat0.png">
+    </span><br>
+    <span class="toggle">
+        <img src="img/ninja1.png">
+        <img style="display:none;" src="img/cat1.png">
+    </span><br>
+    <span class="toggle">
+        <img src="img/ninja2.png">
+        <img style="display:none;" src="img/cat2.png">
+    </span><br>
+    <span class="toggle">
+        <img src="img/cat3.png">
+        <img style="display:none;" src="img/ninja3.png">
+    </span><br>
+    <span class="toggle">
+        <img src="img/cat4.png">
+        <img style="display:none;" src="img/ninja4.png">
+    </span><br>
+</body>
+</html>

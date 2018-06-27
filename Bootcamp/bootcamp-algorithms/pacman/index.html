@@ -6,88 +6,213 @@
         * {
             margin: 0px;
             padding: 0px;
+			font-size: 0pt;
         }
         body {
             background-color: black;
         }
-        div.row div{
-            width: 20px;
+		h2 {
+			color: whitesmoke;
+			font-size: 14pt;
+			margin-left: 20px;
+			padding-left: 75px;
+		}
+		h2#points {
+			padding-left: 0px;
+		}
+		h2#lives {
+			padding-left: 0px;
+		}
+        .brick {
             height: 20px;
+            width: 20px;
             display: inline-block;
-        }
-        div.brick {
             background-color: blue;
         }
-        div.coin {
+        .coin {
             background: url('coin.gif');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-        }
-        div#pacman {
-            width: 20px;
             height: 20px;
+            width: 20px;
             display: inline-block;
-            background: url('pacman.gif');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            position: absolute;
         }
+        .blank {
+			height: 20px;
+			width: 20px;
+			display: inline-block;
+			background-color: black;
+		}
+        #pacman {
+			height: 20px;
+			width: 20px;
+			display: inline-block;
+			background-color: black;
+			background-image: url('pacman.gif');
+			background-size: contain;
+			position: absolute;
+			left: 20px;
+			top: 20px;
+		}
+        #points {
+			height: 30px;
+			width: 200px;
+			background-color: green;
+			text-align: center;
+		}
+		#lives {
+			height: 30px;
+			width: 200px;
+			background-color: purple;
+			text-align: center;
+		}
     </style>
 </head>
 <body>
-    
     <div id="world"></div>
     <div id="pacman"></div>
-
-    <script>
+    <div>
+		<h2>Points</h2>
+		<h2 id='points'></h2>
+	</div>
+	<div>
+		<h2>Lives</h2>
+		<h2 id='lives'></h2>
+	</div>
+</body>
+<script>
     
     var world = [
-        [2,2,2,2,2,2,2,2,2,2],
-        [2,1,1,1,1,1,2,1,1,2],
-        [2,1,2,1,1,2,2,2,1,2],
-        [2,1,2,2,1,2,1,2,1,2],
-        [2,1,1,1,1,1,1,1,1,2],
-        [2,1,2,1,2,1,2,2,1,2],
-        [2,1,1,1,2,1,1,1,1,2],
-        [2,2,2,2,2,2,2,2,2,2]
-    ]
+        [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+        [0,1,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1,0],
+        [0,1,2,1,1,2,1,1,1,2,1,2,1,1,1,2,1,1,2,1,0],
+        [0,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,0],
+        [0,1,2,1,1,2,1,2,1,1,1,1,1,2,1,2,1,1,2,1,0],
+		[0,1,2,2,2,2,1,2,2,2,1,2,2,2,1,2,2,2,2,1,0],
+		[0,1,1,1,1,2,1,1,1,0,1,0,1,1,1,2,1,1,1,1,0],
+		[0,0,0,0,1,2,1,0,0,0,0,0,0,0,1,2,1,0,0,0,0],
+		[1,1,1,1,1,2,1,0,1,1,0,1,1,0,1,2,1,1,1,1,1],
+		[0,0,0,0,0,2,0,0,1,0,0,0,1,0,0,2,0,0,0,0,0],
+		[1,1,1,1,1,2,1,0,1,1,1,1,1,0,1,2,1,1,1,1,1],
+		[0,0,0,0,1,2,1,0,0,0,0,0,0,0,1,2,1,0,0,0,0],
+		[0,1,1,1,1,2,1,0,1,1,1,1,1,0,1,2,1,1,1,1,0],
+		[0,1,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1,0],
+		[0,1,2,1,1,2,1,1,1,2,1,2,1,1,1,2,1,1,2,1,0],
+		[0,1,2,2,1,2,2,2,2,2,0,2,2,2,2,2,1,2,2,1,0],
+		[0,1,1,2,1,2,1,2,1,1,1,1,1,2,1,2,1,2,1,1,0],
+		[0,1,2,2,2,2,1,2,2,2,1,2,2,2,1,2,2,2,2,1,0],
+		[0,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,2,1,0],
+		[0,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,0],
+		[0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0]
+    ];
+    var worldDict = {
+		0: 'blank',
+		1: 'brick',
+        2: 'coin',
+		10: 'pacman', 
+	};
+	
+	function drawWorld(){
+		output = "";
 
-    function displayWorld(){
-        var output = '';
+		for(var row = 0; row < world.length; row++){
+			output += "<div class = 'row'>"
+			for(var x = 0; x < world[row].length; x++){
+				output += "<div class = '" + worldDict[world[row][x]] +"'></div>"
+			}
+			output += "</div>"
+		}
 
-        for (var i=0; i<world.length; i++){
-            output += "\n<div class='row'>"
-            for(var j=0; j<world[i].length; j++){
-                if (world[i][j] == 2){
-                    output += "<div class='brick'></div>";
-                }
-                else if (world[i][j] == 1){
-                    output += "<div class='coin'></div>";
-                }
-                if (world[i][j] == 0){
-                    output += "<div class='empty'></div>";
-                }
-            }
-            output += "\n</div>";
-        }
-        document.getElementById('world').innerHTML = output;
-    }
-    displayWorld();
+		document.getElementById('world').innerHTML = output;
+	}
+	drawWorld(); // World generation
 
-    var pacman = {
-		x: 1,
-		y: 1
+	var pacman = {
+		x: 10,
+		y: 15
 	}
 
 	function drawpacman(){
     	document.getElementById('pacman').style.left = pacman.x * 20 + 'px'
     	document.getElementById('pacman').style.top = pacman.y * 20 + 'px'
 	}
-	drawpacman();
+	drawpacman()
 
-    </script>
+	var score = 0;
 
-</body>
+	function drawscore(){
+		document.getElementById('points').innerHTML = score;
+	}
+	drawscore()
+
+	var lives = 3;
+
+	function drawlives(){
+		document.getElementById('lives').innerHTML = lives;
+	}
+	drawlives()
+
+    document.onkeydown = function(e){
+		console.log(e);
+		if (e.keyCode == 37) { // LEFT 
+			// Scoring
+			if (world[pacman.y][pacman.x-1] === 2){
+				score = score + 10;
+			}
+			else if (world[pacman.y][pacman.x-1] === 3){
+				score = score + 25;
+			}
+			// Movement
+			if(world[pacman.y][pacman.x - 1] != 1){
+				pacman.x--;
+			}
+		}
+		if (e.keyCode == 39) { // RIGHT
+			// Scoring
+			if (world[pacman.y][pacman.x+1] === 2){
+				score = score + 10;
+			}
+			else if (world[pacman.y][pacman.x+1] === 3){
+				score = score + 25;
+			}
+			// Movement
+			if(world[pacman.y][pacman.x + 1] != 1){
+				pacman.x++;
+			}  
+		}
+		if (e.keyCode == 40) { // DOWN
+			// Scoring
+			if (world[pacman.y+1][pacman.x] === 2){
+				score = score + 10;	
+			}
+			else if (world[pacman.y+1][pacman.x] === 3){
+				score = score + 25;
+			}
+			// Movement
+			if(world[pacman.y + 1][pacman.x] != 1){
+				pacman.y++;
+			}
+		}
+		if (e.keyCode == 38) { // UP
+			// Scoring
+			if (world[pacman.y-1][pacman.x] === 2){
+				score = score + 10;	
+			}
+			else if (world[pacman.y-1][pacman.x] === 3){
+				score = score + 25;
+			}
+			// Movement
+			if(world[pacman.y - 1][pacman.x] != 1){
+				pacman.y--;
+			}
+		}
+		world[pacman.y][pacman.x] = 0;		
+		drawpacman(); // pacman move
+		drawWorld(); // World render after sushi is eaten
+		drawscore(); // Update score
+	}
+</script>
+
+
 </html>
