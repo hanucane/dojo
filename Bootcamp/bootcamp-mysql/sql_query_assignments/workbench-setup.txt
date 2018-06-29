@@ -1,0 +1,6 @@
+USE twitter;
+SELECT * FROM users;
+INSERT INTO users (first_name, last_name, handle, birthday)
+VALUES ('Eric', 'Soto', 'monkemoney', '1991-01-30');
+UPDATE twitter.users SET handle='hurricanesoto' WHERE id='6';
+DELETE FROM twitter.users WHERE id='6';
