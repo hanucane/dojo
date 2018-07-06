@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jQuery UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#accordion" ).accordion();
+        } );
+        $( function() {
+          $( "#tabs" ).tabs();
+        } );
+    </script>
+</head>
+<body>
+    <div id="accordion">
+        <h3>Accordion Open</h3>
+        <div>
+          <p>
+          Here is an example of the accordion jQuery UI function.
+          </p>
+        </div>
+        <h3>Tabs Section</h3>
+        <div id="tabs">
+          <ul>
+            <li><a href="#tabs-1">One</a></li>
+            <li><a href="#tabs-2">Two</a></li>
+            <li><a href="#tabs-3">Three</a></li>
+          </ul>
+          <div id="tabs-1">
+            <p>This is where we start our tab section.</p>
+          </div>
+          <div id="tabs-2">
+            <p>As we continue through the sections, we hide the content for the previously shown section.</p>
+          </div>
+          <div id="tabs-3">
+            <p>It's similar to the accordion, but with a slightly different effect.</p>
+          </div>
+        </div>
+        <h3>More Accordion</h3>
+        <div>
+          <p>
+            Are you not entertained yet?
+          </p>
+          <ul>
+            <li>Like ancient times</li>
+            <li>Innovation creates opportunities</li>
+            <li>Drive evolution forward</li>
+          </ul>
+        </div>
+        <h3>Miscellaneous</h3>
+        <div>
+          <p>
+          You probably get the idea by now
+          </p>
+          <p>
+          jQuery UI is a fun tool for developers.
+          </p>
+        </div>
+    </div>
+    
+</body>
+</html>
