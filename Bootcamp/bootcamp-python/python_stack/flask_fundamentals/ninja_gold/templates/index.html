@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        nav {
+            text-align: left;
+        }
+        .container {
+            margin: 25px;
+            background-color: indigo;
+            color: lightgreen;
+            text-align: center;
+        }
+        .scroll {
+            text-align: left;
+            padding: 30px 20px 15px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>Your Gold <span style='background-color:ivory; padding: 3px 30px; color: goldenrod; font-weight: bold;'>{{ session['gold'] }}</span> 
+            <form action='/reset' method='POST'>
+                <button type="submit" class="btn btn-success" name="reset">
+                    Reset
+                </button>
+            </form>
+        </nav>
+        <div class="row">
+            {% for place in places %}
+            <div class="col-sm">
+                <h2>{{ place['place'] }}</h2>
+                <p>({{ place['value'] }})</p>
+                <form action='/game' method="POST">
+                    <input type="hidden" name="place" value="{{ place['place'] }}" />
+                    <button type="submit" class="btn btn-success">
+                        Find Gold!
+                    </button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="scroll">
+            <p><b>Activities</b></p>
+            <div class="pre-scrollable" data-offset="0" style="height: 300px; margin-bottom: 30px;">
+                {% for entry in session['results'] %}
+                <p>{{ entry }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

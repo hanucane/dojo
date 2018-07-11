@@ -17,11 +17,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Submitted Info</h1>
-        <p>Name: {{ request.form['name'] }}</p>
-        <p>Dojo Location: {{ request.form['dojo_location'] }}</p>
-        <p>Favorite Language: {{ request.form['fav_language'] }}</p>
-        <p>Comments: {{ request.form['comments'] }}</p>
+        <h1>Survey Submission</h1>
+        <p><b>Name:</b> {{ request.form['name'] }}</p>
+        <p><b>Dojo Location:</b> {{ request.form['dojo_location'] }}</p>
+        <p><b>Favorite Language:</b> {{ request.form['fav_language'] }}</p>
+        <p><b>Comments:</b> {{ request.form['comments'] }}</p>
         <a class='btn btn-danger' href="/">Go back</a>
     </div>
 </body>

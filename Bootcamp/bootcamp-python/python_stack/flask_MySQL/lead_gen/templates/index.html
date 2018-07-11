@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leads and Clients</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        nav {
+            text-align: right;
+        }
+        .container {
+            margin: 50px 100px;
+            padding: 20px;
+            background-color: skyblue;
+            border-radius: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <form action="/date_range" method="post">
+                <div class="form-group">
+                    <label for="from_date">From:</label>
+                    <input type="date" name="from_date" value="">
+                    <label for="to_date">To:</label>
+                    <input type="date" name="to_date" value="">
+                    <button type="submit" class="btn btn-success">Update</button>
+                </div>
+            </form>
+        </nav><br>
+        <h2>List of all clients and number of leads</h2><br>
+        <div class="row">
+            <div class="col-md">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Customer Name</th>
+                            <th>Number of Leads</th>
+                            <th>Client Email</th>
+                        </tr>
+                    </thead>
+                    {% for client in client_range %}
+                    <tr>    
+                        <td>{{ client.first_name }} {{ client.last_name }}</td>
+                        <td>2</td>
+                        <td>{{ client.email }}</td>
+                    </tr>     
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-md">
+                <form action="/add_client" method="post">    
+                    <table class="table">
+                        <h4>Add New Client</h4>                     
+                        <div class="form-group">
+                            <tr>
+                                <td><label for="first_name">First Name:</label></td>
+                                <td><input name="first_name" type="first_name" class="form-control" value='' placeholder="First Name"></td>
+                            </tr>
+                        </div>
+                        <div class="form-group">
+                            <tr>
+                                <td><label for="last_name">Last Name:</label></td>
+                                <td><input name="last_name" type="last_name" class="form-control" value='' placeholder="Last Name"></td>
+                            </tr>
+                        </div>
+                        <div class="form-group">
+                            <tr>
+                                <td><label for="email">Email:</label></td>
+                                <td><input name="email" type="email" class="form-control" value='' placeholder="Email"></td>
+                            </tr>
+                        </div>
+                        <tr>
+                            <td></td>
+                            <td><button type="submit" class="btn btn-success">Submit</button></td>
+                        </tr>                   
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Lead Name</th>
+                            <th>Lead Email</th>
+                            <th>Referral</th>
+                        </tr>
+                    </thead>
+                    {% for lead in lead_range %}
+                    <tr>    
+                        <td>{{ lead.first_name }} {{ lead.last_name }}</td>
+                        <td>{{ lead.email }}</td>
+                        <td>{{ lead.clients_id }}</td>
+                    </tr>     
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-md">
+                <form action="/add_lead" method="post">    
+                    <table class="table">
+                        <h4>Add New Lead</h4>                     
+                        <div class="form-group">
+                            <tr>
+                                <td><label for="first_name">First Name:</label></td>
+                                <td><input name="first_name" type="first_name" class="form-control" value='' placeholder="First Name"></td>
+                            </tr>
+                        </div>
+                        <div class="form-group">
+                            <tr>
+                                <td><label for="last_name">Last Name:</label></td>
+                                <td><input name="last_name" type="last_name" class="form-control" value='' placeholder="Last Name"></td>
+                            </tr>
+                        </div>
+                        <div class="form-group">
+                            <tr>
+                                <td><label for="email">Email:</label></td>
+                                <td><input name="email" type="email" class="form-control" value='' placeholder="Email"></td>
+                            </tr>
+                        </div>
+                        <div class="form-group">
+                            <tr>
+                                <td><label for="found_at">Found Lead Date:</label></td>
+                                <td><input type="date" name="found_at"></td>
+                            </tr>
+                        </div>
+                        <div class="form-group">
+                            <tr>
+                                <td><label for="exampleFormControlSelect1">Client Referral</label></td>
+                                <td><select class="form-control" id="exampleFormControlSelect1"  name="clients_id">
+                                {% for client in clients %}
+                                    <option value="{{ client.id }}">{{ client.first_name }} {{ client.last_name }}</option>
+                                {% endfor %}
+                                </select></td>
+                            </tr>
+                        </div>
+                        <tr>
+                            <td></td>
+                            <td><button type="submit" class="btn btn-success">Submit</button></td>
+                        </tr>                   
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
