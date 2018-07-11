@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Word Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .container {
+            margin: 25px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <h1>Random Letter Generator</h1>
+        <h4>Random Word ? (attempt #{{request.session.counter}})</h4>
+        <p>{{request.session.random_word}}</p>
+        <form action='/generate' method='POST'>
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary" name="generate">
+                Generate
+            </button>
+        </form>
+        <form action='/reset' method='POST'>
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger" name="reset">
+                Reset
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
