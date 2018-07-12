@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'surveys/css/basic.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+            Thanks for submitting this form! You have submitted this form {{ request.session.counter }} times now.  
+            <a class='btn btn-danger' href="/survey/reset">Reset Survey Count</a>
+        </div>
+        <h1>Survey Submission</h1>
+        <p><b>Name:</b> {{ request.session.name }}</p>
+        <p><b>Email:</b> {{ request.session.email }}</p>
+        <p><b>Dojo Location:</b> {{ request.session.location }}</p>
+        <p><b>Favorite Language:</b> {{ request.session.language }}</p>
+        <p><b>Comments:</b> {{ request.session.comment }}</p>
+        <a class='btn btn-primary' href="/">Go back</a>
+        <a class='btn btn-primary' href="/survey">Back to Survey</a>
+    </div>
+</body>
+</html>

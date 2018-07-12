@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .container {
+            margin: 50px;
+            padding: 20px;
+            background-color: skyblue;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Logged In</h1>
+        <p><b>Name:</b>{{ request.session.first_name }} {{ request.session.last_name }} </p>
+        <p><b>Email:</b>{{ request.session.email }} </p>
+        <form action='/logout' method='POST'>
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger" name="logout">
+                Logout
+            </button>
+        </form>
+        <a class='btn btn-primary' href='/blog'>Go to Blog</a>
+        <a class='btn btn-primary' href='/survey'>Go to Survey</a>
+    </div>
+</body>
+</html>
