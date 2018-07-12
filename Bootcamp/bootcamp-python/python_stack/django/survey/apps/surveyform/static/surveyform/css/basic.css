@@ -1,0 +1,10 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    margin: 50px 100px;
+    padding: 20px;
+    background-color: skyblue;
+    border-radius: 15px;
+}

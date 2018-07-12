@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'surveyform/css/basic.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Survey</h1>
+        <div class="survey-form">
+            <form action="/submit" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input name="name" type="name" class="form-control" value='' placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="name">Your E-mail</label>
+                    <input name="email" type="email" class="form-control" value='' placeholder="E-mail">
+                </div>
+                <div class="form-group">
+                    <label for="dojo_location">Dojo Location</label>
+                    <select name="dojo_location" class="form-control" value=''>
+                        {% for i in request.session.locations %}
+                        <option value='{{ i.location }}'>{{i.location}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fav_language">Favorite Language</label>
+                    <select name="fav_language" class="form-control" value=''>
+                        {% for x in request.session.languages %}
+                        <option value='{{ x.name }}'>{{x.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <small class="form-text text-muted">A comment is required</small>
+                    <textarea name="comments" class="form-control" value='' rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
