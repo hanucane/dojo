@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Session Words</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .container {
+            margin: 25px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md'>
+                <h1>Add a new word</h1>
+                <h4>Session</h4>
+                <form action='/session_words/submit' method='POST'>
+                    {% csrf_token %}
+                    <div class='form-group'>
+                        <input type='text' name='word' placeholder='Enter word here'>
+                    </div>
+                    <div class='form-check'>
+                        <p>Choose Color</p>
+                        <input class="form-check-input" name='color' type='hidden' value='black'>
+                        {% for color in request.session.word_colors %}
+                        <input class="form-check-input" type='radio' name='color' value='{{color}}'>
+                        <label class='form-check-label'>{{color}}</label><br>
+                        {% endfor %}
+                    </div>
+                    <div class='form-check'>
+                        <input class='form-check-input' type='hidden' name='font' value='12pt'>
+                        <input class='form-check-input' type='checkbox' name='font' value='20pt'>
+                        <label class='form-check-label'>Show in BIG font!</label><br>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="generate">
+                        Submit
+                    </button>
+                </form>
+            </div>
+            <div class='col-md'>
+                <form action='/session_words/reset' method='POST'>
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger" name="reset">
+                        Reset
+                    </button>
+                </form>
+                <div class="scroll">
+                    <p><b>Activities</b></p>
+                    <div class="pre-scrollable" data-offset="0" style="height: 300px; margin-bottom: 30px;">
+                        {% for entry in request.session.results %}
+                            <p><span style='font-size: {{ entry.font }}; color: {{ entry.color }}'>{{entry.word}}</span>{{entry.string}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

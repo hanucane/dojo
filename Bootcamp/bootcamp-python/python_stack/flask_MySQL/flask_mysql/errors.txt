@@ -1,0 +1,16 @@
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Password is incorrect
+----------------------------------------------------------------------------------------
+pymysql.err.OperationalError: (1045, "Access denied for user 'roofahdfhaht'@'localhost' (using password: YES)")
+User is incorrect
+----------------------------------------------------------------------------------------
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'dojo' ([Errno 8] nodename nor servname provided, or not known)")
+Host is incorrect
+----------------------------------------------------------------------------------------
+NameError: name 'asdgadsgadsg' is not defined
+DB name is not defined
+----------------------------------------------------------------------------------------
+File "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-python/python_stack/flask_MySQL/flask_mysql/mysqlconnection.py", line 13, in __init__
+    self.connection = agsdgdsgdsfadsf
+NameError: name 'agsdgdsgdsfadsf' is not defined
+Connection name is an error
