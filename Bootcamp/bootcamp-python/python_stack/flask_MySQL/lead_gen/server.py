@@ -6,7 +6,9 @@ mysql = connectToMySQL('lead_gen')
 
 @app.route("/")
 def index():
-    all_clients = mysql.query_db("SELECT * FROM clients;")
+    all_clients = mysql.query_db("SELECT * FROM clients")
+    clients_w_leads = mysql.query_db("SELECT COUNT(clients_id) as count, b.id, b.first_name, b.last_name, b.email FROM leads a LEFT JOIN clients b ON b.id = a.clients_id GROUP BY clients_id;")
+    print(all_clients)
     all_leads = mysql.query_db("SELECT * FROM leads")
     query = "SELECT * FROM clients WHERE created_at < %(to_date)s AND created_at > %(from_date)s;"
     data = {
@@ -20,12 +22,8 @@ def index():
         "from_date": session['from_date']
     }
     lead_range = mysql.query_db(query, data)
-    # query = "SELECT COUNT(%(count)s) FROM leads WHERE id = %(count)s GROUP BY %(count)s;"
-    # data = {
-    #     "count": all_clients[id]
-    # }
 
-    return render_template("index.html", clients = all_clients, leads = all_leads, client_range=client_range, lead_range=lead_range)
+    return render_template("index.html", clients = all_clients, leads = all_leads, clients_count=clients_w_leads, client_range=client_range, lead_range=lead_range)
 
 @app.route('/date_range', methods=['POST'])
 def date_range():

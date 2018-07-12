@@ -43,10 +43,10 @@
                             <th>Client Email</th>
                         </tr>
                     </thead>
-                    {% for client in client_range %}
+                    {% for client in clients_count %}
                     <tr>    
                         <td>{{ client.first_name }} {{ client.last_name }}</td>
-                        <td>2</td>
+                        <td>{{ client.count }}</td>
                         <td>{{ client.email }}</td>
                     </tr>     
                     {% endfor %}
