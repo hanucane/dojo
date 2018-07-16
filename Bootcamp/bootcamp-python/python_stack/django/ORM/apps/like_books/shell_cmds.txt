@@ -1,0 +1,34 @@
+from apps.like_books.models import *
+
+User.objects.create(first_name="Eric", last_name="Soto", email="soto.ericf@gmail.com") 
+User.objects.create(first_name="Graham", last_name="Layman", email="crackers@dojo.com")
+User.objects.create(first_name="Alan", last_name="Watts", email="watts@dojo.com") 
+
+this_user = User.objects.get(id=1)
+Book.objects.create(uploader=this_user, name="Development Stories", desc="A compilation of coding stories")
+Book.objects.create(uploader=this_user, name="The Path to Dynasties", desc="A compilation of workouts")
+this_user = User.objects.get(id=2)
+Book.objects.create(uploader=this_user, name="Trail of Crumbs", desc="A story about how the Python ate all the crackers")
+Book.objects.create(uploader=this_user, name="Fantasy Island", desc="An adult tale of sin and risk.")
+this_user = User.objects.get(id=3)
+Book.objects.create(uploader=this_user, name="Philosophy of Development", desc="An overview of the philosophical concepts uncovered in web development.")
+Book.objects.create(uploader=this_user, name="Intelligent Fool, Simple Genious", desc="The fallacy of man is in his ego's attachment to intellectual processes that provide a guise of intelligence.")
+
+this_book = Book.objects.all()
+this_book.liked_users.add(this_user)
+this_user = User.objects.get(id=1)
+this_book = Book.objects.first()
+this_book.liked_users.add(this_user)
+this_book = Book.objects.last()
+this_book.liked_users.add(this_user)
+this_book = Book.objects.first()
+this_book.liked_users.add(this_user)
+this_book = Book.objects.get(id=3)
+this_book.liked_users.add(this_user)
+
+this_book = Book.objects.get(id=1)
+this_book.liked_users.values()
+
+this_book.uploader.first_name
+this_book = Book.objects.get(id=2)
+this_book.liked_users.values()

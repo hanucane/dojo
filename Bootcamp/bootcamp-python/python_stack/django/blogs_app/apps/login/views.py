@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
 
 def index(request):
+    if 'login' not in request.session:
+        request.session['login'] = False
     return render(request, 'login/index.html')
 
 def register(request):

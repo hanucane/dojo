@@ -2,11 +2,14 @@ from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 def index(request):
-    context = {
-        "email" : "blog@gmail.com",
-        "name" : "mike"
-    }
-    return render(request, 'blog/index.html', context)
+    if request.session['login'] == True:
+        context = {
+            "email" : "blog@gmail.com",
+            "name" : "mike"
+        }
+        return render(request, 'blog/index.html', context)
+    else:
+        return redirect('/')
 
 def new(request):
     response = "Insert new blog here"

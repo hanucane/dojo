@@ -1,0 +1,22 @@
+User.objects.first()
+Returns first object in User class
+
+User.objects.first().first_name
+Returns first_name attribute in first object
+
+User.objects.all().order_by("first_name").values()
+Returns all objects in order by the first_name values
+
+User.objects.order_by("-first_name").values('first_name')
+Returns all objects in descending order by first_name values and displays only first_name
+
+User.objects.get(id='3').first_name
+Returns object id = 3 first_name value
+
+a = User.objects.create(first_name="Andrew", last_name="Nelson", age="28", email_address="anelson@gmail.com")
+a.save()
+User.objects.all().order_by("first_name").values("first_name")
+Creates User in variable and saves variable to database as the appropriate object
+
+User.objects.get(id=2).delete()
+Deletes user by id

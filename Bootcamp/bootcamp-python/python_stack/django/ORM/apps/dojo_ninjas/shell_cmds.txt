@@ -1,0 +1,80 @@
+from apps.dojo_ninjas.models import *
+Dojo.objects.create(name="CodingDojo Silicon Valley", city="Mountain View", state="CA")
+Dojo.objects.create(name="CodingDojo Seattle", city="Seattle", state="WA")
+Dojo.objects.create(name="CodingDojo New York", city="New York", state="NY")
+
+thisDojo = Dojo.objects.get(id=1)
+Ninja.objects.create(dojo=thisDojo, first_name="Richard", last_name="Hendrix")
+Ninja.objects.create(dojo=thisDojo, first_name="Gilfoyle", last_name="")
+Ninja.objects.create(dojo=thisDojo, first_name="Dinesh", last_name="")
+Ninja.objects.create(dojo=thisDojo, first_name="Jared", last_name="Dunn")
+
+thisDojo = Dojo.objects.get(id=2)
+Ninja.objects.create(dojo=thisDojo, first_name="Big", last_name="Head")
+Ninja.objects.create(dojo=thisDojo, first_name="Peter", last_name="Gregory")
+Ninja.objects.create(dojo=thisDojo, first_name="Michael", last_name="Choi")
+
+thisDojo = Dojo.objects.get(id=3)
+Ninja.objects.create(dojo=thisDojo, first_name="Michael", last_name="St. Claire")
+Ninja.objects.create(dojo=thisDojo, first_name="Phil", last_name="Salter")
+Ninja.objects.create(dojo=thisDojo, first_name="Derek", last_name="Lipscomb")
+
+Dojo.objects.first().ninjas.all()
+Dojo.objects.first().ninjas.all().values()
+
+Ninja.objects.first().dojo
+
+Dojo.objects.create(name="CodingDojo Dallas", city="Dallas", state="TX")
+Dojo.objects.create(name="CodingDojo Wasington DC", city="Tysons Corner", state="VA")
+Dojo.objects.create(name="CodingDojo Twin City", city="Chicago", state="IL")
+Dojo.objects.get(id=4).delete()
+Dojo.objects.get(id=5).delete()
+Dojo.objects.get(id=6).delete()
+
+Dojo.objects.create(name="CodingDojo Twin City", city="Chicago", state="IL")
+Dojo.objects.create(name="CodingDojo Wasington DC", city="Tysons Corner", state="VA")
+Dojo.objects.create(name="CodingDojo Dallas", city="Dallas", state="TX")
+
+thisDojo = Dojo.objects.get(id=7)
+Ninja.objects.create(dojo=thisDojo, first_name="John", last_name="Dillinger")
+Ninja.objects.create(dojo=thisDojo, first_name="Homer", last_name="Van Meter")
+Ninja.objects.create(dojo=thisDojo, first_name="John", last_name="Hamilton")
+
+thisDojo = Dojo.objects.get(id=8)
+Ninja.objects.create(dojo=thisDojo, first_name="Joe", last_name="Biden")
+Ninja.objects.create(dojo=thisDojo, first_name="Hillary", last_name="Clinton")
+Ninja.objects.create(dojo=thisDojo, first_name="John", last_name="Kerry")
+
+thisDojo = Dojo.objects.get(id=9)
+Ninja.objects.create(dojo=thisDojo, first_name="DeAndre", last_name="Jordan")
+Ninja.objects.create(dojo=thisDojo, first_name="Harrison", last_name="Barnes")
+Ninja.objects.create(dojo=thisDojo, first_name="Wesley", last_name="Matthews")
+
+Dojo.objects.last().ninjas.all().values()
+<QuerySet [{'id': 17, 'dojo_id': 9, 'first_name': 'DeAndre', 'last_name': 'Jordan'}, {'id': 18, 'dojo_id': 9, 'first_name': 'Harrison', 'last_name': 'Barnes'}, {'id': 19, 'dojo_id': 9, 'first_name': 'Wesley', 'last_name': 'Matthews'}]>
+Dojo.objects.first().ninjas.all().values()
+<QuerySet [{'id': 1, 'dojo_id': 1, 'first_name': 'Richard', 'last_name': 'Hendrix'}, {'id': 2, 'dojo_id': 1, 'first_name': 'Gilfoyle', 'last_name': ''}, {'id': 3, 'dojo_id': 1, 'first_name': 'Dinesh', 'last_name': ''}, {'id': 4, 'dojo_id': 1, 'first_name': 'Jared', 'last_name': 'Dunn'}]>
+
+$ python manage.py makemigrations
+You are trying to add a non-nullable field 'desc' to dojo without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> 'Empty Description'
+Migrations for 'dojo_ninjas':
+  apps/dojo_ninjas/migrations/0002_dojo_desc.py:
+    - Add field desc to dojo
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojo_ninjas, sessions, user_login
+Running migrations:
+  Rendering model states... DONE
+  Applying dojo_ninjas.0002_dojo_desc... OK
+
+>>> from apps.dojo_ninjas.models import *
+>>> Dojo.objects.all().values()
+<QuerySet [{'id': 1, 'name': 'CodingDojo Silicon Valley', 'city': 'Mountain View', 'state': 'CA', 'desc': 'Empty Description'}, {'id': 2, 'name': 'CodingDojo Seattle', 'city': 'Seattle', 'state': 'WA', 'desc': 'Empty Description'}, {'id': 3, 'name': 'CodingDojo New York', 'city': 'New York', 'state': 'NY', 'desc': 'Empty Description'}, {'id': 7, 'name': 'CodingDojo Twin City', 'city': 'Chicago', 'state': 'IL', 'desc': 'Empty Description'}, {'id': 8, 'name': 'CodingDojo Wasington DC', 'city': 'Tysons Corner', 'state': 'VA', 'desc': 'Empty Description'}, {'id': 9, 'name': 'CodingDojo Dallas', 'city': 'Dallas', 'state': 'TX', 'desc': 'Empty Description'}]>

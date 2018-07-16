@@ -1,31 +1,35 @@
 from django.shortcuts import render, HttpResponse, redirect
 
 def index(request):
-    request.session['locations'] = (
-        {'location': 'Seattle'},
-        {'location': 'San Jose'},
-        {'location': 'Silicon Valley'},
-        {'location': 'Tulsa'},
-        {'location': 'Salt Lake City'},
-        {'location': 'Dallas'},
-        {'location': 'Chicago'},
-        {'location': 'New York City'}
-    )
-    request.session['languages'] = (
-        {'name': 'Python'},
-        {'name': 'Django'},
-        {'name': 'PHP'},
-        {'name': 'Flask'},
-        {'name': 'SQL'},
-        {'name': 'HTML'},
-        {'name': 'CSS'},
-        {'name': 'Javascript'}
-    )
-    if 'counter' in request.session:
+    if request.session['login'] == True:
+        request.session['locations'] = (
+            {'location': 'Seattle'},
+            {'location': 'San Jose'},
+            {'location': 'Silicon Valley'},
+            {'location': 'Tulsa'},
+            {'location': 'Salt Lake City'},
+            {'location': 'Dallas'},
+            {'location': 'Chicago'},
+            {'location': 'New York City'}
+        )
+        request.session['languages'] = (
+            {'name': 'Python'},
+            {'name': 'Django'},
+            {'name': 'PHP'},
+            {'name': 'Flask'},
+            {'name': 'SQL'},
+            {'name': 'HTML'},
+            {'name': 'CSS'},
+            {'name': 'Javascript'}
+        )
+        if 'counter' in request.session:
+            return render(request, 'surveys/index.html')
+        else:
+            request.session['counter'] = 0
         return render(request, 'surveys/index.html')
     else:
-        request.session['counter'] = 0
-    return render(request, 'surveys/index.html')
+        request.session['message'] = "You are not logged in!"
+        return redirect('/')
 
 def result(request):
     return render(request, 'surveys/submitted.html')

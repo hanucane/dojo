@@ -1,0 +1,66 @@
+from apps.book_authors.models import *
+
+Book.objects.create(name="C sharp", desc="The C# language")
+Book.objects.create(name="Java", desc="The Java language")
+Book.objects.create(name="Python", desc="The Python language")
+Book.objects.create(name="PHP", desc="The PHP language")
+Book.objects.create(name="Ruby", desc="The Ruby language")
+
+Author.objects.create(first_name="Mike", last_name="Choi", email="mchoi@dojo.com")
+Author.objects.create(first_name="Speros", last_name="Misirlakis", email="speros@dojo.com")
+Author.objects.create(first_name="John", last_name="Doe", email="john@dojo.com") 
+Author.objects.create(first_name="Jadee", last_name="J", email="jadee@dojo.com")
+Author.objects.create(first_name="Jay", last_name="Fly", email="jay@dojo.com")
+
+from apps.book_authors.models import *
+b = Book.objects.last()
+b.name = "C#"
+b.save()
+a = Author.objects.last()
+a.first_name = "Ketul"
+a.save()
+
+this_book = Book.objects.get(id=1)
+this_author = Author.objects.get(id=1)
+this_author.books.add(this_book)
+this_book = Book.objects.get(id=2)
+this_author.books.add(this_book)
+this_author = Author.objects.get(id=2)
+this_author.books.add(this_book)
+this_book = Book.objects.get(id=1)
+this_author.books.add(this_book)
+this_book = Book.objects.get(id=3)
+this_author.books.add(this_book)
+this_author = Author.objects.get(id=3)
+this_author.books.add(this_book)
+this_book = Book.objects.get(id=1)
+this_author.books.add(this_book)
+this_book = Book.objects.get(id=2)
+this_author.books.add(this_book)
+this_book = Book.objects.get(id=4)
+this_author.books.add(this_book)
+this_author = Author.objects.get(id=4)
+this_author.books.add(this_book)
+this_book = Book.objects.get(id=5)
+this_author.books.add(this_book)
+this_book = Book.objects.get(id=3)
+this_author.books.add(this_book)
+this_book = Book.objects.get(id=2)
+this_author.books.add(this_book)
+this_book = Book.objects.get(id=1)
+this_author.books.add(this_book)
+
+this_book = Book.objects.get(id=3)
+this_book.authors.all()
+
+c = this_book.authors.first()
+c.delete()
+(4, {'book_authors.Author_books': 3, 'book_authors.Author': 1})
+this_book.authors.all().values()
+
+this_book = Book.objects.get(id=2)
+this_author = Author.objects.get(id=5)
+this_author.books.add(this_book)
+this_author = Author.objects.get(id=3)
+this_author.books.all().values()
+

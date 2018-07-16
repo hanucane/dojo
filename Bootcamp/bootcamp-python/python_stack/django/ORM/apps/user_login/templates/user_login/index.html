@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        h2 {
+            text-align: center;
+        }
+        .container {
+            margin: 50px;
+            padding: 20px;
+            background-color: skyblue;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <h2>Dojo User Page</h2>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{user.id}}</td>
+                <td><a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></td>
+                <td>{{user.age}}</td>
+                <td>{{user.email_address}}</td>
+                <td>{{user.created_at}}</td>
+                <td><a href="/users/{{user.id}}">Show</a> <a href="/users/{{user.id}}/edit">Edit</a> <a href="/users/{{user.id}}/destroy">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/users/new">Add new user</a>
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>

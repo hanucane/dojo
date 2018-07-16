@@ -2,6 +2,7 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
+        self.prev = None
 
 class SList:
     def __init__(self, value):
@@ -27,13 +28,11 @@ class SList:
                 self.head = runner.next
                 runner = None
                 return
-
         while runner != None:
             if runner.value == value:
                 break
             prev = runner
-            runner = runner.next
-        
+            runner = runner.next      
         if runner == None:
             return
         
