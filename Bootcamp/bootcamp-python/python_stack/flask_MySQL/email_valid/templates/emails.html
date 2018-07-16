@@ -18,7 +18,29 @@
 <body>
     <div class="container">
         <h1>Email</h1>
-        <p><b>Email:</b> {{ request.form['email'] }}</p>
+        <div class="alert alert-success">
+            The email address you entered <b>{{ request.form['email'] }}</b> is a VALID email address! Thank you!
+        </div>
+        <h2>Email Addresses Entered</h2>
+            {% if emails %}
+            <table>
+                <tr>
+                    <th>Email Address</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </tr>
+                {% for email in emails %}
+                <tr>
+                    <td>{{email.emails}}</td>
+                    <td>{{email.created_at}}</td>
+                    <td><form action="/delete" method="post">
+                        <input type="hidden" name="id" value="{{email.id}}">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form></td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% endif %}
         <a class='btn btn-danger'href='/'>Go Back</a>
     </div>
 </body>

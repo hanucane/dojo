@@ -37,6 +37,26 @@
                 <button type="submit" class="btn btn-success">Submit</button>
             </form>
         </div>
+        <h2>Email Addresses Entered</h2>
+            {% if emails %}
+            <table>
+                <tr>
+                    <th>Email Address</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </tr>
+                {% for email in emails %}
+                <tr>
+                    <td>{{email.emails}}</td>
+                    <td>{{email.created_at}}</td>
+                    <td><form action="/delete" method="post">
+                        <input type="hidden" name="id" value="{{email.id}}">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form></td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% endif %}
     </div>
 </body>
 </html>

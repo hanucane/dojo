@@ -12,17 +12,19 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 def email():
     emails = mysql.query_db("SELECT * FROM emails;")
 
-    return render_template('index.html')
+    return render_template('index.html', emails=emails)
 
 @app.route("/submitted", methods=['POST'])
 def add_email():
-    query = "INSERT INTO emails (email,created_at, updated_at) VALUES (%(email)s, NOW(), NOW());"
+    query = "INSERT INTO emails (emails, created_at, updated_at) VALUES (%(emails)s, NOW(), NOW());"
     data = { 
-        'email': request.form['email'] 
+        'emails': request.form['email'] 
     }
     mysql.query_db(query, data)
+    emails = mysql.query_db("SELECT * FROM emails;")
 
-    return render_template('emails.html')
+
+    return render_template('emails.html', emails=emails)
 
 @app.route("/submit", methods=['POST'])
 def submit():
@@ -34,6 +36,15 @@ def submit():
         return redirect("/")
     else:
         return add_email()
+
+@app.route("/delete", methods=['POST'])
+def delete():
+    query = "DELETE FROM emails WHERE id=%(id)s"
+    data = {
+        'id': request.form['id']
+    }
+    mysql.query_db(query, data)
+    return redirect("/")
 
 if __name__=="__main__":
     app.run(debug=True)
