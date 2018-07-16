@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootcamp Courses</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        {% if course %}
+        <h1>Course</h1>
+        <div class="row">Name: {{course.name}}</div>
+        <div class="row">Description: {{course.description.desc}}</div>
+        {% endif %}
+        <h2>Add Comment</h2>
+        <form action="/comment/create" method="POST">
+            {% csrf_token %}
+            {% if course %}
+            <input name="name" type="hidden" value="{{course.name}}">
+            {% endif %}
+            <div class="form-group row">
+                <div class="col-sm-1"><label for="comment">Comment: </label></div>
+                <div class="col-md"><textarea name="comment" class="form-control" value='' rows="3" placeholder="Insert course comment here"></textarea></div>
+            </div>
+            <button type="submit" class="btn btn-success">
+                Add Course
+            </button>
+        </form>
+    </div>
+</body>
+</html>
