@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'apps.dojo_ninjas',
     'apps.book_authors',
     'apps.like_books',
+    'apps.store',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

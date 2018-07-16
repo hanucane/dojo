@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amadon Checkout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        h2 {
+            text-align: center;
+        }
+        .container {
+            margin: 50px;
+            padding: 20px;
+            background-color: skyblue;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <h2>Thank you for your business</h2>
+        <p>We charged your credit card for {{request.session.current}}</p><br>
+        <p>You have ordered {{request.session.items_purchased}} items so far and spent ${{request.session.current}} with Amadon.com!</p>
+        <a href="/amadon" class="btn btn-primary">Go back</a>
+    </div>
+</body>
+</html>

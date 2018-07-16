@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amadon Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        h2 {
+            text-align: center;
+        }
+        .container {
+            margin: 50px;
+            padding: 20px;
+            background-color: skyblue;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Item</th>
+            </tr>
+            {% for item in items %}
+            <form action='/amadon/buy' method='post'>
+                {% csrf_token %}
+            <tr>
+                <input type="hidden" name="id" value="{{item.id}}">
+                <td><input type="hidden" name="item_name" value="{{item.item_name}}">{{item.item_name}}</td>
+                <td><input type="hidden" name="item_desc" value="{{item.item_desc}}">{{item.item_desc}}</td>
+                <td><input type="hidden" name="price" value="{{item.price}}">${{item.price}}</td>
+                <td>
+                    <select name='quantity'>
+                        {% for i in range %}
+                        <option value='{{ i }}'>{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <button class="btn btn-success" type="submit" value="submit">Buy!</button>   
+                </form>
+                </td>
+                {% endfor %}
+            </tr>
+            
+        </table>
+        
+    </div>
+</body>
+</html>
