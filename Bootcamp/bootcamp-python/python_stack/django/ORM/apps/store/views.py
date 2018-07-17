@@ -16,7 +16,6 @@ def buy(request):
         request.session['items_purchased'] = int(request.POST['quantity'])
     else:
         request.session['items_purchased'] = int(request.POST['quantity']) + int(request.session['items_purchased'])
-    print(request.POST['quantity'])
     return redirect('/amadon/checkout')
 
 def checkout(request):
