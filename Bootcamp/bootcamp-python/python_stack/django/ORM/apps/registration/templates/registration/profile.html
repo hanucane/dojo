@@ -10,6 +10,9 @@
         h2 {
             text-align: center;
         }
+        a {
+            align-content: center;
+        }
         .container {
             margin: 50px;
             padding: 20px;
@@ -28,6 +31,8 @@
             </div>
             {% endfor %}
         {% endif %}
+        <p>Click the image below to go to the wall</p>
+        <a href="/registration/wall/{{user.id}}"><img src="https://vignette.wikia.nocookie.net/pinkfloyd/images/5/50/Wiki-background/revision/latest?cb=20161029211112" alt="the_wall" height="400px" width="600px"></a>
     </div>
 </body>
 </html>

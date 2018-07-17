@@ -15,8 +15,6 @@ class UserManager(models.Manager):
             validate_email(postData['email'])
         except ValidationError:
             errors["email"] = "Enter a valid email address."
-        if User.objects.get(email=postData['email']):
-            errors["email"] = "This email already has an account."
         while True:
             password = postData['password']
             if len(postData['password']) < 8:
@@ -28,7 +26,20 @@ class UserManager(models.Manager):
             elif password != postData['pw_confirm']:
                 errors["password"] = "Your password must match."
             break
-        
+        return errors
+
+class MessageManager(models.Manager):
+    def basic_validator(self, postData):
+        errors = {}
+        if len(postData['message']) < 1:
+            errors["message"] = "Message can not be empty"
+        return errors
+
+class CommentManager(models.Manager):
+    def basic_validator(self, postData):
+        errors = {}
+        if len(postData['comment']) < 1:
+            errors["comment"] = "Comment can not be empty"
         return errors
 
 class User(models.Model):
@@ -40,3 +51,20 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     objects = UserManager()
+
+class Message(models.Model):
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, related_name="messages")
+
+    objects = MessageManager()
+
+class Comment(models.Model):
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, related_name="comments")
+    message = models.ForeignKey(Message, related_name="comments")
+
+    objects = CommentManager()
