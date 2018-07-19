@@ -40,7 +40,7 @@ def register(request):
     return redirect('/dashboard')
 
 def admin_dash(request):
-    return render(request, 'dashboard/admin/manage_users.html')
+    return render(request, 'dashboard/admin/manage_users.html', {"users": User.objects.all()})
 
 def login(request):
     password = request.POST['password']
@@ -65,4 +65,85 @@ def logout(request):
     return redirect('/')
 
 def dash(request):
-    return render(request, 'dashboard/user/users.html')
+    return render(request, 'dashboard/user/users.html', {"users": User.objects.all()})
+
+def edit(request, id):
+    return render(request, 'dashboard/admin/edit_user.html', {'user': User.objects.get(id=id), 'range': [0,9]})
+
+def update(request, id):
+    # errors = User.objects.basic_validator(request.POST)
+    # if len(errors):
+    #     for tag, error in errors.items():
+    #         messages.error(request, error, extra_tags=tag)
+    #     return redirect('/users/edit'+id)
+    # else:
+    user = User.objects.get(id = id)
+    user.first_name = request.POST['first_name']
+    user.last_name = request.POST['last_name']
+    user.email = request.POST['email']
+    user.user_level = request.POST['user_level']
+    user.save()
+    messages.success(request, "User successfully updated")
+    return redirect('/dashboard/admin')
+
+def new(request):
+    return render(request, 'dashboard/admin/add_user.html', {'range': [0,9]})
+
+def create(request):
+    errors = User.objects.basic_validator(request.POST)
+    if len(errors):
+        for tag, error in errors.items():
+            messages.error(request, error, extra_tags=tag)
+        return redirect('/users/new')
+    password = request.POST['password']
+    hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+    User.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'], email=request.POST['email'], password=hashed, user_level=request.POST['user_level'])
+    return redirect('/dashboard/admin')
+
+def destroy(request, id):
+    b = User.objects.get(id=id)
+    b.delete()
+    messages.success(request, "User successfully deleted")
+    return redirect('/dashboard/admin')
+
+def edit_self(request, id):
+    return render(request, 'dashboard/user/edit_self.html', {'user': User.objects.get(id=id), 'range': [0,9]})
+
+def update_self(request, id):
+    user = User.objects.get(id = id)
+    user.first_name = request.POST['first_name']
+    user.last_name = request.POST['last_name']
+    user.email = request.POST['email']
+    user.user_level = request.POST['user_level']
+    user.save()
+    messages.success(request, "User successfully updated")
+    return redirect('/dashboard')
+
+def update_description(request):
+    Description.objects.create(desc=request.POST['description'], user=User.objects.get(id=request.session['user_id']))
+    return redirect('/edit_profile/'+str(request.session['user_id']))
+
+def show(request, id):
+    return render(request, 'dashboard/user/messenger.html', {'user': User.objects.get(id=id), 'messages': Message.objects.all(), 'responses': Response.objects.all(), 'description': Description.objects.all()})
+
+def msg_submit(request):
+    Message.objects.create(message=request.POST['message'], user=User.objects.get(id=request.session['user_id']), msg_receiver=User.objects.get(id=request.POST['user_id']))
+    return redirect('/users/show/'+str(request.POST['user_id']))
+
+def msg_destroy(request):
+    b = Message.objects.get(id=request.POST['message_id'])
+    b.delete()
+    c = request.POST['user_id']
+    messages.success(request, "Message successfully deleted")
+    return redirect('/users/show/'+str(c))
+
+def resp_submit(request):
+    Response.objects.create(response=request.POST['response'], message=Message.objects.get(id=request.POST['message_id']), user=User.objects.get(id=request.session['user_id']))
+    return redirect('/users/show/'+str(request.POST['user_id']))
+
+def resp_destroy(request):
+    b = Response.objects.get(id=request.POST['response_id'])
+    b.delete()
+    c = request.POST['user_id']
+    messages.success(request, "Response successfully deleted")
+    return redirect('/users/show/'+str(c))

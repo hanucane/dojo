@@ -44,9 +44,17 @@ class Message(models.Model):
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, related_name="messages")
+    msg_receiver = models.ForeignKey(User, related_name="rec_messages")
+
 
 class Response(models.Model):
-    reponse = models.TextField()
+    response = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, related_name="responses")
     message = models.ForeignKey(Message, related_name="responses")
+
+class Description(models.Model):
+    desc = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.OneToOneField(User)
+

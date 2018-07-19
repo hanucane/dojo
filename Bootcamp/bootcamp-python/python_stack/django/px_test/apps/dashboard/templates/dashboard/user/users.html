@@ -17,15 +17,63 @@
         <a class="navbar-brand" href="/">Test App</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
+                {% if request.session.user_level == 0 %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
                 </li>
+                {% endif %}
+                {% if request.session.user_level == 9 %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">Log out</a>
+                    <a class="nav-link" href="/dashboard/admin">Dashboard</a>
                 </li>
-            </ul>    
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/edit_profile/{{request.session.user_id}}">Profile</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <a class="nav-link" href="/logout">Log out</a>
+            </form>     
         </div>
     </nav>
-
+    <div class="container">
+        <div class="row">
+            <h2>Manager Users</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-11">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Created At</th>
+                            <th scope="col">User Level</th>
+                        </tr>
+                    </thead>
+                    {% for user in users %}
+                    <tr>
+                        <td scope="row"><a href="/users/show/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.created_at}}</td>
+                        {% if user.user_level == 0 %}
+                            <td>User</td>
+                        {% endif %}
+                        {% if user.user_level == 9 %}
+                            <td>Admin</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>
