@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/bin/Debug/netcoreapp2.0/Fundamentals.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/bin/Debug/netcoreapp2.0/Fundamentals.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/bin/Debug/netcoreapp2.0/Fundamentals.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/bin/Debug/netcoreapp2.0/Fundamentals.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/bin/Debug/netcoreapp2.0/Fundamentals.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/obj/Debug/netcoreapp2.0/Fundamentals.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/obj/Debug/netcoreapp2.0/Fundamentals.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/obj/Debug/netcoreapp2.0/Fundamentals.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/obj/Debug/netcoreapp2.0/Fundamentals.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/obj/Debug/netcoreapp2.0/Fundamentals.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/obj/Debug/netcoreapp2.0/Fundamentals.pdb
