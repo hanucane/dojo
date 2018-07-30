@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belt Reviewer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        h4 {
+            padding: 10px 5px;
+        }
+        .pre-scrollable {
+            border: 2px solid black;
+            padding: 10px;
+        }
+        .book {
+            padding: 10px 10px;
+        }
+        .book p {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">Welcome !</a>
+            <form class="form-inline">
+                <a class="nav-link" href="/books/add">Add Book and Review</a>
+                <a class="nav-link" href="/logout">Logout</a>
+            </form>
+        </nav>
+        <div class="row">
+            <div class="col-md-7">
+                <h4>Recent Book Reviews</h4>
+                {% for book in books %}
+                <div class="book">
+                    <a href="/books/{{book.id}}">{{book.title}}</a>
+                    <p>Rating: {{reviews.rating}}</p>
+                    <p>{{book.reviews.user.name}} says: <i>{{book.reviews.comment}}</i></p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-5">
+                <div class="scroll">
+                    <h4>Other Books with Reviews:</h4>
+                    <div class="pre-scrollable" data-offset="0" style="height: 210px;">
+                        <p>Book Title</p>
+                        <p>Book Title</p>
+                        <p>Book Title</p>
+                        <p>Book Title</p>
+                        <p>Book Title</p>
+                        <p>Book Title</p>
+                        <p>Book Title</p>
+                        <p>Book Title</p>
+                        <p>Book Title</p>                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/obj/Debug/netcoreapp2.0/Sigma.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/obj/Debug/netcoreapp2.0/Sigma.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/obj/Debug/netcoreapp2.0/Sigma.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/bin/Debug/netcoreapp2.0/Sigma.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/bin/Debug/netcoreapp2.0/Sigma.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/bin/Debug/netcoreapp2.0/Sigma.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/bin/Debug/netcoreapp2.0/Sigma.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/bin/Debug/netcoreapp2.0/Sigma.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/obj/Debug/netcoreapp2.0/Sigma.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/obj/Debug/netcoreapp2.0/Sigma.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Sigma/obj/Debug/netcoreapp2.0/Sigma.csprojResolveAssemblyReference.cache

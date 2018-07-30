@@ -1,0 +1,72 @@
+from ..login_reg_app.models import User
+
+What is the flow of information in a typical request, from when we type an address on our browser, to when we receive the response on our browser?
+
+
+What is MVC, OOP and procedural programming? Why would we use each?
+MVC is Model View Controller frameowrk that allows us to modularize our applications functions. Models are used to represent the database architecture. Views are to display the webpage, such as HTML, CSS and JS. Controllers are used to communicate between requests on the view and the model to get, post, update and delete information to be packaged for the views.
+Procedural programming is a set of steps or routine to be carried out.
+Object oriented programming is creating a set of objects that may contain data. It creates attributes and methods by which the objects will be handled.
+
+What is jQuery and why do we use it?
+jQuery is a Javascript library that allows us to make changes to a page without requesting a new page or reloading the current. It is interpreted the same across all browsers which simplifies its implementation. 
+
+Consider a database with the following tables: users, friendships, where users includes id, name, and email, and friendships includes id, user_id, friend_id; If our friendships table includes a single association to confirm a friendship between two users, what is the QUERY to pull all of your non-friends?
+
+What are some ways to make your website uniform across multiple browsers?
+CSS Resets make it so that the styling across multiple web browsers will start from the same formatting. jQuery library makes it so javascript can be run across browsers without issues in interpretation by the browser.
+
+What are the differences between submitting a form via method="post" vs method="get"?
+
+What are the advantages/disadvantages of sending data to the server in the url vs making a post request?
+
+Why should we never render a page on a post request.
+
+You notice that when you click submit on a form, your app breaks. Describe how you would approach debugging this problem.
+After reviewing the error, I would check to see if it something that is a misspelling, typo or simple oversight of a connection that needed to be made. After going through the simple possibilities, I would use the error to explore google for similar errors and the underlying cause of such issues. From there I would solve my bug and the form would be functioning.
+
+What are a couple security threats and how do we defend against them?
+
+What is the difference between Session, Post, and Cookies?
+
+Explain why and when we use session.
+
+What is an ORM and why do we use it?  What are its advantages and also its disadvantages.
+
+In your models, you may make a class User with the following code: class User(models.Model): Why do we have models.Model inside the parentheses?
+
+In your models, you may make a class UserManager with the following code: class UserManager(models.Manager): Why do we have models.Manager inside the parentheses?
+
+What is self and why does it appear in methods that we define in a class?
+
+What is the __init__ method in a class?
+
+Name 2 HTTP Verbs and when would we use each
+
+What is RegEx and what do we use it for?
+
+On large web applications, what are the benefits of using a framework?
+
+What does a templating engine do for us?
+
+What are 3 different type of database table relationships?
+
+Why do we use routes and how do they work?
+
+What is a virtual environment and why do we use it?
+
+Explain what this code does: “from flask import Flask”.
+
+What is the importance of normalizing your database?
+
+What is an API?
+
+What is AJAX and why do we use it?
+
+What is the difference between an HTTP request/response and an AJAX request/response?
+
+What is the difference between client and server validation, and when do we use either or both?
+
+What are the major differences between Flask and Django?
+
+(VB) What are differences between tuples, lists, and dictionaries.

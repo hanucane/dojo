@@ -1,5 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
+from django.utils.timezone import utc
+import datetime
 import bcrypt
 
 from .models import *
@@ -13,7 +15,7 @@ def register(request):
     errors = User.objects.basic_validator(request.POST)
     if len(errors):
         for tag, error in errors.items():
-            messages.error(request, error, extra_tags=tag)
+            messages.error(request, error, extra_tags='registration')
         return redirect('/registration')
     else:
         password = request.POST['password']
@@ -25,9 +27,9 @@ def register(request):
     return redirect('/registration/profile/'+str(id))
 
 def login(request):
-    password = request.POST['password']
-    hashed = User.objects.get(email=request.POST['email']).password
+    password = request.POST['password']    
     if User.objects.get(email=request.POST['email']):
+        hashed = User.objects.get(email=request.POST['email']).password
         if bcrypt.checkpw(password.encode('utf-8'), hashed.encode('utf-8')):
             messages.success(request, "You successfully logged in!")
             id = User.objects.get(email=request.POST['email']).id
@@ -35,7 +37,7 @@ def login(request):
             request.session['user_id'] = id
             return redirect('/registration/wall/'+str(id))
             
-    messages.success(request, "You could not be logged in")
+    messages.error(request, "You could not be logged in", extra_tags='login')
     return redirect('/registration')
 
 def logout(request):
@@ -52,7 +54,7 @@ def profile(request, id):
 
 def wall(request, id):
     if request.session['logged_in'] == True:
-        return render(request, 'registration/wall.html', {'user': User.objects.get(id=id), 'messages': Message.objects.all(), 'comments': Comment.objects.all()})
+        return render(request, 'registration/wall.html', {'user': User.objects.get(id=id), 'wall_messages': Message.objects.all(), 'comments': Comment.objects.all()})
         return redirect('/registration')
     else: 
         messages.success(request, "You need to be logged in")
@@ -64,9 +66,16 @@ def submit_msg(request):
 
 def destroy_msg(request):
     b = Message.objects.get(id=request.POST['message_id'])
-    b.delete()
-    messages.success(request, "Message successfully deleted")
-    return redirect('/registration/wall/'+str(request.session['user_id']))
+    now = datetime.datetime.utcnow().replace(tzinfo=utc)
+    timediff = now - b.created_at
+    print(b.created_at, now, timediff)
+    if timediff.total_seconds() > 1800:
+        messages.error(request, "It's too late to delete this message.")
+        return redirect('/registration/wall/'+str(request.session['user_id']))
+    else:
+        b.delete()
+        messages.success(request, "Message successfully deleted")
+        return redirect('/registration/wall/'+str(request.session['user_id']))
 
 def submit_comment(request):
     Comment.objects.create(comment=request.POST['comment'], user=User.objects.get(id=request.session['user_id']), message=Message.objects.get(id=request.POST['message_id']))

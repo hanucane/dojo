@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belt Reviewer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        h2 {
+            padding: 20px 10px 10px 10px;
+        }
+        table {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Welcome {{user.name}}!</a>
+        <form class="form-inline">
+            {% if request.session.logged_in == True %}
+            <a href="/logout">Logout</a>
+            {% endif %}
+        </form>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <h2>Your Trip Schedules</h2>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Destination</th>
+                        <th>Travel Start Date</th>
+                        <th>Travel End Date</th>
+                        <th>Plan</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for trip in current_trips %}  
+                    <tr>
+                        <td><a href="/view/{{trip.id}}">{{trip.destination}}</a></td>
+                        <td>{{trip.start_date}}</td>
+                        <td>{{trip.end_date}}</td>
+                        <td>{{trip.description}}</td>
+                        <td><a href="/canceltrip/{{trip.id}}">Cancel</a> {% if trip.planner.id == request.session.user_id %}<a href="/deletetrip/{{trip.id}}">Delete</a>{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <h2>Other Travel Plans</h2>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Destination</th>
+                        <th>Travel Start Date</th>
+                        <th>Travel End Date</th>
+                        <th>Do You Want To Join?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for trip in available_trips %}
+                    <tr>
+                        <td><a href="/view/{{trip.id}}">{{trip.destination}}</a></td>
+                        <td>{{trip.start_date}}</td>
+                        <td>{{trip.end_date}}</td>
+                        <td><a href="/join/{{trip.id}}">Join</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="row justify-content-end">
+            <a class="btn btn-success" href="/addtrip">Create Trip</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/bin/Debug/netcoreapp2.0/Collections.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/bin/Debug/netcoreapp2.0/Collections.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/bin/Debug/netcoreapp2.0/Collections.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/bin/Debug/netcoreapp2.0/Collections.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/bin/Debug/netcoreapp2.0/Collections.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/obj/Debug/netcoreapp2.0/Collections.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/obj/Debug/netcoreapp2.0/Collections.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/obj/Debug/netcoreapp2.0/Collections.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/obj/Debug/netcoreapp2.0/Collections.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/obj/Debug/netcoreapp2.0/Collections.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/obj/Debug/netcoreapp2.0/Collections.pdb

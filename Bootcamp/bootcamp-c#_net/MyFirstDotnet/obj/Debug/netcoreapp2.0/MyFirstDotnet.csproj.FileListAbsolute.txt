@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/bin/Debug/netcoreapp2.0/MyFirstDotnet.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/bin/Debug/netcoreapp2.0/MyFirstDotnet.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/bin/Debug/netcoreapp2.0/MyFirstDotnet.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/bin/Debug/netcoreapp2.0/MyFirstDotnet.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/bin/Debug/netcoreapp2.0/MyFirstDotnet.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/obj/Debug/netcoreapp2.0/MyFirstDotnet.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/obj/Debug/netcoreapp2.0/MyFirstDotnet.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/obj/Debug/netcoreapp2.0/MyFirstDotnet.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/obj/Debug/netcoreapp2.0/MyFirstDotnet.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/obj/Debug/netcoreapp2.0/MyFirstDotnet.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/obj/Debug/netcoreapp2.0/MyFirstDotnet.pdb
