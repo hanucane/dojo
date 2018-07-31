@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/bin/Debug/netcoreapp2.0/Basic_XIII.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/bin/Debug/netcoreapp2.0/Basic_XIII.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/bin/Debug/netcoreapp2.0/Basic_XIII.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/bin/Debug/netcoreapp2.0/Basic_XIII.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/bin/Debug/netcoreapp2.0/Basic_XIII.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/obj/Debug/netcoreapp2.0/Basic_XIII.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/obj/Debug/netcoreapp2.0/Basic_XIII.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/obj/Debug/netcoreapp2.0/Basic_XIII.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/obj/Debug/netcoreapp2.0/Basic_XIII.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/obj/Debug/netcoreapp2.0/Basic_XIII.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/obj/Debug/netcoreapp2.0/Basic_XIII.pdb
