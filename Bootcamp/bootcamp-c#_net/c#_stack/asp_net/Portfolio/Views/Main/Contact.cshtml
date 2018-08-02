@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        h1 {
+            text-align: center;
+            padding: 10px;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="nav navbar-nav mx-auto">
+            <a class="nav-item nav-link" href="/">Home <span class="sr-only">(current)</span></a> 
+            <a class="nav-item nav-link" href="/projects">Projects</a> 
+            <a class="nav-item nav-link" href="/contact">Contact</a>
+        </div>
+    </nav>
+    <h1>Contact Me!</h1>
+    <div class="row">
+        <div class="col-6">
+            <form action="/">        
+                <div class="form-group-row">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="form-group-row">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" value="">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" value="" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>   
+    </div>
+</body>
+</html>

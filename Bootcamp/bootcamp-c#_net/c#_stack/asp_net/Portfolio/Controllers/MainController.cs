@@ -6,22 +6,22 @@ namespace Portfolio.Controllers
         
         [HttpGet]       
         [Route("")]     
-        public string Index()
+        public IActionResult Index()
         {
-            return "This is my Index!";
+            return View();
         }
 
         [HttpGet]
         [Route("projects")]
-        public string Projects()
+        public IActionResult Projects()
         {
-            return "These are my projects";
+            return View();
         }
         [HttpGet]
         [Route("contact")]
-        public string Contact()
+        public IActionResult Contact()
         {
-            return "This is my Contact!";
+            return View();
         }
 
     }
