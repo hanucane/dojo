@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time Display</title>
+    <style>
+        .row {
+            width: 100%;
+            text-align: center;
+            align-content: center;
+        }
+        .time_block {
+            border: 2px solid black;
+            height: 100px;
+            width: 20%;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <h1>The current time and date</h1>
+        @{
+            var date = DateTime.Now.ToString("MMM dd yyyy");
+            var time = DateTime.Now.ToString("hh:mm tt");
+            <div class="time_block">
+                <p>@date</p>
+                <p>@time</p>
+            </div>
+        }
+    </div>
+</body>
+</html>
