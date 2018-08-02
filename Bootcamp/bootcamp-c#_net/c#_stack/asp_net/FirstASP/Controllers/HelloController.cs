@@ -6,9 +6,9 @@ namespace FirstASP.Controllers     //be sure to use your own project's namespace
         //for each route this controller is to handle:
         [HttpGet]       //type of request
         [Route("")]     //associated route string (exclude the leading /)
-        public string Index()
+        public IActionResult Index()
         {
-            return "Hello World from HelloController!";
+            return View();
         }
 
         // [HttpGet]
@@ -39,22 +39,22 @@ namespace FirstASP.Controllers     //be sure to use your own project's namespace
         //     // Writes "I ate 5 sandwiches."
         // }
 
-        public class FirstController : Controller
-        {
-            public IActionResult Method()
-            {
-                return RedirectToAction("OtherMethod", "Second");
-            }
-        }
+        // public class FirstController : Controller
+        // {
+        //     public IActionResult Method()
+        //     {
+        //         return RedirectToAction("OtherMethod", "Second");
+        //     }
+        // }
         
-        // In another file
-        public class SecondController : Controller
-        {
-            public IActionResult OtherMethod()
-            {
-                return View();
-            }
-        }
+        // // In another file
+        // public class SecondController : Controller
+        // {
+        //     public IActionResult OtherMethod()
+        //     {
+        //         return View();
+        //     }
+        // }
 
 
     }

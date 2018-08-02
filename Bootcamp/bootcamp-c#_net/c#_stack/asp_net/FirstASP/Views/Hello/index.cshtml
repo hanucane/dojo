@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Razor Fun</title>
+</head>
+<body>
+    @{
+        var StringList = new List<string>{
+                                "All",
+                                "of",
+                                "the",
+                                "colors"
+                            };
+        
+        foreach(var word in StringList)
+        {
+
+                <p>@word</p>
+
+        }
+    }
+</body>
+</html>
