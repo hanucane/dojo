@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/MyFirstDotnet.csproj",
+      "projectUniqueName": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/MyFirstDotnet/MyFirstDotnet.csproj",
       "projectName": "MyFirstDotnet",
-      "projectPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/MyFirstDotnet.csproj",
+      "projectPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/MyFirstDotnet/MyFirstDotnet.csproj",
       "packagesPath": "/Users/Eric/.nuget/packages/",
-      "outputPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/MyFirstDotnet/obj/",
+      "outputPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/MyFirstDotnet/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

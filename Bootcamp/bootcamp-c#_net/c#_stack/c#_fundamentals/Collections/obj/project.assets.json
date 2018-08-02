@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/Collections.csproj",
+      "projectUniqueName": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Collections/Collections.csproj",
       "projectName": "Collections",
-      "projectPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/Collections.csproj",
+      "projectPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Collections/Collections.csproj",
       "packagesPath": "/Users/Eric/.nuget/packages/",
-      "outputPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Collections/obj/",
+      "outputPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Collections/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

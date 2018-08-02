@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/Fundamentals.csproj",
+      "projectUniqueName": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Fundamentals/Fundamentals.csproj",
       "projectName": "Fundamentals",
-      "projectPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/Fundamentals.csproj",
+      "projectPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Fundamentals/Fundamentals.csproj",
       "packagesPath": "/Users/Eric/.nuget/packages/",
-      "outputPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Fundamentals/obj/",
+      "outputPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Fundamentals/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

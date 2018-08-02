@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/bin/Debug/netcoreapp2.0/SinglyLinkedLists.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/bin/Debug/netcoreapp2.0/SinglyLinkedLists.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/bin/Debug/netcoreapp2.0/SinglyLinkedLists.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/bin/Debug/netcoreapp2.0/SinglyLinkedLists.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/bin/Debug/netcoreapp2.0/SinglyLinkedLists.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/obj/Debug/netcoreapp2.0/SinglyLinkedLists.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/obj/Debug/netcoreapp2.0/SinglyLinkedLists.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/obj/Debug/netcoreapp2.0/SinglyLinkedLists.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/obj/Debug/netcoreapp2.0/SinglyLinkedLists.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/obj/Debug/netcoreapp2.0/SinglyLinkedLists.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_algorithm/SinglyLinkedLists/obj/Debug/netcoreapp2.0/SinglyLinkedLists.pdb

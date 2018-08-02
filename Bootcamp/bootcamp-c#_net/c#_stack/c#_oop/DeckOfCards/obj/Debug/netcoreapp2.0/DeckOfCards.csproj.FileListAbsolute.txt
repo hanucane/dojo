@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/bin/Debug/netcoreapp2.0/DeckOfCards.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/bin/Debug/netcoreapp2.0/DeckOfCards.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/bin/Debug/netcoreapp2.0/DeckOfCards.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/bin/Debug/netcoreapp2.0/DeckOfCards.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/bin/Debug/netcoreapp2.0/DeckOfCards.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/obj/Debug/netcoreapp2.0/DeckOfCards.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/obj/Debug/netcoreapp2.0/DeckOfCards.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/obj/Debug/netcoreapp2.0/DeckOfCards.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/obj/Debug/netcoreapp2.0/DeckOfCards.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/obj/Debug/netcoreapp2.0/DeckOfCards.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_oop/DeckOfCards/obj/Debug/netcoreapp2.0/DeckOfCards.pdb

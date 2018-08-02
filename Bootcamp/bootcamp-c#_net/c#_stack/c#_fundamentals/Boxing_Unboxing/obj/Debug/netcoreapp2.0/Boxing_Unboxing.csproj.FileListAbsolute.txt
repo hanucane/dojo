@@ -9,3 +9,14 @@
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Boxing_Unboxing/obj/Debug/netcoreapp2.0/Boxing_Unboxing.AssemblyInfo.cs
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Boxing_Unboxing/obj/Debug/netcoreapp2.0/Boxing_Unboxing.dll
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Boxing_Unboxing/obj/Debug/netcoreapp2.0/Boxing_Unboxing.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/bin/Debug/netcoreapp2.0/Boxing_Unboxing.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/bin/Debug/netcoreapp2.0/Boxing_Unboxing.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/bin/Debug/netcoreapp2.0/Boxing_Unboxing.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/bin/Debug/netcoreapp2.0/Boxing_Unboxing.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/bin/Debug/netcoreapp2.0/Boxing_Unboxing.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/obj/Debug/netcoreapp2.0/Boxing_Unboxing.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/obj/Debug/netcoreapp2.0/Boxing_Unboxing.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/obj/Debug/netcoreapp2.0/Boxing_Unboxing.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/obj/Debug/netcoreapp2.0/Boxing_Unboxing.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/obj/Debug/netcoreapp2.0/Boxing_Unboxing.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Boxing_Unboxing/obj/Debug/netcoreapp2.0/Boxing_Unboxing.pdb

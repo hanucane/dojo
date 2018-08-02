@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/Basic_XIII.csproj",
+      "projectUniqueName": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Basic_XIII/Basic_XIII.csproj",
       "projectName": "Basic_XIII",
-      "projectPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/Basic_XIII.csproj",
+      "projectPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Basic_XIII/Basic_XIII.csproj",
       "packagesPath": "/Users/Eric/.nuget/packages/",
-      "outputPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/Basic_XIII/obj/",
+      "outputPath": "/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_fundamentals/Basic_XIII/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
