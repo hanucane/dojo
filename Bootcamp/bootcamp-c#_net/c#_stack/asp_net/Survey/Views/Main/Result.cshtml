@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@model SurveyData
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dojo Survey</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         .container {
@@ -16,14 +12,13 @@
     </style>
 </head>
 <body>
-    <div class="container">
+
         <h1>Survey Submission</h1>
-        <p><b>Name: </b>@ViewBag.name</p>
-        <p><b>Email: </b>@ViewBag.email</p>
-        <p><b>Dojo Location: </b>@ViewBag.dojo</p>
-        <p><b>Favorite Language: </b>@ViewBag.language</p>
-        <p><b>Comments: </b>@ViewBag.comments</p>
+        <p><b>Name: </b>@Model._name</p>
+        <p><b>Email: </b>@Model._email</p>
+        <p><b>Dojo Location: </b>@Model._dojo</p>
+        <p><b>Favorite Language: </b>@Model._language</p>
+        <p><b>Comments: </b>@Model._comments</p>
         <a class='btn btn-danger' href="/">Go back</a>
-    </div>
+
 </body>
-</html>

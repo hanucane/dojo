@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Survey.Models;
 namespace Survey.Controllers
 {
     public class MainController : Controller   
@@ -12,14 +13,9 @@ namespace Survey.Controllers
         }
         [HttpPost]       
         [Route("result")]     
-        public IActionResult Result(string name, string email, string dojo_location, string fav_language, string comments)
+        public IActionResult Result(SurveyData results)
         {
-            ViewBag.name = name;
-            ViewBag.email = email;
-            ViewBag.dojo = dojo_location;
-            ViewBag.language = fav_language;
-            ViewBag.comments = comments;
-            return View();
+            return View(results);
         }
         
     }
