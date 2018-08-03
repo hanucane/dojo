@@ -1,3 +1,4 @@
+@model SurveyData
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
@@ -11,41 +12,50 @@
 </head>
 <body>
     <div class="survey-form">
-        <form action="/result" method="post">
+        <form action="/survey/create" method="post">
             <div class="form-group">
-                <label for="name">Your Name</label>
-                <input name="_name" type="name" class="form-control" value='' placeholder="Name">
+                <label asp-for="_name">Your Name</label>
+                <input asp-for="_name" class="form-control" placeholder="Name">
+                <span asp-validation-for="_name"></span>
             </div>
             <div class="form-group">
-                <label for="name">Your E-mail</label>
-                <input name="_email" type="email" class="form-control" value='' placeholder="E-mail">
+                <label asp-for="_email">Your E-mail</label>
+                <input asp-for="_email" class="form-control" placeholder="E-mail">
             </div>
             <div class="form-group">
-                <label for="_dojo">Dojo Location</label>
-                <select name="_dojo" class="form-control" value=''>
+                <label asp-for="_dojo">Dojo Location</label>
+                <select asp-for="_dojo" class="form-control">
                     <option>San Jose</option>
                     <option>Seattle</option>
                     <option>Silicon Valley</option>
                     <option>Tulsa</option>
                     <option>Dallas</option>
                 </select>
+                <span asp-validation-for="_dojo"></span>
             </div>
             <div class="form-group">
-                <label for="_language">Favorite Language</label>
-                <select name="_language" class="form-control" value=''>
+                <label asp-for="_language">Favorite Language</label>
+                <select asp-for="_language" class="form-control">
                     <option>Python</option>
                     <option>Javascript</option>
                     <option>PHP</option>
                     <option>HTML</option>
                     <option>C#</option>
                 </select>
+                <span asp-validation-for="_language"></span>
             </div>
             <div class="form-group">
-                <label for="comments">Comments</label>
-                <small class="form-text text-muted">A comment is required</small>
-                <textarea name="_comments" class="form-control" value='' rows="3"></textarea>
+                <label asp-for="_comments">Comments</label>
+                <small class="form-text text-muted">A comment is not required, but encouraged.</small>
+                <textarea asp-for="_comments" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="_comments"></span>
             </div>
             <button type="submit" class="btn btn-warning">Submit</button>
-        </form>
+        </form><br>
+        @{
+            if (@ViewBag.errors != null){
+                <div class="alert alert-warning" role="alert">@ViewBag.errors</div>;
+            }
+        }
     </div>
 </body>

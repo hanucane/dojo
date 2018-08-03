@@ -15,8 +15,21 @@ namespace Survey.Controllers
         [Route("result")]     
         public IActionResult Result(SurveyData results)
         {
-            return View(results);
+            return View("Result", results);
         }
-        
+ 
+
+        [Route("survey/create")]
+        public IActionResult Create(SurveyData results)
+        {
+            if(ModelState.IsValid)
+            {
+                return View("Result", results);
+            }
+            else
+            {
+                return View("Index");
+            }
+        }     
     }
 }
