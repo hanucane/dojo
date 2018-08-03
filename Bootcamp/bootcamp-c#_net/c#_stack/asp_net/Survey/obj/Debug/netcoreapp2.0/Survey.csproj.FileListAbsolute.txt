@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/bin/Debug/netcoreapp2.0/Survey.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/bin/Debug/netcoreapp2.0/Survey.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/bin/Debug/netcoreapp2.0/Survey.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/bin/Debug/netcoreapp2.0/Survey.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/bin/Debug/netcoreapp2.0/Survey.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/obj/Debug/netcoreapp2.0/Survey.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/obj/Debug/netcoreapp2.0/Survey.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/obj/Debug/netcoreapp2.0/Survey.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/obj/Debug/netcoreapp2.0/Survey.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/obj/Debug/netcoreapp2.0/Survey.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Survey/obj/Debug/netcoreapp2.0/Survey.pdb
