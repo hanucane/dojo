@@ -1,0 +1,9 @@
+﻿@model List<string>
+
+<h1 style="text-align-center">Here are some users</h1>
+
+@{
+    foreach (string user in @Model){
+        <p>@user</p>
+    }
+}

@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/bin/Debug/netcoreapp2.0/ViewModel.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/bin/Debug/netcoreapp2.0/ViewModel.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/bin/Debug/netcoreapp2.0/ViewModel.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/bin/Debug/netcoreapp2.0/ViewModel.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/bin/Debug/netcoreapp2.0/ViewModel.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/obj/Debug/netcoreapp2.0/ViewModel.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/obj/Debug/netcoreapp2.0/ViewModel.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/obj/Debug/netcoreapp2.0/ViewModel.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/obj/Debug/netcoreapp2.0/ViewModel.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/obj/Debug/netcoreapp2.0/ViewModel.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/ViewModel/obj/Debug/netcoreapp2.0/ViewModel.pdb
