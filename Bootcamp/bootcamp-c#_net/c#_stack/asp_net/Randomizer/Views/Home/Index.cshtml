@@ -1,0 +1,8 @@
+﻿@using Microsoft.AspNetCore.Http
+
+<div style="align-content: center; text-align: center;">
+    <p>Random Passcode (passcode #@Context.Session.GetInt32("count"))</p>
+    <p style="border: solid 1px black; margin-left: 40%; margin-right: 40%;">@Context.Session.GetString("random")</p>
+    <a href="/generate" class="btn btn-success">Generate</a>
+    <a href="/reset" class="btn btn-danger">Reset</a>
+</div>

@@ -1,0 +1,17 @@
+﻿<h2 style="text-align: center;">Welcome to Quoting Dojo</h2>
+<form action="/addquote" method="post">
+    <div class="form-group row">
+        <label asp-for="name">Your name</label>
+        <input asp-for="name" class="form-control" placeholder="Name">
+        <span asp-validation-for="name"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="quote">Your quote</label>
+        <textarea asp-for="quote" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="name"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Add my quote!</button>
+        <a href="/quotes" class="btn btn-primary">Skip to quotes!</a>
+    </div>
+</form>

@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/bin/Debug/netcoreapp2.0/Randomizer.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/bin/Debug/netcoreapp2.0/Randomizer.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/bin/Debug/netcoreapp2.0/Randomizer.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/bin/Debug/netcoreapp2.0/Randomizer.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/bin/Debug/netcoreapp2.0/Randomizer.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/obj/Debug/netcoreapp2.0/Randomizer.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/obj/Debug/netcoreapp2.0/Randomizer.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/obj/Debug/netcoreapp2.0/Randomizer.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/obj/Debug/netcoreapp2.0/Randomizer.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/obj/Debug/netcoreapp2.0/Randomizer.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/Randomizer/obj/Debug/netcoreapp2.0/Randomizer.pdb
