@@ -1,0 +1,28 @@
+﻿@model Trail
+<div class="header">
+    <h1>@ViewBag.Trails.Name</h1>
+    <h3><a href=/><u>Go Home</u></a></h3>
+</div>
+<div class="content">
+    <h2>Description</h2>
+    <h3>@ViewBag.Trails.Description</h3>
+    <h2>Trail Length</h2>
+    <h3>
+        @ViewBag.Trails.Length 
+        miles
+    </h3>
+    <h2>Elevation Change</h2>
+    <h3>
+        @ViewBag.Trails.Elevation 
+        feet
+    </h3>
+    <h2>Longitude</h2>
+    <h3>-@ViewBag.Trails.Longitude
+        ° N
+    </h3>
+    <h2>Latitude</h2>
+    <h3>-@ViewBag.Trails.Latitude
+        ° W
+    </h3>
+</div>
+

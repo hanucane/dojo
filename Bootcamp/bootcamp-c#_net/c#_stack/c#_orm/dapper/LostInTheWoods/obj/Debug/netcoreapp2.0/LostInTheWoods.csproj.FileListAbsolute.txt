@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/bin/Debug/netcoreapp2.0/LostInTheWoods.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/bin/Debug/netcoreapp2.0/LostInTheWoods.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/bin/Debug/netcoreapp2.0/LostInTheWoods.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/bin/Debug/netcoreapp2.0/LostInTheWoods.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/bin/Debug/netcoreapp2.0/LostInTheWoods.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/dapper/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.pdb

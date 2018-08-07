@@ -1,0 +1,24 @@
+﻿<div class="header">
+    <h1>Lost in the Woods</h1>
+    <h3>List of local hiking trails</h3>
+</div>
+<div class="table">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <th scope="col">Trail Name</th>
+            <th scope="col">Trail Length</th>
+            <th scope="col">Elevation Change</th>
+        </thead>
+        <tbody>
+            @foreach(var trail in @ViewBag.Trails)
+            {
+                <tr>
+                    <td><a href=trails/@trail.Id> @trail.Name</a></td>
+                    <td>@trail.Length Miles</td>
+                    <td>@trail.Elevation Feet</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="newtrail" class="btn btn-primary btn-lg active" role="button">Add a new Trail</a>
+</div>
