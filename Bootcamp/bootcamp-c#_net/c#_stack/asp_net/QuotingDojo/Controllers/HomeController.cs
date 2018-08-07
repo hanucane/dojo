@@ -14,8 +14,27 @@ namespace QuotingDojo.Controllers
         [Route("")]
         public IActionResult Index()
         {
-    	    List<Dictionary<string, object>> AllUsers = DbConnector.Query("SELECT * FROM users");
             return View();
+        }
+
+        [HttpPost]
+        [Route("quotes")]
+        public IActionResult Quote(Quotes data)
+        {
+            string query = $"INSERT INTO Quotes(name, quote) VALUES ('{data.name}', '{data.quote}')";
+            DbConnector.Execute(query);
+            List<Dictionary<string, object>> Quotes = DbConnector.Query("SELECT * FROM Quotes ORDER BY created_at DESC");
+            ViewBag.Quotes = Quotes;
+            return View("Quotes");
+        }
+
+        [HttpGet]
+        [Route("quotes")]
+        public IActionResult Quotes()
+        {
+            List<Dictionary<string, object>> Quotes = DbConnector.Query("SELECT * FROM Quotes ORDER BY created_at DESC");
+            ViewBag.Quotes = Quotes;
+            return View("Quotes");
         }
 
         public IActionResult Error()

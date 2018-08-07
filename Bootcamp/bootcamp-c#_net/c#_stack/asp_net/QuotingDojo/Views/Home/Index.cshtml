@@ -1,5 +1,7 @@
-﻿<h2 style="text-align: center;">Welcome to Quoting Dojo</h2>
-<form action="/addquote" method="post">
+﻿@model Quotes
+
+<h2 style="text-align: center;">Welcome to Quoting Dojo</h2>
+<form action="/quotes" method="post">
     <div class="form-group row">
         <label asp-for="name">Your name</label>
         <input asp-for="name" class="form-control" placeholder="Name">

@@ -1,0 +1,14 @@
+@model Quotes
+<h2>Here are the awesome quotes!</h2>
+
+@foreach(var user in ViewBag.Quotes)
+{
+    <div class="row">
+        <div class="quote">
+            <p><b>"@user["quote"]"</b></p>
+            <p><i>-@user["name"] at @user["created_at"].ToString("h:mm tt MMMM dd yyyy")</i></p>
+            <hr>
+        </div>
+    </div>
+}
+    

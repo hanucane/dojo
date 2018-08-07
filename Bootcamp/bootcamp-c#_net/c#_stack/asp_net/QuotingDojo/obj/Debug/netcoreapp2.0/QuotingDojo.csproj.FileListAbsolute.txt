@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/bin/Debug/netcoreapp2.0/QuotingDojo.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/bin/Debug/netcoreapp2.0/QuotingDojo.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/bin/Debug/netcoreapp2.0/QuotingDojo.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/bin/Debug/netcoreapp2.0/QuotingDojo.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/bin/Debug/netcoreapp2.0/QuotingDojo.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/obj/Debug/netcoreapp2.0/QuotingDojo.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/obj/Debug/netcoreapp2.0/QuotingDojo.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/obj/Debug/netcoreapp2.0/QuotingDojo.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/obj/Debug/netcoreapp2.0/QuotingDojo.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/obj/Debug/netcoreapp2.0/QuotingDojo.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/asp_net/QuotingDojo/obj/Debug/netcoreapp2.0/QuotingDojo.pdb
