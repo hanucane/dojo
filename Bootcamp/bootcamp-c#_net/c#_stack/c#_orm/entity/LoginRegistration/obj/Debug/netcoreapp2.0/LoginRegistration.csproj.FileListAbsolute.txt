@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/bin/Debug/netcoreapp2.0/LoginRegistration.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/bin/Debug/netcoreapp2.0/LoginRegistration.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/bin/Debug/netcoreapp2.0/LoginRegistration.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/bin/Debug/netcoreapp2.0/LoginRegistration.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/bin/Debug/netcoreapp2.0/LoginRegistration.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/obj/Debug/netcoreapp2.0/LoginRegistration.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/obj/Debug/netcoreapp2.0/LoginRegistration.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/obj/Debug/netcoreapp2.0/LoginRegistration.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/obj/Debug/netcoreapp2.0/LoginRegistration.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/obj/Debug/netcoreapp2.0/LoginRegistration.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/LoginRegistration/obj/Debug/netcoreapp2.0/LoginRegistration.pdb
