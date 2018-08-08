@@ -1,0 +1,14 @@
+﻿@model Reviews
+<h2>Here are the awesome reviews!</h2>
+
+@foreach(Reviews review in @ViewBag.all_reviews)
+{
+    <div class="row">
+        <div class="review">
+            <h4>@review.restaurant</h4>
+            <p><b>@review.review</b> @review.rating stars</p>
+            <p><i>-@review.name on @review.review_date.ToString("MMMM dd yyyy")</i></p>
+            <hr>
+        </div>
+    </div>
+}

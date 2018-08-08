@@ -1,0 +1,41 @@
+﻿@model Reviews
+<div class="row">
+    <form action="/review" method="post">
+        <div class="form-group row">
+            <label asp-for="name">Reviewer Name: </label>
+            <input type="text" class="form-control" asp-for="name" placeholder="Enter name">
+            <span asp-validation-for="name"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="restaurant">Restaurant Name: </label>
+            <input type="text" class="form-control" asp-for="restaurant" placeholder="Enter restaurant">
+            <span asp-validation-for="restaurant"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="review">Review: </label>
+            <textarea asp-for="review" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="review"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="review_date">Date: </label>
+            </div>
+            <div class="col-10">
+                <input class="form-control" type="date" asp-for="review_date">
+            </div>
+            <span asp-validation-for="review_date"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="rating">Rating: </label>
+            <select asp-for="rating" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <span asp-validation-for="rating"></span>
+        </div>
+        <button type="submit" class="btn btn-warning">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/bin/Debug/netcoreapp2.0/RESTauranter.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/bin/Debug/netcoreapp2.0/RESTauranter.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/bin/Debug/netcoreapp2.0/RESTauranter.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/bin/Debug/netcoreapp2.0/RESTauranter.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/bin/Debug/netcoreapp2.0/RESTauranter.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/obj/Debug/netcoreapp2.0/RESTauranter.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/obj/Debug/netcoreapp2.0/RESTauranter.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/obj/Debug/netcoreapp2.0/RESTauranter.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/obj/Debug/netcoreapp2.0/RESTauranter.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/obj/Debug/netcoreapp2.0/RESTauranter.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/RESTauranter/obj/Debug/netcoreapp2.0/RESTauranter.pdb
