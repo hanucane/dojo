@@ -1,0 +1,47 @@
+@model User
+<div class="row">
+    <div class="col-md-8">
+        <h2>Welcome @Model.first_name @Model.last_name</h2>
+    </div>
+    <div class="col-md-4">
+        <p style="margin-top: 30px; text-align: right;">Current balance 
+
+            <span style="padding: 5px 10px; border: 1px solid black;">$@Model.accounts.LastOrDefault().balance</span>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-8" style="margin: 10px 0px 0px 25px;">
+        <form action="/transaction" method="post">
+            <div class="form-group row">
+                <select name="change_type">
+                    <option value="deposit">Deposit</option>
+                    <option value="withdrawal">Withdrawal</option>
+                </select>
+                <input type="int" name="change_val" placeholder="Enter Value">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+        <span>@ViewBag.error</span>
+    </div>
+</div>
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Current Balance</th>
+                <th>Deposit / Withdrawal</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var x in @Model.accounts){
+                <tr>
+                    <td>$@x.balance</td>
+                    <td>$@x.change</td>
+                    <td>@x.created_at.ToString("MMMM dd yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
