@@ -88,9 +88,9 @@ namespace BankAccounts.Controllers
         {
             int? id = HttpContext.Session.GetInt32("login");
             int user_id = _context.user.Where(x => x.id == id).FirstOrDefault().id;
+            Account data = _context.account.Where(x => x.UserId == id).LastOrDefault();
             DateTime current = DateTime.Now;
             if (change_type == "deposit"){
-                Account data = _context.account.Where(x => x.UserId == id).LastOrDefault();
                 if (data == null){
                     Account NewAccount = new Account(){
                         balance = change_val,
@@ -113,7 +113,6 @@ namespace BankAccounts.Controllers
                 }
             }
             else if (change_type == "withdrawal"){
-                var data = _context.account.Where(x => x.UserId == id).LastOrDefault();
                 if (data == null){
                     ViewBag.error = "Need to make a deposit before making a withdrawal.";
                 }

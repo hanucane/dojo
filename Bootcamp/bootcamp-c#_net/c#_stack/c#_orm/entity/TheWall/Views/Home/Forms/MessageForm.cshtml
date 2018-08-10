@@ -1,0 +1,23 @@
+@using Microsoft.AspNetCore.Http
+@model Messages
+
+<form method="post" action="/message">
+    <input type="hidden" asp-for="UserId" value='@Context.Session.GetInt32("user")'>
+    <div class="form-group">
+        <label asp-for="message"><b>Post a message</b></label>
+        <textarea asp-for="message" class="form-control" rows="3"></textarea>
+    </div>      
+    <div class="row justify-content-end">
+        <button type="submit" class="btn btn-primary">Post a message</button>
+    </div>
+</form> 
+@if(@ViewBag.success != null){
+    <div class="alert alert-success">
+        @ViewBag.success
+    </div>;
+}
+@if(@ViewBag.error != null){
+    <div class="alert alert-danger">
+        @ViewBag.error
+    </div>;
+}

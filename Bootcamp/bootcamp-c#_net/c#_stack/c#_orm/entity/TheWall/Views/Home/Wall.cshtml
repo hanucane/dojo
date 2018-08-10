@@ -1,0 +1,5 @@
+@using Microsoft.AspNetCore.Http
+@model List<Messages>
+
+@Html.Partial("Forms/MessageForm", (List<Messages>)Model)
+@Html.Partial("WallBlock", (List<Messages>)Model)

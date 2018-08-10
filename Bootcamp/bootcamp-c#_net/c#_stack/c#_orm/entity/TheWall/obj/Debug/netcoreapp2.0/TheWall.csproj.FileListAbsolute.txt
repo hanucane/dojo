@@ -1,0 +1,11 @@
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/bin/Debug/netcoreapp2.0/TheWall.deps.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/bin/Debug/netcoreapp2.0/TheWall.runtimeconfig.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/bin/Debug/netcoreapp2.0/TheWall.runtimeconfig.dev.json
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/bin/Debug/netcoreapp2.0/TheWall.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/bin/Debug/netcoreapp2.0/TheWall.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/obj/Debug/netcoreapp2.0/TheWall.csprojResolveAssemblyReference.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/obj/Debug/netcoreapp2.0/TheWall.csproj.CoreCompileInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/obj/Debug/netcoreapp2.0/TheWall.AssemblyInfoInputs.cache
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/obj/Debug/netcoreapp2.0/TheWall.AssemblyInfo.cs
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/obj/Debug/netcoreapp2.0/TheWall.dll
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/TheWall/obj/Debug/netcoreapp2.0/TheWall.pdb

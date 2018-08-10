@@ -1,0 +1,24 @@
+@using Microsoft.AspNetCore.Http
+@model Comments
+
+<form method="post" action="/comment">
+    <input type="hidden" asp-for="UserId" value='@Context.Session.GetInt32("user")'>
+    <input type="hidden" asp-for="MessageId" value="@ViewBag.id">
+    <div class="form-group">
+        <label asp-for="comment"><b>Post a comment</b></label>
+        <textarea asp-for="comment" class="form-control" rows="3"></textarea>
+    </div>      
+    <div class="row justify-content-end">
+        <button type="submit" class="btn btn-primary">Post a comment</button>
+    </div>
+</form> 
+@if(@ViewBag.success != null){
+    <div class="alert alert-success">
+        @ViewBag.success
+    </div>;
+}
+@if(@ViewBag.error != null){
+    <div class="alert alert-danger">
+        @ViewBag.error
+    </div>;
+}
