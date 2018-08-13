@@ -1,0 +1,48 @@
+@using Microsoft.AspNetCore.Http
+@model Weddings
+
+<div class="row justify-content-between align-items-center">
+    <div class="col-9">
+        <h2>Welcome to the Wedding Planner</h2>
+    </div>
+    <div class="col-2">
+        <a href="/logout">Log Out</a>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-11">
+        <table class="table" style="margin-top: 20px;">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Wedding</th>
+                <th scope="col">Date</th>
+                <th scope="col">Guests</th>
+                <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var x in @ViewBag.weddings){
+                    <tr>
+                        <th scope="row"><a href="/wedding/@x.id">@x.groom & @x.bride</a> </th>
+                        <td>@x.date.ToString("MMMM d, yyyy")</td>
+                        <td>12</td>
+                        <td>@if(@Context.Session.GetInt32("user") == @x.creator.id){<a href="/wedding_delete/@x.id">Delete Event</a>;}
+                            else{
+                                bool InList = false;
+                            foreach(var y in x.Guest){
+                                if(@Context.Session.GetInt32("user") == @y.Users.id){
+                                    InList = true;
+                                    <a href="/delete_rsvp/@x.id">Un-RSVP</a>;
+                                    }
+                                if(InList == false){<a href="/add_rsvp/@x.id">RSVP</a>;}
+                            }; }
+                            </td>
+                    </tr>;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row justify-content-end">
+    <a class="btn btn-success" href="/plan" style="margin-right: 50px;">New Wedding</a>
+</div>

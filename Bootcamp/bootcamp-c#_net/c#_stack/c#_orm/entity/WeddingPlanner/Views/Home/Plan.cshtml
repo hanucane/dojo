@@ -1,0 +1,40 @@
+@using Microsoft.AspNetCore.Http
+@model Weddings
+
+<div class="row justify-content-between align-items-center">
+    <div class="col-10">
+        <h2>Welcome to the Wedding Planner</h2>
+    </div>
+    <div class="col-1">
+        <a href="/dashboard">Dashboard</a>
+    </div>
+    <div class="col-1">
+        <a href="/logout">Log Out</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-7">
+        <form action="/wedding_create" method="post">
+            <input type="hidden" asp-for="CreatorId" value='@Context.Session.GetInt32("user")'>
+            <div class="form-group">
+                <label asp-for="bride"><b>Bride</b></label>
+                <input type="text" class="form-control" asp-for="bride" placeholder="Enter Bride's first name">
+            </div>  
+            <div class="form-group">
+                <label asp-for="groom"><b>Groom</b></label>
+                <input type="text" class="form-control" asp-for="groom" placeholder="Enter Groom's first name">
+            </div>
+            <div class="form-group">
+                <label asp-for="date"><b>Date</b></label>
+                <input type="date" class="form-control" asp-for="date">
+            </div>
+            <div class="form-group">
+                <label asp-for="address"><b>Wedding Address</b></label>
+                <input type="text" class="form-control" asp-for="address">
+            </div>    
+            <div class="row justify-content-end">
+                <button type="submit" class="btn btn-warning">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

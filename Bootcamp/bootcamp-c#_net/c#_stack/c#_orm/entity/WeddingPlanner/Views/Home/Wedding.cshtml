@@ -1,0 +1,40 @@
+@using Microsoft.AspNetCore.Http
+@model Weddings
+
+<div class="row justify-content-between align-items-center">
+    <div class="col-10">
+        <h2>Welcome to the Wedding Planner</h2>
+    </div>
+    <div class="col-1">
+        <a href="/dashboard">Dashboard</a>
+    </div>
+    <div class="col-1">
+        <a href="/logout">Log Out</a>
+    </div>
+</div>
+@foreach(var x in @ViewBag.weddings){
+
+    <h2>@x.groom and @x.bride</h2>
+    <h3>Wedding Date: August 25, 2018</h3>
+<div class="row">
+    
+    <div class="col-5">
+        <h5>Guests:</h5>
+        <ul style="list-style: none;">
+            @foreach(var y in x.Guest){
+                <li>@y.Users.first_name @y.Users.last_name</li>;
+            }
+            
+        </ul>
+    </div>
+    <div class="col-7">
+        <iframe
+        width="600"
+        height="450"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJVuWn_DQ1FnNB0VCofZjs2nL9qHu5EP4
+            &q=@ViewBag.address" allowfullscreen>
+        </iframe>
+    </div>
+</div>;
+}
