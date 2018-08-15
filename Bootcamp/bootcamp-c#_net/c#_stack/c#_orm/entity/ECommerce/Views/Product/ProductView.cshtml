@@ -15,22 +15,20 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-5 margin-b-30">
-                    <div id="product-single"  class="owl-carousel owl-theme single-product-slider">
+                    <div id="product-single" class="owl-carousel owl-theme single-product-slider">
+                        @foreach(var img in @product.product_img){
                         <div class="item">
-                            <a href="@product.img_url" data-lightbox="roadtrip"> <img src="@product.img_url" alt="Product image" class="img-responsive"></a>                              
-                        </div>
-                        <div class="item">
-                            <a href="@product.img_url" data-lightbox="roadtrip"> <img src="@product.img_url" alt="Product image" class="img-responsive"></a>                              
-                        </div>
-                        <div class="item">
-                            <a href="@product.img_url" data-lightbox="roadtrip"> <img src="@product.img_url" alt="Product image" class="img-responsive"></a>                              
-                        </div>
+                            <a href="@img.img_url" data-lightbox="roadtrip"> <img src="@img.img_url" alt="Product image" class="img-responsive"></a>                              
+                        </div>;
+                    }
                     </div>
+                    @Html.Partial("Forms/ImgAdd", new ViewDataDictionary(ViewData) {{"id",@product.id}} ) 
                 </div>
                 <div class="col-md-7">
                     <div class="product-detail-desc">
                         <h3 class="title"><a href="#">@product.name</a></h3>
-                        @foreach(var price in @ViewBag.prices){<span class="price">$@price.Prices.new_price</span>;}
+                        @Html.Partial("Forms/PricePartial", new ViewDataDictionary(ViewData) {{"id",@product.id}} )     
+                        @if(@product.Prices != null){<span class="price"><del>$@product.Prices.new_price</del> $@product.Prices.used</span>;}
                         <span class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -42,22 +40,11 @@
                         <p>
                             @product.description
                         </p>
-                        <div class="colors">
-                            <span>Choose color</span>
-                            <a href="#" class="light"></a>
-                            <a href="#" class="blue"></a>
-                            <a href="#" class="yellow"></a>
-                            <a href="#" class="red"></a>
-                        </div>
                         <div class="available">
                             Availability : In Stock 
                             @foreach(var quantity in @ViewBag.inventory){
-                                @quantity.Inventory.quantity_new;
+                                <p>@quantity.Inventory.quantity_new left</p>;
                             }
-                        </div>
-                        <div class="size">
-                            <span>Size:</span> 
-                            <select><option>38</option><option>40</option><option>42</option><option>44</option></select>
                         </div>
                         <div class="tags clearfix">
                             @foreach(var x in @ViewBag.categories){

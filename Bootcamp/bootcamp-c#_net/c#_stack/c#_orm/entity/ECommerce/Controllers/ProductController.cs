@@ -31,35 +31,60 @@ namespace ECommerce.Controllers
         }
 
         [HttpPost("addProduct")]
-        public IActionResult CreateProduct(Products newProduct, Prices newPrice, Inventory newInventory)
+        public IActionResult CreateProduct(Products newProduct, ProductImgs newImg, Inventory newInventory)
         {
             if(ModelState.IsValid)
             {
                 _context.Products.Add(newProduct);
                 _context.SaveChanges();
                 TempData["product_id"] = newProduct.id;
-                TempData["price"] = newPrice.new_price;
+                TempData["image"] = newImg.img_url;
                 TempData["inventory"] = newInventory.quantity_new;
-                return RedirectToAction("CreatePrice");
+                return RedirectToAction("CreateImage");
 
             }
             return View("Index");
         }
 
-        [HttpGet("addPrice")]
-        public IActionResult CreatePrice()
+        [HttpGet("addImage")]
+        public IActionResult CreateImage()
         {
             if(ModelState.IsValid)
             {
-                Prices price = new Prices(){
-                    new_price = (int)TempData["price"],
+                ProductImgs image = new ProductImgs(){
+                    img_url = (string)TempData["image"],
                     ProductsId = (int)TempData["product_id"]
                 };
-                _context.Prices.Add(price);
+                _context.ProductImgs.Add(image);
                 _context.SaveChanges();
                 TempData["product_id"] = TempData["product_id"];
                 TempData["inventory"] = TempData["inventory"];
                 return RedirectToAction("CreateInventory");
+
+            }
+            return View("Index");
+        }
+        
+        [HttpPost("addImg")]
+        public IActionResult AddImage(ProductImgs newImg)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.ProductImgs.Add(newImg);
+                _context.SaveChanges();
+                List<Products> product = _context.Products.Where(x => x.id == newImg.ProductsId)
+                .Include(y => y.product_category).ThenInclude(z => z.Category)
+                .Include(y => y.product_img)
+                .Include(y => y.Prices)
+                .Include(y => y.Inventory)
+                .ToList();
+                ViewBag.products = product;
+                ViewBag.images = _context.Products.Where(x => x.id == newImg.ProductsId).Include(y => y.product_img).ToList();
+                ViewBag.prices = _context.Products.Where(x => x.id == newImg.ProductsId).Include(y => y.Prices).ToList();
+                ViewBag.inventory = _context.Products.Where(x => x.id == newImg.ProductsId).Include(y => y.Inventory).ToList();
+                ViewBag.categories = _context.Products.Where(x => x.id == newImg.ProductsId).Include(y => y.product_category).ThenInclude(z => z.Category).ToList();
+                ViewBag.all_categories = _context.Categories.ToList();
+                return Redirect("products/"+newImg.ProductsId);
             }
             return View("Index");
         }
@@ -81,16 +106,42 @@ namespace ECommerce.Controllers
             return View("Index");
         }
 
+        [HttpPost("addPrice")]
+        public IActionResult CreatePrice(Prices newPrice)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Prices.Add(newPrice);
+                _context.SaveChanges();
+                List<Products> product = _context.Products.Where(x => x.id == newPrice.ProductsId)
+                .Include(y => y.product_category).ThenInclude(z => z.Category)
+                .Include(y => y.product_img)
+                .Include(y => y.Prices)
+                .Include(y => y.Inventory)
+                .ToList();
+                ViewBag.products = product;
+                ViewBag.images = _context.Products.Where(x => x.id == newPrice.ProductsId).Include(y => y.product_img).ToList();
+                ViewBag.prices = _context.Products.Where(x => x.id == newPrice.ProductsId).Include(y => y.Prices).ToList();
+                ViewBag.inventory = _context.Products.Where(x => x.id == newPrice.ProductsId).Include(y => y.Inventory).ToList();
+                ViewBag.categories = _context.Products.Where(x => x.id == newPrice.ProductsId).Include(y => y.product_category).ThenInclude(z => z.Category).ToList();
+                ViewBag.all_categories = _context.Categories.ToList();
+                return Redirect("products/"+newPrice.ProductsId);
+            }
+            return View("Index");
+        }
+
         [HttpGet("products/{id}")]
         public IActionResult ViewProduct(int id)
         {
             List<Products> product = _context.Products.Where(x => x.id == id)
                 .Include(y => y.product_category).ThenInclude(z => z.Category)
+                .Include(y => y.product_img)
                 .Include(y => y.Prices)
                 .Include(y => y.Inventory)
                 .ToList();
             ViewBag.products = product;
-            ViewBag.prices = _context.Products.Where(x => x.id == id).Include(y => y.Prices).ToList();
+            ViewBag.images = _context.Products.Where(x => x.id == id).Include(y => y.product_img).ToList();
+            ViewBag.prices = _context.Prices.Where(x => x.ProductsId == id).ToList();
             ViewBag.inventory = _context.Products.Where(x => x.id == id).Include(y => y.Inventory).ToList();
             ViewBag.categories = _context.Products.Where(x => x.id == id).Include(y => y.product_category).ThenInclude(z => z.Category).ToList();
             ViewBag.all_categories = _context.Categories.ToList();
@@ -100,7 +151,7 @@ namespace ECommerce.Controllers
         [HttpGet("products/grid")]
         public IActionResult ProductList()
         {
-            ViewBag.products = _context.Products.Include(x => x.Prices).ToList();
+            ViewBag.products = _context.Products.Include(x => x.Prices).Include(x => x.product_img).ToList();
             ViewBag.categories = _context.Categories.ToList();
             return View("ProductGrid");
         }
@@ -129,6 +180,7 @@ namespace ECommerce.Controllers
                 _context.Product_Category.Add(newProdCat);
                 _context.SaveChanges();
                 ViewBag.products = _context.Products.Where(x => x.id == product_id).ToList();
+                ViewBag.images = _context.Products.Where(x => x.id == product_id).Include(y => y.product_img).ToList();
                 ViewBag.prices = _context.Products.Where(x => x.id == product_id).Include(y => y.Prices).ToList();
                 ViewBag.inventory = _context.Products.Where(x => x.id == product_id).Include(y => y.Inventory).ToList();
                 ViewBag.categories = _context.Products.Where(x => x.id == product_id).Include(y => y.product_category).ThenInclude(z => z.Category).ToList();
@@ -150,7 +202,7 @@ namespace ECommerce.Controllers
                 _context.Product_Category.Add(newProdCat);
                 _context.SaveChanges();
                 ViewBag.category = _context.Categories.Where(x => x.id == category_id).ToList();
-                ViewBag.products = _context.Categories.Where(x => x.id == category_id).Include(y => y.product_category).ThenInclude(z => z.Product).ToList();
+                ViewBag.products = _context.Categories.Where(x => x.id == category_id).Include(y => y.product_category).ThenInclude(z => z.Product).ThenInclude(a => a.product_img).ToList();
                 ViewBag.all_products = _context.Products.Include(x => x.product_category).ThenInclude(y => y.Category).ToList();
 
                 return View("CategoryView");
@@ -158,13 +210,14 @@ namespace ECommerce.Controllers
             return View("Index");
         }
 
-        [HttpGet("/product/{product_id}/remove/{merge_id}")]
+        [HttpGet("product/{product_id}/remove/{merge_id}")]
         public IActionResult RemoveCategory(int product_id, int merge_id)
         {
             var prod_cat_table = _context.Product_Category.FirstOrDefault(x => x.id == merge_id);
             _context.Product_Category.Remove(prod_cat_table);
             _context.SaveChanges();
             ViewBag.products = _context.Products.Where(x => x.id == product_id).ToList();
+            ViewBag.images = _context.Products.Where(x => x.id == product_id).Include(y => y.product_img).ToList();
             ViewBag.prices = _context.Products.Where(x => x.id == product_id).Include(y => y.Prices).ToList();
             ViewBag.inventory = _context.Products.Where(x => x.id == product_id).Include(y => y.Inventory).ToList();
             ViewBag.categories = _context.Products.Where(x => x.id == product_id).Include(y => y.product_category).ThenInclude(z => z.Category).ToList();
@@ -176,11 +229,12 @@ namespace ECommerce.Controllers
         public IActionResult CategoryView(int id)
         {
             ViewBag.category = _context.Categories.Where(x => x.id == id).ToList();
-            ViewBag.products = _context.Categories.Where(x => x.id == id).Include(y => y.product_category).ThenInclude(z => z.Product).ToList();
+            ViewBag.products = _context.Categories.Where(x => x.id == id).Include(y => y.product_category).ThenInclude(z => z.Product).ThenInclude(a => a.product_img).ToList();
             ViewBag.all_products = _context.Products.Include(x => x.product_category).ThenInclude(y => y.Category).ToList();
             
             return View("CategoryView");
         }
+        
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

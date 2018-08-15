@@ -12,7 +12,7 @@ namespace ECommerce.Models
         public DbSet<Product_Category> Product_Category { get; set; }
         public DbSet<Prices> Prices { get; set; }
         public DbSet<Inventory> Inventory { get; set; }
-
+        public DbSet<ProductImgs> ProductImgs { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Products>()

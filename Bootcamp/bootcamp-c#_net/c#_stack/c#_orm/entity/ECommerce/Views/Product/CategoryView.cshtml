@@ -18,9 +18,13 @@
                 @foreach(var p in x.product_category){
             <div class="product-list">
                 <div class="row">
-                    <div class="col-md-4 margin-b-30">
-                        <div class="product-list-thumb">
-                            <a href="/products/@p.Product.id"> <img src="@p.Product.img_url" alt="Product image" class="img-responsive"></a>
+                    <div class="col-md-4 margin-b-15">
+                        <div id="product-single"  class="owl-carousel owl-theme single-product-slider">
+                            @foreach(var img in @p.Product.product_img){
+                            <div class="item">
+                                <a href="@img.img_url" data-lightbox="roadtrip"> <img src="@img.img_url" alt="Product image" class="img-responsive"></a>                              
+                            </div>;
+                        }
                         </div>
                     </div>
                     <div class="col-md-8">

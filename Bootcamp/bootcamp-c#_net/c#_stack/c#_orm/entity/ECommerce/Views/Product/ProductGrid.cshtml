@@ -111,7 +111,9 @@
                 @foreach(var product in @ViewBag.products){
                 <div class="col-sm-4">
                     <div class="item_holder">
-                        <a href="/products/@product.id"><img src="@product.img_url" alt="" class="img-responsive"></a>
+                        @foreach(var img in @product.product_img){
+                            <a href="/products/@product.id"><img src="@img.img_url" alt="" class="img-responsive"></a>
+                        }
                         <div class="title">
                             <h5>@product.name</h5>
                             <span class="price">$@product.Prices.new_price</span>

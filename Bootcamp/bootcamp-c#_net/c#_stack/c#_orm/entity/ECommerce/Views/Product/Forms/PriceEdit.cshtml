@@ -2,21 +2,21 @@
 @model Prices
 
 <div class="sky-form-login">
-    <h4>Add Price</h4>
+    <h4>Edit Price</h4>
     <form action="/addPrice" method="post" class="sky-form">
-        <input type="hidden" asp-for="ProductsId" value="@ViewBag.id">
+        <input type="hidden" asp-for="ProductsId" value="@ViewBag.prices.ProductsId">
         <div class="form-group row">
             <label asp-for="new_price">New Price: </label>
-            <input type="decimal" class="form-control" asp-for="new_price" placeholder="Enter price for new">
+            <input type="decimal" class="form-control" asp-for="new_price" value="@ViewBag.prices.new_price">
             <span asp-validation-for="new_price"></span>
         </div>
         <div class="form-group row">
             <label asp-for="used">Used Price: </label>
-            <input type="decimal" class="form-control" asp-for="used" placeholder="Enter price for used">
+            <input type="decimal" class="form-control" asp-for="used" value="@ViewBag.prices.used">
             <span asp-validation-for="used"></span>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-success">Create</button>
+            <button type="submit" class="btn btn-primary">Update</button>
         </div>
     </form>
 </div>

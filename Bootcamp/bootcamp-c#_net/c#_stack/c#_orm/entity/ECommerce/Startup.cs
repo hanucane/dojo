@@ -24,6 +24,7 @@ namespace ECommerce
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Store>(options => options.UseMySql(Configuration["DBInfo:ConnectionString"]));
+            services.AddDbContext<Customer>(options => options.UseMySql(Configuration["DBInfo:ConnectionString"]));
             services.AddSession();
             services.AddMvc();
         }
@@ -44,6 +45,9 @@ namespace ECommerce
             app.UseSession();
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "customer", 
+                    template: "{controller=Customer}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Product}/{action=Index}/{id?}");

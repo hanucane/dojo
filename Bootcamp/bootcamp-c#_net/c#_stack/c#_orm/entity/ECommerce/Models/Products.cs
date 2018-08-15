@@ -14,8 +14,8 @@ namespace ECommerce.Models
         [Required]
         [MinLength(2, ErrorMessage="Product description must be at least 10 characters")]
         public string description { get; set; }
-        public string img_url { get; set; }
         public List<Product_Category> product_category { get; set; }
+        public List<ProductImgs> product_img { get; set; }
         public int PricesId { get; set; }
         public Prices Prices { get; set; }
         public int InventoryId { get; set; }
@@ -24,6 +24,7 @@ namespace ECommerce.Models
         public Products()
         {
             product_category = new List<Product_Category>();
+            product_img = new List<ProductImgs>();
         }
 
     }

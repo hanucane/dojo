@@ -5,15 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ECommerce.Models
 {
-    public class Prices
+    public class ProductImgs
     {
-        [Key]
         public int id { get; set; }
-        [Required]
-        public decimal new_price { get; set; }
-        public decimal used { get; set; }
-        [ForeignKey("Products")]
         public int ProductsId { get; set; }
         public Products Product { get; set; }
+        [Required]
+        public string img_url { get; set; }
     }
 }

@@ -14,13 +14,7 @@
                 <input type="text" class="form-control" asp-for="description" placeholder="Enter description">
                 <span asp-validation-for="description"></span>
             </div>
-            <div class="form-group row">
-                <label asp-for="img_url">Image: </label>
-                <input type="text" class="form-control" asp-for="img_url" placeholder="Enter image URL">
-                <span asp-validation-for="img_url"></span>
-                <span>@ViewBag.category</span>
-            </div>
-            @Html.Partial("Forms/PricePartial")
+            @Html.Partial("Forms/ImgPartial")
             @Html.Partial("Forms/InventoryPartial")
             <div class="form-group">
                 <button type="submit" class="btn btn-success">Create</button>
