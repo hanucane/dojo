@@ -1,0 +1,97 @@
+@using Microsoft.AspNetCore.Http
+@model Products
+
+@foreach(var product in @ViewBag.products){
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>@product.name</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="space-60"></div>
+<div class="container body-content">
+    <div class="row single-product">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-5 margin-b-30">
+                    <div id="product-single"  class="owl-carousel owl-theme single-product-slider">
+                        <div class="item">
+                            <a href="@product.img_url" data-lightbox="roadtrip"> <img src="@product.img_url" alt="Product image" class="img-responsive"></a>                              
+                        </div>
+                        <div class="item">
+                            <a href="@product.img_url" data-lightbox="roadtrip"> <img src="@product.img_url" alt="Product image" class="img-responsive"></a>                              
+                        </div>
+                        <div class="item">
+                            <a href="@product.img_url" data-lightbox="roadtrip"> <img src="@product.img_url" alt="Product image" class="img-responsive"></a>                              
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="product-detail-desc">
+                        <h3 class="title"><a href="#">@product.name</a></h3>
+                        @foreach(var price in @ViewBag.prices){<span class="price">$@price.Prices.new_price</span>;}
+                        <span class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-full"></i>
+                            <a href="#">8 Reviews</a>
+                        </span>
+                        <p>
+                            @product.description
+                        </p>
+                        <div class="colors">
+                            <span>Choose color</span>
+                            <a href="#" class="light"></a>
+                            <a href="#" class="blue"></a>
+                            <a href="#" class="yellow"></a>
+                            <a href="#" class="red"></a>
+                        </div>
+                        <div class="available">
+                            Availability : In Stock 
+                            @foreach(var quantity in @ViewBag.inventory){
+                                @quantity.Inventory.quantity_new;
+                            }
+                        </div>
+                        <div class="size">
+                            <span>Size:</span> 
+                            <select><option>38</option><option>40</option><option>42</option><option>44</option></select>
+                        </div>
+                        <div class="tags clearfix">
+                            @foreach(var x in @ViewBag.categories){
+                                @foreach(var merge in x.product_category){
+                                    <a href="/category/@merge.Category.id">@merge.Category.name</a> <a href="/product/@x.id/remove/@merge.id" class="buttons fa fa-trash-o"></a>;
+                                }
+                            }                       
+                            <form action="/products/@product.id/addCategory" method="post" class="form-inline">
+                                <div class="form-group">
+                                    <label class="select">
+                                        <select name="category_id">
+                                            <option value="0" selected="" disabled="">Category</option>
+                                            @foreach(var x in @ViewBag.all_categories){
+                                                <option value="@x.id">@x.name</option>;
+                                            }   
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="add-buttons">
+                            <a href="#" class="btn btn-border btn-lg" data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="btn btn-border btn-lg"  data-toggle="tooltip" data-placement="top" title="Add to Compare"><i class="fa fa-random"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart" class="btn btn-skin btn-lg"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div><!--single product details end-->
+        </div>
+    </div>
+</div>;
+}

@@ -25,7 +25,7 @@
                     <tr>
                         <th scope="row"><a href="/wedding/@x.id">@x.groom & @x.bride</a> </th>
                         <td>@x.date.ToString("MMMM d, yyyy")</td>
-                        <td>12</td>
+                        <td>@x.Guest.Count</td>
                         <td>@if(@Context.Session.GetInt32("user") == @x.creator.id){<a href="/wedding_delete/@x.id">Delete Event</a>;}
                             else{
                                 bool InList = false;

@@ -1,0 +1,8 @@
+@using Microsoft.AspNetCore.Http
+@model Inventory
+
+<div class="form-group row">
+    <label asp-for="quantity_new">Quantity: </label>
+    <input type="int" class="form-control" asp-for="quantity_new" placeholder="Enter initial quantity">
+    <span asp-validation-for="quantity_new"></span>
+</div>

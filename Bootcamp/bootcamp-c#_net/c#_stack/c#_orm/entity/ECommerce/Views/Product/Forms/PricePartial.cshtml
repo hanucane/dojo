@@ -1,0 +1,8 @@
+@using Microsoft.AspNetCore.Http
+@model Prices
+
+<div class="form-group row">
+    <label asp-for="new_price">Price: </label>
+    <input type="float" class="form-control" asp-for="new_price" placeholder="Enter price">
+    <span asp-validation-for="new_price"></span>
+</div>

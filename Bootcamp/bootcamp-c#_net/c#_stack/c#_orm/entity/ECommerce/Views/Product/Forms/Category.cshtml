@@ -1,0 +1,18 @@
+@using Microsoft.AspNetCore.Http
+@model Categories
+
+    <div class="sky-form-login">
+        <h2>Create Category</h2>
+        <form action="/addCategory" method="post" class="sky-form">
+            <div class="form-group row">
+                <label asp-for="name">Name: </label>
+                <input type="text" class="form-control" asp-for="name" placeholder="Enter category">
+                <span asp-validation-for="name"></span>
+                <span>@ViewBag.category</span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Create</button>
+            </div>
+        </form>
+    </div>
+    

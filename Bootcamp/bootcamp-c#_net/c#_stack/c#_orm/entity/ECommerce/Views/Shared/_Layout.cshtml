@@ -43,11 +43,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="images/logo-dark.png" alt="logo"></a>
+                <a class="navbar-brand" href="/">Dojo Store</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <!--mega menu-->
                     <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown">Pages  <i class="fa fa-angle-down"></i></a>
@@ -70,8 +70,8 @@
                                             <h3 class="heading">Product Pages </h3>
                                             <ul class="nav mega-vertical-nav">
                                                 <li><a href="product-list.html"><i class="fa fa-list"></i> Product list</a></li>
-                                                <li><a href="product-grid.html"><i class="fa fa-bars"></i> Product grid</a></li>
-                                                <li><a href="product-detail.html"><i class="fa fa-angle-right"></i> Product Detail </a></li>
+                                                <li><a href="/products/grid"><i class="fa fa-bars"></i> Product Grid</a></li>
+                                                <li><a href="/products/categories"><i class="fa fa-angle-right"></i> Product Category Designer </a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
@@ -94,71 +94,6 @@
                     </li> <!--menu Features li end here-->
                     <!--mega menu end--> 
                     <!--mega menu-->
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown">Women  <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-
-                                        <div class="col-sm-3">
-                                            <h3 class="heading">Sample title</h3>
-                                            <ul class="nav mega-vertical-nav">        
-                                                <li><a href="#">Nam ipsum est</a></li>
-                                                <li><a href="#">Volutpat</a></li>
-                                                <li><a href="#">In efficitur in</a></li>
-                                                <li><a href="#">Accumsan eget</a></li>
-                                                <li><a href="#">Curabitur</a></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h3 class="heading">Sample title </h3>
-                                            <ul class="nav mega-vertical-nav">
-                                                <li><a href="#">Nam ipsum est</a></li>
-                                                <li><a href="#">Volutpat</a></li>
-                                                <li><a href="#">In efficitur in</a></li>
-                                                <li><a href="#">Accumsan eget</a></li>
-                                                <li><a href="#">Curabitur</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h3 class="heading">Sample title</h3>
-                                            <ul class="nav mega-vertical-nav">
-                                                <li><a href="#">Nam ipsum est</a></li>
-                                                <li><a href="#">Volutpat</a></li>
-                                                <li><a href="#">In efficitur in</a></li>
-                                                <li><a href="#">Accumsan eget</a></li>
-                                                <li><a href="#">Curabitur</a></li>                                        
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <img src="images/women/8.jpg" class="img-responsive" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li> <!--menu Features li end here-->
-                    <!--mega menu end--> 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true">Men <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Nam ipsum est</a></li>
-                            <li><a href="#">Volutpat</a></li>
-                            <li><a href="#">In efficitur in</a></li>
-                            <li><a href="#">Accumsan eget</a></li>
-                            <li><a href="#">Curabitur</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true">Blog <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            
-                            <li><a href="blog-masonry.html">Masonry view</a></li>
-                            <li><a href="blog-post.html">Single Post</a></li>
-                        </ul>
-                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -236,8 +171,10 @@
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
-    <div class="container body-content">
+
         @RenderBody()
+        <div class="space-60"></div>
+
         <!--footer start-->
         <footer class="footer">
             <div class="container">
@@ -320,7 +257,6 @@
             </div>
         </div>
         <!--footer end-->
-    </div>
 
     <environment include="Development">
         <script src="~/bower_components/jquery/dist/jquery.min.js"></script>  

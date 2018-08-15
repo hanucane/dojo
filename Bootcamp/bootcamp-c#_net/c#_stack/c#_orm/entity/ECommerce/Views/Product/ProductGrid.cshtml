@@ -1,0 +1,149 @@
+@using Microsoft.AspNetCore.Http
+@model Products
+
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>Products</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="space-60"></div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="sidebar-widget">
+                <h3>Categories</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#">New Arrivals</a></li>
+                    @foreach(var cat in @ViewBag.categories){
+                        <li><a href="/category/@cat.id">@cat.name</a></li>;
+                    }   
+                </ul>
+            </div><!--sidebar-widget end-->
+            <div class="sidebar-widget">
+                <h3>Bestseller </h3>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="images/men/5.jpg" alt="" width="70">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href='#'>men's backpack</a></h4>
+                        <span class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-empty"></i>
+                        </span>
+                        <span class="price">
+                            <del>$99.00</del>
+                            $49.00
+                        </span>
+
+                    </div>
+                </div><!--media-->
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="images/men/6.jpg" alt="" width="70">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href='#'>men's T-shirts</a></h4>
+                        <span class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-empty"></i>
+                        </span>
+                        <span class="price">
+                            <del>$99.00</del>
+                            $49.00
+                        </span>
+
+                    </div>
+                </div><!--media-->
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="images/women/5.jpg" alt="" width="70">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href='#'>Women's lowers</a></h4>
+                        <span class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-empty"></i>
+                        </span>
+                        <span class="price">
+                            <del>$99.00</del>
+                            $49.00
+                        </span>
+
+                    </div>
+                </div><!--media-->
+            </div><!--sidebar-widget end-->
+            <div class="sidebar-widget clearfix">
+                <h3>Color</h3>
+                <a class="color-box gray" href='#'></a>
+                <a class="color-box black" href='#'></a>
+                <a class="color-box blue" href='#'></a>
+                <a class="color-box red" href='#'></a>
+                <a class="color-box yellow" href='#'></a>
+            </div>
+        </div><!--sidebar col-->
+        <div class="col-md-8">
+            <ul class="product-filter-block list-inline clearfix">
+                <li>Sort by:</li>
+                <li class="active"><a href="#">Top Rated</a></li>
+                <li><a href="#">Featured items</a></li>
+                <li><a href="#">new arrivals</a></li>
+            </ul><!--fliter list end-->
+            
+            <div class="row">
+                @foreach(var product in @ViewBag.products){
+                <div class="col-sm-4">
+                    <div class="item_holder">
+                        <a href="/products/@product.id"><img src="@product.img_url" alt="" class="img-responsive"></a>
+                        <div class="title">
+                            <h5>@product.name</h5>
+                            <span class="price">$@product.Prices.new_price</span>
+                            <p>
+                                @product.description
+                            </p>
+                        </div>
+                    </div><!--item holder-->
+                </div>;<!--col end-->
+                }
+            </div><!--row-->
+            <!--pagination-->
+            <nav>
+                <ul class="pagination pull-right clearfix">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!--pagination end-->
+        </div>
+    </div>
+</div>

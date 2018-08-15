@@ -1,0 +1,92 @@
+@using Microsoft.AspNetCore.Http
+@model Categories
+
+@foreach(var cat in @ViewBag.category){
+
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>@cat.name Category</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="space-60"></div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-8">
+            @foreach(var x in @ViewBag.products){
+                @foreach(var p in x.product_category){
+            <div class="product-list">
+                <div class="row">
+                    <div class="col-md-4 margin-b-30">
+                        <div class="product-list-thumb">
+                            <a href="/products/@p.Product.id"> <img src="@p.Product.img_url" alt="Product image" class="img-responsive"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="product-list-desc">
+                            <h3 class="title"><a href="/products/@p.Product.id">@p.Product.name</a></h3>
+                            <span class="price">$199.00</span>
+                            <span class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-full"></i>
+                                <a href="#">8 Reviews</a>
+                            </span>
+                            <p>@p.Product.description</p>
+                            <a href="/product/@p.ProductsId/remove/@p.id" class="btn btn-danger">Remove Product from Category</a>
+                        </div>
+                    </div>
+                </div>
+            </div>;<!--products list-->
+            };
+            }
+            <!--pagination-->
+            <nav>
+                <ul class="pagination pull-right clearfix">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!--pagination end-->
+        </div>
+        <div class="col-md-4">
+            <div class="sidebar-widget">
+                <h3>Add Product to Category</h3>
+                <form action="/products/addCategory/@cat.id" method="post" class="form-inline">
+                    <div class="form-group">
+                        <label class="select">
+                            <select name="product_id">
+                                <option value="0" selected="" disabled="">Product</option>
+                                @foreach(var x in @ViewBag.all_products){
+                                    <option value="@x.id">@x.name</option>;
+                                }   
+                            </select>
+                            <i></i>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit"><i class="fa fa-plus"></i></button>
+                    </div>
+                </form>
+            </div><!--sidebar-widget end-->
+        </div><!--sidebar col-->
+
+    </div>
+</div>;
+}

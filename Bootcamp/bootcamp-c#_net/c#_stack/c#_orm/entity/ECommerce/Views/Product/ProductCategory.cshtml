@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Http
+
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>Products and Categories</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="space-60"></div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-6">
+            @Html.Partial("Forms/Product")
+        </div>
+        <div class="col-md-6">
+            @Html.Partial("Forms/Category")
+        </div>
+    </div>
+</div>
