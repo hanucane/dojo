@@ -90,14 +90,6 @@
                     </div>
                 </div><!--media-->
             </div><!--sidebar-widget end-->
-            <div class="sidebar-widget clearfix">
-                <h3>Color</h3>
-                <a class="color-box gray" href='#'></a>
-                <a class="color-box black" href='#'></a>
-                <a class="color-box blue" href='#'></a>
-                <a class="color-box red" href='#'></a>
-                <a class="color-box yellow" href='#'></a>
-            </div>
         </div><!--sidebar col-->
         <div class="col-md-8">
             <ul class="product-filter-block list-inline clearfix">
@@ -111,13 +103,16 @@
                 @foreach(var product in @ViewBag.products){
                 <div class="col-sm-4">
                     <div class="item_holder">
-                        <a href="/products/@product.id"><img src="@product.product_img[0].img_url" alt="" class="img-responsive"></a>
+
+                            <a href="/products/@product.id"><img src="@product.product_img[0].img_url" alt="" class="img-responsive"></a>
+                        
                         <div class="title">
                             <h5>@product.name</h5>
                             <span class="price">$@product.Prices.new_price</span>
                             <p>
                                 @product.description
                             </p>
+                            <a href="/addCart/@product.id" data-toggle="tooltip" data-placement="top" title="" class="btn btn-skin" data-original-title="Add to cart">Add to cart</a>
                         </div>
                     </div><!--item holder-->
                 </div>;<!--col end-->

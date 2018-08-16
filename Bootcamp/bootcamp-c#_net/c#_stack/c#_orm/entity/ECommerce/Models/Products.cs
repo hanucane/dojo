@@ -20,11 +20,13 @@ namespace ECommerce.Models
         public Prices Prices { get; set; }
         public int InventoryId { get; set; }
         public Inventory Inventory { get; set; }
+        public List<Order_Products> Order_Products { get; set; }
 
         public Products()
         {
             product_category = new List<Product_Category>();
             product_img = new List<ProductImgs>();
+            Order_Products = new List<Order_Products>();
         }
 
     }

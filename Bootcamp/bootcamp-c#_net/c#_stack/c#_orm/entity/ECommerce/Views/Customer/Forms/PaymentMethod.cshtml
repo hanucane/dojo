@@ -1,0 +1,74 @@
+@using Microsoft.AspNetCore.Http
+@model PaymentMethods
+
+<h3>Payment Information</h3>
+<input type="hidden" asp-for="UsersId" value='@Context.Session.GetInt32("user")'>			
+
+<div class="form-group row">
+    <div class="col col-md-12">
+        <label asp-for="nickname">Card Nickname: </label>
+        <input type="text" class="form-control" asp-for="nickname" placeholder="Optional">
+        <span asp-validation-for="nickname"></span>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col col-md-2 col-md-offset-1">
+        <label class="radio"><input type="radio" asp-for="card_type" value="Visa" checked><i></i>Visa</label>
+    </div>
+    <div class="col col-md-3">
+        <label class="radio"><input type="radio" asp-for="card_type" value="MasterCard"><i></i>MasterCard</label>
+    </div>
+    <div class="col col-md-4">
+        <label class="radio"><input type="radio" asp-for="card_type" value="American Express"><i></i>American Express</label>
+    </div>
+    <div class="col col-md-2">
+        <label class="radio"><input type="radio" asp-for="card_type" value="Discover"><i></i>Discover</label>
+    </div>
+</div>	
+
+<div class="form-group row">
+    <div class="col col-md-12">
+        <label asp-for="card_name">Name on Card</label>
+        <input type="text" asp-for="card_name" class="form-control" placeholder="Name on card">
+        <span asp-validation-for="card_name"></span>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col col-md-9">
+        <label asp-for="card_num">Card Number</label>
+        <input type="text" asp-for="card_num" id="card" class="form-control" placeholder="Card number">
+        <span asp-validation-for="card_num"></span>
+    </div>
+    <div class="col col-md-3">
+        <label asp-for="card_ccv">Security Code</label>
+        <input type="text" asp-for="card_ccv" class="form-control" placeholder="CVV2">
+        <span asp-validation-for="card_ccv"></span>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col col-md-3">Expiration date</label>
+    <div class="col col-md-6">
+        <select name="month" class="form-control">
+            <option value="0" selected disabled>Month</option>
+            <option value="1">January</option>
+            <option value="1">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        <i></i>
+    </div>
+    <div class="col col-md-3">
+        <input type="text" name="year" class="form-control" placeholder="Year">
+    </div>
+</div>

@@ -1,0 +1,70 @@
+@using Microsoft.AspNetCore.Http
+@model Orders
+
+<!--breadcrumb start-->
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>Order History</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="space-60"></div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-8">
+            <form class="search-form">
+                <input type="text" class="form-control" placeholder="Search Order">
+                <i class="fa fa-search"></i>
+            </form>
+        </div>
+    </div>
+    <div class="table-responsive table-order-history">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Product Name</th>
+                    <th>Order No.</th>
+                    <th>Status</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var order in ViewBag.orders)
+                {
+                    @foreach(var product in order.Order_Products){
+                        <tr>
+                            <td valign="middle"><img src="@product.Product.product_img[0].img_url" alt="" width="50"></td>
+                            <td valign="middle"><a href="/products/@product.Product.id">@product.Product.name</a></td>
+                            <td valign="middle">@order.id</td>
+                            <td><span class="label-success"><i class="fa fa-check"></i></span> @order.order_status</td>
+                            <td>$@product.Product.Prices.new_price</td>
+                            <td class="total-order">$@product.cost</td>
+                        </tr>;
+                    };
+                }
+            </tbody>
+        </table>
+    </div>
+    <nav>
+        <ul class="pagination pull-right clearfix">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

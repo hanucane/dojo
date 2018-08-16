@@ -1,0 +1,93 @@
+@using Microsoft.AspNetCore.Http
+@model Cart
+
+<!--breadcrumb start-->
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>Shopping Cart</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="space-60"></div>
+<div class="container body-content">
+    <div class="table-responsive">
+        <table class="table table-condensed cart-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in ViewBag.cart){
+                        <tr>
+                            <td class="product-image">
+                                <img src="@item.Product.product_img[0].img_url" alt="" width="80">
+                            </td>
+                            <td class='product-name'><a href='/products/@item.Product.id'>@item.Product.name</a></td>
+                            <td class="product-price">$@item.Product.Prices.new_price</td>
+                            <td class="product-quantity">
+                                <input type="number" value="@item.quantity" min="1" class="fl qty-text" name="quantity">
+                            </td>
+                            <td class="product-total">
+                                $@item.cost
+                            </td>
+                            <td class='product-delete'><a href='/removeCart/@item.id' data-toggle='tooltip' data-placement='top' title='Remove this item'><i class="fa fa-times"></i></a></td>
+                        </tr>;
+                }
+            </tbody>
+        </table><!--cart table-->             
+    </div>
+    <div class="space-20"></div>
+    <div class="coupon-row">
+        <div class="row">
+            <div class="col-sm-4">
+                <form class="coupon-form">
+                    <input type="text" class="form-control" placeholder="Coupon code">
+                    <button type="button">Apply</button>
+                </form>
+            </div>   
+            <div class="col-sm-3 col-sm-offset-5 text-right">
+                <a href="#" class="btn btn-light-dark">Update Cart</a>
+            </div>
+        </div>
+    </div><!--cart row-->
+    <div class="space-30"></div>
+    <div class="cart-total">
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-7">
+                <h2>Cart total</h2>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td>$@ViewBag.cost</td>
+                        </tr>
+                            <tr>
+                            <td>Shipping</td>
+                            <td>Free Shipping <a href="#" class="shipping-calculate">Calculate Shipping</a></td>
+                        </tr>
+                            <tr>
+                            <td>Total</td>
+                            <td class="total">$@ViewBag.cost</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"> <a href="/checkout" class="btn btn-lg btn-skin">Proceed to checkout</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

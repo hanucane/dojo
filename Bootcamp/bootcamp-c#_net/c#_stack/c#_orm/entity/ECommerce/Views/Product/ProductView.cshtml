@@ -27,7 +27,7 @@
                 <div class="col-md-7">
                     <div class="product-detail-desc">
                         <h3 class="title"><a href="#">@product.name</a></h3>
-                        @Html.Partial("Forms/PricePartial", new ViewDataDictionary(ViewData) {{"id",@product.id}} )     
+                        @if(@product.Prices == null){@Html.Partial("Forms/PricePartial", new ViewDataDictionary(ViewData) {{"id",@product.id}} );}     
                         @if(@product.Prices != null){<span class="price"><del>$@product.Prices.new_price</del> $@product.Prices.used</span>;}
                         <span class="rating">
                             <i class="fa fa-star"></i>

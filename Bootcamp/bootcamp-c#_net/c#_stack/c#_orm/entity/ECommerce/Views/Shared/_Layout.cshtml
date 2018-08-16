@@ -33,6 +33,23 @@
     </environment>
 </head>
 <body>
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs">
+                    <span>This is a demo e-commerce store.</span>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ul class="list-inline">                          
+                        <li class="hidden-xs"><a href="/registration"><i class="pe-7s-user"></i> Register</a></li>
+                        <li><a href="/login"><i class="pe-7s-lock"></i> Login</a></li>
+                        <li><a href="javascript:void(0)" class="search-toggle"><i class="fa fa-search"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--top bar end-->
     <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top yamm sticky">
         <div class="container">
@@ -47,7 +64,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <!--mega menu-->
                     <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown">Pages  <i class="fa fa-angle-down"></i></a>
@@ -78,7 +95,8 @@
                                         <div class="col-sm-3">
                                             <h3 class="heading">Cart Pages</h3>
                                             <ul class="nav mega-vertical-nav">
-                                                <li><a href="/viewCart"><i class="fa fa-shopping-cart"></i> Cart</a></li>                                                   
+                                                <li><a href="/products/overview"><i class="fa fa-bars"></i> Customer Product Grid</a></li>
+                                                <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>                                                   
                                                 <li><a href="/checkout"><i class="fa fa-truck"></i> Checkout</a></li>   
                                                 <li><a href="/orders"><i class="fa fa-sliders"></i> Order history </a></li>
                                                 <li><a href="compare.html"><i class="fa fa-random"></i> Compare </a></li>
@@ -98,7 +116,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true"><i class="pe-7s-cart"></i> <span class="badge">5</span></a>
+                        <a href="/cart" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true"><i class="pe-7s-cart"></i> <span class="badge">5</span></a>
                         <div class="dropdown-menu shopping-cart">
 
                             <div class="cart-items content-scroll">
@@ -160,8 +178,8 @@
                             </div><!--cart-items-->
 
                             <div class="cart-footer">
-                                <a href="#" class="btn btn-light-dark"> View Cart</a>
-                                <a href="#" class="btn btn-skin"> Checkout</a>
+                                <a href="/cart" class="btn btn-light-dark"> View Cart</a>
+                                <a href="/checkout" class="btn btn-skin"> Checkout</a>
                             </div><!--footer of cart-->
 
 
@@ -195,7 +213,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4 margin-b-30">
-                        <h3>Product Tags </h3>
+                        <h3>Product Categories </h3>
                         <div class="tags clearfix">
                             <a href="#">Fashion</a>
                             <a href="#">Shoes</a>
@@ -219,7 +237,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">Phone Number</h4>
+                                <h4 class="media-heading">+1 (862) 219 0367</h4>
                             </div>
                         </div>
                         <div class="media">
@@ -227,7 +245,7 @@
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">Email Address</h4>
+                                <h4 class="media-heading">soto.ericf@gmail.com</h4>
                             </div>
                         </div>
                         <div class="media">
@@ -235,7 +253,7 @@
                                 <i class="fa fa-home"></i>
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">Address</h4>
+                                <h4 class="media-heading">13725 32nd Ave NE <br>Seattle, WA 98125</h4>
                             </div>
                         </div>
                     </div>
