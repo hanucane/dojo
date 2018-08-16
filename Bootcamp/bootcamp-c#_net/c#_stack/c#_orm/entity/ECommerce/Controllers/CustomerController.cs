@@ -209,5 +209,14 @@ namespace ECommerce.Controllers
                 .ToList();
             return View("OrderHistory");
         }
+
+        [HttpGet("profile")]
+        public IActionResult Profile()
+        {
+            int currentUser = (int)HttpContext.Session.GetInt32("user");
+            int id = _context.Users.FirstOrDefault(x => x.id == currentUser).id;
+            ViewBag.user = _context.Users.FirstOrDefault(x => x.id == id);
+            return View("Profile");
+        }
     }
 }

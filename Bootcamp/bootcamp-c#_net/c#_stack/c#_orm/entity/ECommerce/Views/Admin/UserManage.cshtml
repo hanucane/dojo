@@ -16,7 +16,7 @@
             <h2>Manage Users</h2>
         </div>
         <div class="col col-md-4" style="text-align: right; padding-right:5%;">
-            <a class="btn btn-success btn-lg" href="/admin/useradd">Create New User</a>
+            <a class="btn btn-success btn-lg" href="/admin/usercreate">Create New User</a>
         </div>
     </div>
     <div class="space-20"></div>
@@ -41,7 +41,7 @@
                     <td>@if(user.user_level == 9){<p>Admin</p>;}
                         @if(user.user_level == 1){<p>User</p>;}
                     </td>
-                    <td><a class="btn btn-warning" href="/admin/edit/@user.id">Edit</a> <a class="btn btn-danger" href="/admin/userdelete/@user.id">Delete</a></td>
+                    <td><a class="btn btn-warning" href="/admin/useredit/@user.id">Edit</a> <a class="btn btn-danger" href="/admin/userdelete/@user.id">Delete</a></td>
                 </tr>
             }
         </tbody>

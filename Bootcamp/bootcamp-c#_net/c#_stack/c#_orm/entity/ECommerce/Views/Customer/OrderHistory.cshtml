@@ -39,7 +39,21 @@
                             <td valign="middle"><img src="@product.Product.product_img[0].img_url" alt="" width="50"></td>
                             <td valign="middle"><a href="/products/@product.Product.id">@product.Product.name</a></td>
                             <td valign="middle">@order.id</td>
-                            <td><span class="label-success"><i class="fa fa-check"></i></span> @order.order_status</td>
+                            <td>@if(@order.order_status == "Processing"){
+                                    <span class="label-warning"><i class="fa fa-refresh"></i></span>;
+                                }
+                                @if(@order.order_status == "Ready to Ship"){
+                                    <span class="label-warning"><i class="fa fa-reply"></i></span>;
+                                }
+                                @if(@order.order_status == "Shipped"){
+                                    <span class="label-success"><i class="fa fa-paper-plane"></i></span>;
+                                }
+                                @if(@order.order_status == "Completed"){
+                                    <span class="label-success"><i class="fa fa-check"></i></span>;
+                                }
+                                @if(@order.order_status == "Cancel"){
+                                    <span class="label-danger"><i class="fa fa-times"></i></span>;
+                                } @order.order_status</td>
                             <td>$@product.Product.Prices.new_price</td>
                             <td class="total-order">$@product.cost</td>
                         </tr>;

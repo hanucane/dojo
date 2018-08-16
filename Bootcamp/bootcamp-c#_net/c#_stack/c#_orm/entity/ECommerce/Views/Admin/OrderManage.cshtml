@@ -1,0 +1,112 @@
+@using Microsoft.AspNetCore.Http
+@model Orders
+
+<!--breadcrumb start-->
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>Order History</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="space-60"></div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-8">
+            <form class="search-form">
+                <input type="text" class="form-control" placeholder="Search Order">
+                <i class="fa fa-search"></i>
+            </form>
+        </div>
+    </div>
+    <div class="table-responsive table-order-history">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Product Name</th>
+                    <th>Order Id</th>
+                    <th>Customer Name</th>
+                    <th>Billing Address</th>
+                    <th>Status</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var order in ViewBag.orders)
+                {
+                    @foreach(var product in order.Order_Products){
+                        <tr>
+                            <td valign="middle"><img src="@product.Product.product_img[0].img_url" alt="" width="50"></td>
+                            <td valign="middle"><a href="/products/@product.Product.id">@product.Product.name</a></td>
+                            <td valign="middle">@order.id</td>
+                            <td valign="middle"><a href="/admin/useredit/@order.User.id">@order.User.first_name @order.User.last_name</a></td>
+                            <td valign="middle">@order.BillingAddress.address1, @order.BillingAddress.city, @order.BillingAddress.state @order.BillingAddress.zip_code</td>
+                            <td>
+                                
+                                <form action="/updateorderstatus" method="post">
+                                    <input type="hidden" name="order" value="@order.id">
+                                    <div class="form-group row">
+                                        <div class="col col-sm-8">
+                                            @if(@order.order_status == "Processing"){
+                                                <span class="label-warning"><i class="fa fa-refresh"></i></span>;
+                                            }
+                                            @if(@order.order_status == "Ready to Ship"){
+                                                <span class="label-warning"><i class="fa fa-reply"></i></span>;
+                                            }
+                                            @if(@order.order_status == "Shipped"){
+                                                <span class="label-success"><i class="fa fa-paper-plane"></i></span>;
+                                            }
+                                            @if(@order.order_status == "Completed"){
+                                                <span class="label-success"><i class="fa fa-check"></i></span>;
+                                            }
+                                            @if(@order.order_status == "Cancel"){
+                                                <span class="label-danger"><i class="fa fa-times"></i></span>;
+                                            }
+                                            <label class="select">
+                                                <select class="form-control" name="order_status">
+                                                    <option value="@order.order_status" selected="" disabled="">@order.order_status</option> 
+                                                    <option value="Processing">Processing</option>
+                                                    <option value="Ready to Ship">Ready to Ship</option>
+                                                    <option value="Shipped">Shipped</option>
+                                                    <option value="Completed">Completed</option>
+                                                    <option value="Cancel">Cancel</option>
+                                                </select>
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div class="col col-sm-2">
+                                            <button type="submit" class="btn btn-success">Update</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                            <td>$@product.Product.Prices.new_price</td>
+                            <td class="total-order">$@product.cost</td>
+                        </tr>;
+                    };
+                }
+            </tbody>
+        </table>
+    </div>
+    <nav>
+        <ul class="pagination pull-right clearfix">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

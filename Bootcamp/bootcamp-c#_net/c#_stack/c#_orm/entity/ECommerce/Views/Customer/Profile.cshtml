@@ -1,0 +1,78 @@
+@using Microsoft.AspNetCore.Http
+@model Users
+
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>Profile</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="space-40"></div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col col-md-8">
+            <h2>Edit User</h2>
+        </div>
+        <div class="col col-md-4" style="text-align: right; padding-right:5%;">
+            <a class="btn btn-primary btn-lg" href="/orders">View Orders</a>
+        </div>
+    </div>
+    <div class="space-20"></div>
+
+    <div class="row">
+        <div class="col col-md-6">
+            <div class="sky-form-login">
+                <h2>Update Profile Information</h2>
+                <form action="/admin/useredit/@ViewBag.user.id" method="post" class="sky-form">
+                    <div class="form-group row">
+                        <label asp-for="first_name">First Name: </label>
+                        <input type="text" class="form-control" asp-for="first_name" value="@ViewBag.user.first_name">
+                        <span asp-validation-for="first_name"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="last_name">Last Name: </label>
+                        <input type="text" class="form-control" asp-for="last_name" value="@ViewBag.user.last_name">
+                        <span asp-validation-for="last_name"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="email">E-mail: </label>
+                        <input type="email" class="form-control" asp-for="email" value="@ViewBag.user.email">
+                        <span asp-validation-for="email"></span>
+                    </div>
+                    @if(@ViewBag.EditUser != null)
+                    {
+                        <div class="alert alert-danger" role="alert">@ViewBag.EditUser</div>
+                    }
+                    @if(@ViewBag.EditSuccess != null)
+                    {
+                        <div class="alert alert-success" role="alert">@ViewBag.EditSuccess</div>
+                    }
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col col-md-5 col-md-1-offset">
+            <div class="sky-form-login">
+                <h2>Update Password</h2>
+                <form action="/admin/userpasswordedit/@ViewBag.user.id" method="post" class="sky-form">
+                    <div class="form-group row">
+                        <label asp-for="password">Password: </label>
+                        <input type="password" class="form-control" asp-for="password" placeholder="Enter new password">
+                        <span asp-validation-for="password"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password">Confirm Password: </label>
+                        <input type="password" class="form-control" name="password" placeholder="Confirm new password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Change Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="space-40"></div>

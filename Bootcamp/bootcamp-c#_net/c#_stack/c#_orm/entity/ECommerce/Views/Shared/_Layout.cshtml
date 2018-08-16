@@ -45,7 +45,6 @@
                     else{
                         <span>Enjoy the Dojo Store, @Context.Session.GetString("user_name")!</span>;
                     }
-                    
                 </div>
                 <div class="col-sm-6 text-right">
                     <ul class="list-inline">
@@ -54,7 +53,7 @@
                         <li><a href="/login"><i class="pe-7s-lock"></i> Login</a></li>;
                         }                          
                         else{
-                        <li><a href="/orders"><i class="pe-7s-user"></i></a></li>;
+                        <li><a href="/profile"><i class="pe-7s-user"></i> Profile</a></li>;
                         <li><a href="/logout"><i class="pe-7s-lock"></i> Log Out</a></li>;
                         }
                         <li><a href="javascript:void(0)" class="search-toggle"><i class="fa fa-search"></i></a></li>
@@ -101,7 +100,7 @@
                                             <ul class="nav mega-vertical-nav">
                                                 <li><a href="/admin/usermanage"><i class="fa fa-user"></i> Manage Users</a></li>
                                                 <li><a href="#"><i class="fa fa-list"></i> Inventory list</a></li>
-                                                <li><a href="#"><i class="fa fa-list"></i> Order Status list</a></li>
+                                                <li><a href="/ordermanage"><i class="fa fa-list"></i> Order Status list</a></li>
                                                 <li><a href="/products/grid"><i class="fa fa-bars"></i> Product Grid</a></li>
                                                 <li><a href="/products/categories"><i class="fa fa-pencil"></i> Product Category Designer</a></li>
                                             </ul>
