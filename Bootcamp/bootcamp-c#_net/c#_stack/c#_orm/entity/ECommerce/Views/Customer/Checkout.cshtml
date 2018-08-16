@@ -11,40 +11,40 @@
 <div class="container body-content">
     <div class="sky-checkout-form">
         <form action="/submitOrder" method="post" id="checkout-form" class="sky-form">
-                <div class="form-group row">
-                    <div class="col col-md-6">
-                        @Html.Partial("Forms/BillingAddress")
-                        <div class="space-20"></div>
-                        @Html.Partial("Forms/PaymentMethod")
-                    </div>
-                    <div class="col col-md-5 col-md-offset-1">
-                        @Html.Partial("Forms/ShippingAddress")
-                    </div>
-                </div>
-            <div class="space-20"></div>
-            <div class="cart-total">                
-                <h2>Cart total</h2>
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <td>Subtotal</td>
-                            <td class="color">$@ViewBag.cost</td>
-                        </tr>
-                        <tr>
-                            <td>Shipping</td>
-                            <td class="color">Free Shipping</td>
-                        </tr>
-                        <tr>
-                            <td>Total</td>
-                            <td class="total color">$@ViewBag.cost</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col col-md-6">
+                @Html.Partial("Forms/BillingAddress")
+                <div class="space-20"></div>
+                @Html.Partial("Forms/PaymentMethod")
             </div>
-            <div class="space-20"></div>
-            <footer class="text-right">
-                <button type="submit" class="btn btn-light-dark btn-lg">Place order</button>
-            </footer>
+            <div class="col col-md-5 col-md-offset-1">
+                @Html.Partial("Forms/ShippingAddress")
+                <div class="space-20"></div>
+                <div class="cart-total">                
+                    <h1 style="text-align:center;">Cart Total</h1>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>Subtotal</td>
+                                <td class="color">$@ViewBag.cost</td>
+                            </tr>
+                            <tr>
+                                <td>Shipping</td>
+                                <td class="color">Free Shipping</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td class="total color">$@ViewBag.cost</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <footer class="text-right">
+                    <button type="submit" class="btn btn-light-dark btn-lg">Place order</button>
+                </footer>
+            </div>
         </form>
     </div>
+    <div class="space-30"></div>
+
 </div>
+            

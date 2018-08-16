@@ -62,12 +62,20 @@ namespace ECommerce.Controllers
                 {
                     HttpContext.Session.SetInt32("user", user.id);
                     HttpContext.Session.SetInt32("user_level", user.user_level);
+                    HttpContext.Session.SetString("user_name", user.first_name+" "+user.last_name);
                     ViewBag.login="You successfully logged in.";
                     return Redirect("/");
                 }
             }
             ViewBag.login="Please try logging in again.";
             return View("Forms/Login");
+        }
+
+        [HttpGet("/logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return Redirect("/");
         }
         
         [HttpGet("products/overview")]
@@ -151,6 +159,7 @@ namespace ECommerce.Controllers
                     BillingAddressesId = newBilling.id,
                     card_type = newPayment.card_type,
                     card_name = newPayment.card_name,
+                    card_num = newPayment.card_num,
                     card_ccv = newPayment.card_ccv,
                     card_exp = expiration,
                     nickname = newPayment.nickname,

@@ -16,7 +16,7 @@ namespace ECommerce.Models
         public BillingAddresses BillingAddress { get; set; }
         public string card_type { get; set; }
         [Required]
-        public string card_num { get; set; }
+        public int card_num { get; set; }
         public string card_exp { get; set; }
         [Required]
         public string card_name { get; set; }

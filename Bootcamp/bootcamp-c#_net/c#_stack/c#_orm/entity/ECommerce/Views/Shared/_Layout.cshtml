@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -37,12 +39,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 hidden-xs">
-                    <span>This is a demo e-commerce store.</span>
+                    @if(Context.Session.GetString("user_name") == null){
+                        <span>This is a demo e-commerce store.</span>;
+                    }
+                    else{
+                        <span>Enjoy the Dojo Store, @Context.Session.GetString("user_name")!</span>;
+                    }
+                    
                 </div>
                 <div class="col-sm-6 text-right">
-                    <ul class="list-inline">                          
+                    <ul class="list-inline">
+                        @if(Context.Session.GetInt32("user") == null){
                         <li class="hidden-xs"><a href="/registration"><i class="pe-7s-user"></i> Register</a></li>
-                        <li><a href="/login"><i class="pe-7s-lock"></i> Login</a></li>
+                        <li><a href="/login"><i class="pe-7s-lock"></i> Login</a></li>;
+                        }                          
+                        else{
+                        <li><a href="/orders"><i class="pe-7s-user"></i></a></li>;
+                        <li><a href="/logout"><i class="pe-7s-lock"></i> Log Out</a></li>;
+                        }
                         <li><a href="javascript:void(0)" class="search-toggle"><i class="fa fa-search"></i></a></li>
                     </ul>
                 </div>
@@ -73,38 +87,38 @@
                                 <div class="yamm-content">
                                     <div class="row">
 
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-2">
                                             <h3 class="heading">Base pages</h3>
                                             <ul class="nav mega-vertical-nav">        
-                                                <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
                                                 <li><a href="/registration"><i class="fa fa-user"></i> Register</a></li>
+                                                <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
                                                 <li><a href="/contact"><i class="fa fa-map-marker"></i> Contact </a></li>
-                                                <li><a href="404.html"><i class="fa fa-trash-o"></i> 404 </a></li>
                                             </ul>
 
                                         </div>
                                         <div class="col-sm-3">
-                                            <h3 class="heading">Product Pages </h3>
+                                            <h3 class="heading">Admin Pages </h3>
                                             <ul class="nav mega-vertical-nav">
-                                                <li><a href="product-list.html"><i class="fa fa-list"></i> Inventory list</a></li>
-                                                <li><a href="product-list.html"><i class="fa fa-list"></i> Order Status list</a></li>
+                                                <li><a href="/admin/usermanage"><i class="fa fa-user"></i> Manage Users</a></li>
+                                                <li><a href="#"><i class="fa fa-list"></i> Inventory list</a></li>
+                                                <li><a href="#"><i class="fa fa-list"></i> Order Status list</a></li>
                                                 <li><a href="/products/grid"><i class="fa fa-bars"></i> Product Grid</a></li>
-                                                <li><a href="/products/categories"><i class="fa fa-angle-right"></i> Product Category Designer </a></li>
+                                                <li><a href="/products/categories"><i class="fa fa-pencil"></i> Product Category Designer</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
-                                            <h3 class="heading">Cart Pages</h3>
+                                            <h3 class="heading">Customer Pages</h3>
                                             <ul class="nav mega-vertical-nav">
                                                 <li><a href="/products/overview"><i class="fa fa-bars"></i> Customer Product Grid</a></li>
                                                 <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>                                                   
                                                 <li><a href="/checkout"><i class="fa fa-truck"></i> Checkout</a></li>   
-                                                <li><a href="/orders"><i class="fa fa-sliders"></i> Order history </a></li>
-                                                <li><a href="compare.html"><i class="fa fa-random"></i> Compare </a></li>
-                                                <li><a href="wishlist.html"><i class="fa fa-heart"></i> Wishlist </a></li>
+                                                <li><a href="/orders"><i class="fa fa-sliders"></i> Order history</a></li>
+                                                <li><a href="/comingsoon"><i class="fa fa-random"></i> Compare</a></li>
+                                                <li><a href="/comingsoon"><i class="fa fa-heart"></i> Wishlist</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-sm-3">
-                                            <img src="images/women/10.jpg" class="img-responsive" alt="">
+                                        <div class="col-sm-4">
+                                            <img src="images/bootstrap-stack.png" class="img-responsive" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -192,7 +206,6 @@
     </nav>
 
         @RenderBody()
-        <div class="space-60"></div>
 
         <!--footer start-->
         <footer class="footer">
@@ -201,14 +214,14 @@
                     <div class="col-md-4 margin-b-30">
                         <h3>About Dojo Store</h3>
                         <p>
-                            This is an web store built out in C# asp.NET. None of the items are for sale. This website is a portfolio piece.
+                            This is an web store built out with C# / asp.NET and Entity Framework. None of the items are for sale. This website is a portfolio piece.
                         </p>
                         <ul class="list-inline social-footer">
-                            <li><a href="#" data-toggle="tooltip" data-placement="top" data-title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" data-toggle="tooltip" data-placement="top" data-title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" data-toggle="tooltip" data-placement="top" data-title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.facebook.com/eric.soto.10048" target="_blank" data-toggle="tooltip" data-placement="top" data-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/HurricaneSoto?lang=enlinked" target="_blank" data-toggle="tooltip" data-placement="top" data-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/eric-soto/" target="_blank" data-toggle="tooltip" data-placement="top" data-title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="#" data-toggle="tooltip" data-placement="top" data-title="Google plus"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#" data-toggle="tooltip" data-placement="top" data-title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCyVOHb019yRbXxVEY5_3VvA?view_as=subscriber" target="_blank" data-toggle="tooltip" data-placement="top" data-title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
                             <li><a href="#" data-toggle="tooltip" data-placement="top" data-title="Rss feeds"><i class="fa fa-rss"></i></a></li>
                         </ul>
                     </div>
@@ -231,7 +244,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 margin-b-30">
-                        <h3>Help Center</h3>
+                        <h3>Contact Information</h3>
                         <div class="media">
                             <div class="media-left">
                                 <i class="fa fa-phone"></i>

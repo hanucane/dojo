@@ -49,6 +49,9 @@ namespace ECommerce
                     name: "customer", 
                     template: "{controller=Customer}/{action=Index}/{id?}");
                 routes.MapRoute(
+                    name: "admin", 
+                    template: "{controller=Admin}/{action=Index}/{id?}");
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Product}/{action=Index}/{id?}");
             });

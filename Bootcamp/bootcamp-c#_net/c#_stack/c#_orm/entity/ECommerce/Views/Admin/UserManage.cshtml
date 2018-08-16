@@ -1,0 +1,51 @@
+@using Microsoft.AspNetCore.Http
+@model Users
+
+<!--breadcrumb start-->
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>User Management</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="space-40"></div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col col-md-8">
+            <h2>Manage Users</h2>
+        </div>
+        <div class="col col-md-4" style="text-align: right; padding-right:5%;">
+            <a class="btn btn-success btn-lg" href="/admin/useradd">Create New User</a>
+        </div>
+    </div>
+    <div class="space-20"></div>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th class="col col-sm-1">ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>User Level</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var user in ViewBag.users){
+                <tr>
+                    <td>@user.id</td>
+                    <td>@user.first_name @user.last_name</td>
+                    <td>@user.email</td>
+                    <td>@user.created_at.ToString("MMMM d, yyyy")</td>
+                    <td>@if(user.user_level == 9){<p>Admin</p>;}
+                        @if(user.user_level == 1){<p>User</p>;}
+                    </td>
+                    <td><a class="btn btn-warning" href="/admin/edit/@user.id">Edit</a> <a class="btn btn-danger" href="/admin/userdelete/@user.id">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+    <div class="space-20"></div>
+</div>
