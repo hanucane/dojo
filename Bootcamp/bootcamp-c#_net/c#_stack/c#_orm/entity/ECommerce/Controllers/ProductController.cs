@@ -153,6 +153,10 @@ namespace ECommerce.Controllers
         {
             ViewBag.products = _context.Products.Include(x => x.Prices).Include(x => x.product_img).ToList();
             ViewBag.categories = _context.Categories.ToList();
+            ViewBag.bestseller = _context.Inventory.OrderByDescending(x => x.quantity_sold)
+                .Include(y => y.Product).ThenInclude(z => z.product_img)
+                .Include(y => y.Product).ThenInclude(z => z.product_category).ThenInclude(xx => xx.Category)
+                .Take(3).ToList();
             return View("ProductGrid");
         }
 
@@ -202,7 +206,9 @@ namespace ECommerce.Controllers
                 _context.Product_Category.Add(newProdCat);
                 _context.SaveChanges();
                 ViewBag.category = _context.Categories.Where(x => x.id == category_id).ToList();
-                ViewBag.products = _context.Categories.Where(x => x.id == category_id).Include(y => y.product_category).ThenInclude(z => z.Product).ThenInclude(a => a.product_img).ToList();
+                ViewBag.products = _context.Categories.Where(x => x.id == category_id)
+                .Include(y => y.product_category).ThenInclude(z => z.Product).ThenInclude(a => a.product_img)
+                .Include(y => y.product_category).ThenInclude(z => z.Product).ThenInclude(a => a.Prices).ToList();
                 ViewBag.all_products = _context.Products.Include(x => x.product_category).ThenInclude(y => y.Category).ToList();
 
                 return View("CategoryView");
@@ -229,7 +235,9 @@ namespace ECommerce.Controllers
         public IActionResult CategoryView(int id)
         {
             ViewBag.category = _context.Categories.Where(x => x.id == id).ToList();
-            ViewBag.products = _context.Categories.Where(x => x.id == id).Include(y => y.product_category).ThenInclude(z => z.Product).ThenInclude(a => a.product_img).ToList();
+            ViewBag.products = _context.Categories.Where(x => x.id == id)
+                .Include(y => y.product_category).ThenInclude(z => z.Product).ThenInclude(a => a.product_img)
+                .Include(y => y.product_category).ThenInclude(z => z.Product).ThenInclude(a => a.Prices).ToList();
             ViewBag.all_products = _context.Products.Include(x => x.product_category).ThenInclude(y => y.Category).ToList();
             
             return View("CategoryView");

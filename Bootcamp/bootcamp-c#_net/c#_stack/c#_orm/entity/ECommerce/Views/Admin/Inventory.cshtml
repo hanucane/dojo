@@ -1,0 +1,72 @@
+@using Microsoft.AspNetCore.Http
+@model Orders
+
+<!--breadcrumb start-->
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>Inventory</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="space-60"></div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-8">
+            <form class="search-form">
+                <input type="text" class="form-control" placeholder="Search Order">
+                <i class="fa fa-search"></i>
+            </form>
+        </div>
+    </div>
+    <div class="table-responsive table-order-history">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>New</th>
+                    <th>Used</th>
+                    <th>Defective</th>
+                    <th>Sold</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var product in ViewBag.products)
+                {
+                    <tr>
+                        <td valign="middle"><img src="@product.product_img[0].img_url" alt="" width="50"></td>
+                        <td valign="middle">@product.id</td>
+                        <td valign="middle"><a href="/products/@product.id">@product.name</a></td>
+                        <td valign="middle">@product.Inventory.quantity_new</td>
+                        <td valign="middle">@product.Inventory.quantity_used</td>
+                        <td valign="middle">@product.Inventory.quantity_defect</td>
+                        <td valign="middle">@product.Inventory.quantity_sold</td>
+                        <td valign="middle"><a href="/products/@product.id">Edit</a> <a href="#">Delete</a></td>
+                    </tr>;
+                }
+            </tbody>
+        </table>
+    </div>
+    <nav>
+        <ul class="pagination pull-right clearfix">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

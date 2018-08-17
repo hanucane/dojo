@@ -23,72 +23,30 @@
             </div><!--sidebar-widget end-->
             <div class="sidebar-widget">
                 <h3>Bestseller </h3>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="images/men/5.jpg" alt="" width="70">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href='#'>men's backpack</a></h4>
-                        <span class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-empty"></i>
-                        </span>
-                        <span class="price">
-                            <del>$99.00</del>
-                            $49.00
-                        </span>
+                @foreach(var best in @ViewBag.bestseller)
+                {
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="@best.Product.product_img[0].img_url" alt="" width="70">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href='/product/@best.Product.id'>@best.Product.name</a></h4>
+                            <span class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-empty"></i>
+                            </span>
+                            <span class="price">
+                                $@best.Product.Prices.new_price
+                            </span>
 
-                    </div>
-                </div><!--media-->
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="images/men/6.jpg" alt="" width="70">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href='#'>men's T-shirts</a></h4>
-                        <span class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-empty"></i>
-                        </span>
-                        <span class="price">
-                            <del>$99.00</del>
-                            $49.00
-                        </span>
-
-                    </div>
-                </div><!--media-->
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="images/women/5.jpg" alt="" width="70">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href='#'>Women's lowers</a></h4>
-                        <span class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-empty"></i>
-                        </span>
-                        <span class="price">
-                            <del>$99.00</del>
-                            $49.00
-                        </span>
-
-                    </div>
-                </div><!--media-->
+                        </div>
+                    </div>;<!--media-->
+                }
             </div><!--sidebar-widget end-->
         </div><!--sidebar col-->
         <div class="col-md-8">
@@ -96,7 +54,7 @@
                 <li>Sort by:</li>
                 <li class="active"><a href="#">Top Rated</a></li>
                 <li><a href="#">Featured items</a></li>
-                <li><a href="#">new arrivals</a></li>
+                <li><a href="#">New arrivals</a></li>
             </ul><!--fliter list end-->
             
             <div class="row">
@@ -104,13 +62,14 @@
                 <div class="col-sm-4">
                     <div class="item_holder">
 
-                            <a href="/products/@product.id"><img src="@product.product_img[0].img_url" alt="" class="img-responsive"></a>
+                            <a href="/product/@product.id"><img src="@product.product_img[0].img_url" alt="" class="img-responsive"></a>
                         
                         <div class="title">
                             <h5>@product.name</h5>
                             <span class="price">$@product.Prices.new_price</span>
                             <p>
-                                @product.description
+                                @product.description<br>
+                                @product.Inventory.quantity_new left
                             </p>
                             <a href="/addCart/@product.id" data-toggle="tooltip" data-placement="top" title="" class="btn btn-skin" data-original-title="Add to cart">Add to cart</a>
                         </div>

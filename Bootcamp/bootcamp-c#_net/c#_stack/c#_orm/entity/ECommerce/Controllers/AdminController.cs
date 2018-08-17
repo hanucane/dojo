@@ -124,5 +124,18 @@ namespace ECommerce.Controllers
             _context.SaveChanges();
             return RedirectToAction("OrderView");
         }
+
+        [HttpGet("inventory")]
+        public IActionResult Inventory()
+        {
+            ViewBag.products = _context.Products
+                .Include(y => y.Order_Products).ThenInclude(z => z.Order)
+                .Include(y => y.Prices)
+                .Include(y => y.product_img)
+                .Include(y => y.product_category)
+                .Include(y => y.Inventory)
+                .ToList();
+            return View("Inventory");
+        }
     }
 }

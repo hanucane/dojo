@@ -4,7 +4,7 @@
 <div class="sky-form-login">
     <h4>Edit Price</h4>
     <form action="/addPrice" method="post" class="sky-form">
-        <input type="hidden" asp-for="ProductsId" value="@ViewBag.prices.ProductsId">
+        <input type="hidden" asp-for="ProductsId" value="@ViewBag.id">
         <div class="form-group row">
             <label asp-for="new_price">New Price: </label>
             <input type="decimal" class="form-control" asp-for="new_price" value="@ViewBag.prices.new_price">

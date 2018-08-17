@@ -30,17 +30,21 @@ namespace ECommerce.Controllers
         {
             if(ModelState.IsValid)
             {
-                if (NewUser.password == confirm_password){
-                    PasswordHasher<Users> Hasher = new PasswordHasher<Users>();
-                    NewUser.password = Hasher.HashPassword(NewUser, NewUser.password);
-                    _context.Users.Add(NewUser);
-                    _context.SaveChanges();
-                    HttpContext.Session.SetInt32("user", NewUser.id);
-
-
-                    return Redirect("/");
+                var user = _context.Users.FirstOrDefault(x => x.email == NewUser.email);
+                if (user == null){
+                    if (NewUser.password == confirm_password){
+                        PasswordHasher<Users> Hasher = new PasswordHasher<Users>();
+                        NewUser.password = Hasher.HashPassword(NewUser, NewUser.password);
+                        _context.Users.Add(NewUser);
+                        _context.SaveChanges();
+                        HttpContext.Session.SetInt32("user", NewUser.id);
+                        HttpContext.Session.SetInt32("user_level", NewUser.user_level);
+                        HttpContext.Session.SetString("user_name", NewUser.first_name+" "+NewUser.last_name);
+                        return Redirect("/");
+                    }
+                    ModelState.AddModelError("password", "Passwords must match.");
                 }
-                ModelState.AddModelError("password", "Passwords must match.");
+                ModelState.AddModelError("email", "User with email already exists.");
             }
             return View("Forms/Register");
         }
@@ -81,8 +85,12 @@ namespace ECommerce.Controllers
         [HttpGet("products/overview")]
         public IActionResult ProductList()
         {
-            ViewBag.products = _context.Products.Include(x => x.Prices).Include(x => x.product_img).ToList();
+            ViewBag.products = _context.Products.Include(x => x.Prices).Include(x => x.product_img).Include(x => x.Inventory).ToList();
             ViewBag.categories = _context.Categories.ToList();
+            ViewBag.bestseller = _context.Inventory.OrderByDescending(x => x.quantity_sold)
+                .Include(y => y.Product).ThenInclude(z => z.product_img)
+                .Include(y => y.Product).ThenInclude(z => z.product_category).ThenInclude(xx => xx.Category)
+                .Take(3).ToList();
             return View("ProductGrid");
         }
 
@@ -148,7 +156,7 @@ namespace ECommerce.Controllers
         {
             var user = HttpContext.Session.GetInt32("user");
             var cart = _context.Cart.Where(x => x.UsersId == (int)user).Include(y => y.Product).ToList();
-            string expiration = month + "/" + year;
+            string expiration = month+"/"+year;
             if(ModelState.IsValid)
             {
                 _context.BillingAddresses.Add(newBilling);
@@ -177,12 +185,15 @@ namespace ECommerce.Controllers
                 _context.SaveChanges();
                 foreach(var item in cart)
                 {
+                    Inventory updateInventory = _context.Inventory.FirstOrDefault(x => x.ProductsId == item.ProductsId);
                     Order_Products newItem = new Order_Products(){
                         OrdersId = newOrder.id,
                         ProductsId = item.ProductsId,
                         quantity = item.quantity,
                         cost = item.cost
                     };
+                    updateInventory.quantity_new -= item.quantity;
+                    updateInventory.quantity_sold += item.quantity;
                     _context.Order_Products.Add(newItem);
                     _context.Cart.Remove(item);
                     _context.SaveChanges();
@@ -217,6 +228,24 @@ namespace ECommerce.Controllers
             int id = _context.Users.FirstOrDefault(x => x.id == currentUser).id;
             ViewBag.user = _context.Users.FirstOrDefault(x => x.id == id);
             return View("Profile");
+        }
+
+        [HttpGet("product/{id}")]
+        public IActionResult ViewProduct(int id)
+        {
+            List<Products> product = _context.Products.Where(x => x.id == id)
+                .Include(y => y.product_category).ThenInclude(z => z.Category)
+                .Include(y => y.product_img)
+                .Include(y => y.Prices)
+                .Include(y => y.Inventory)
+                .ToList();
+            ViewBag.products = product;
+            ViewBag.images = _context.Products.Where(x => x.id == id).Include(y => y.product_img).ToList();
+            ViewBag.prices = _context.Prices.Where(x => x.ProductsId == id).ToList();
+            ViewBag.inventory = _context.Products.Where(x => x.id == id).Include(y => y.Inventory).ToList();
+            ViewBag.categories = _context.Products.Where(x => x.id == id).Include(y => y.product_category).ThenInclude(z => z.Category).ToList();
+            ViewBag.all_categories = _context.Categories.ToList();
+            return View("CustomerProduct");
         }
     }
 }

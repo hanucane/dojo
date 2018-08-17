@@ -19,18 +19,15 @@
             <div class="product-list">
                 <div class="row">
                     <div class="col-md-4 margin-b-15">
-                        <div id="product-single"  class="owl-carousel owl-theme single-product-slider">
-                            @foreach(var img in @p.Product.product_img){
-                            <div class="item">
-                                <a href="@img.img_url" data-lightbox="roadtrip"> <img src="@img.img_url" alt="Product image" class="img-responsive"></a>                              
-                            </div>;
-                        }
-                        </div>
+
+                        <a href="/product/@p.Product.id"><img src="@p.Product.product_img[0].img_url" alt="" class="img-responsive"></a>
+
+
                     </div>
                     <div class="col-md-8">
                         <div class="product-list-desc">
                             <h3 class="title"><a href="/products/@p.Product.id">@p.Product.name</a></h3>
-                            <span class="price">$199.00</span>
+                            <span class="price">$@p.Product.Prices.new_price</span>
                             <span class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>

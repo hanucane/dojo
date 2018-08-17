@@ -22,12 +22,10 @@
                         </div>;
                     }
                     </div>
-                    @Html.Partial("Forms/ImgAdd", new ViewDataDictionary(ViewData) {{"id",@product.id}} ) 
                 </div>
                 <div class="col-md-7">
                     <div class="product-detail-desc">
                         <h3 class="title"><a href="#">@product.name</a></h3>
-                        @if(@product.Prices == null){@Html.Partial("Forms/PricePartial", new ViewDataDictionary(ViewData) {{"id",@product.id}} );}     
                         @if(@product.Prices != null){<span class="price"><del>$@product.Prices.new_price</del> $@product.Prices.used</span>;}
                         <span class="rating">
                             <i class="fa fa-star"></i>
@@ -50,25 +48,9 @@
                         <div class="tags clearfix">
                             @foreach(var x in @ViewBag.categories){
                                 @foreach(var merge in x.product_category){
-                                    <a href="/category/@merge.Category.id">@merge.Category.name</a> <a href="/product/@x.id/remove/@merge.id" class="buttons fa fa-trash-o"></a>;
+                                    <a href="/category/@merge.Category.id">@merge.Category.name</a>;
                                 }
                             }                       
-                            <form action="/products/@product.id/addCategory" method="post" class="form-inline">
-                                <div class="form-group">
-                                    <label class="select">
-                                        <select name="category_id">
-                                            <option value="0" selected="" disabled="">Category</option>
-                                            @foreach(var x in @ViewBag.all_categories){
-                                                <option value="@x.id">@x.name</option>;
-                                            }   
-                                        </select>
-                                        <i></i>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit"><i class="fa fa-plus"></i></button>
-                                </div>
-                            </form>
                         </div>
                         
                         <div class="add-buttons">
