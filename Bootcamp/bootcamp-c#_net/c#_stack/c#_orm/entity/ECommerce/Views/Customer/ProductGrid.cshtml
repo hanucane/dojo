@@ -60,7 +60,7 @@
             <div class="row">
                 @foreach(var product in @ViewBag.products){
                 <div class="col-sm-4">
-                    <div class="item_holder">
+                    <div class="item_holder" style="height: 430px;">
 
                             <a href="/product/@product.id"><img src="@product.product_img[0].img_url" alt="" class="img-responsive"></a>
                         
@@ -68,10 +68,9 @@
                             <h5>@product.name</h5>
                             <span class="price">$@product.Prices.new_price</span>
                             <p>
-                                @product.description<br>
                                 @product.Inventory.quantity_new left
                             </p>
-                            <a href="/addCart/@product.id" data-toggle="tooltip" data-placement="top" title="" class="btn btn-skin" data-original-title="Add to cart">Add to cart</a>
+                            @Html.Partial("Forms/CartQuantity", new ViewDataDictionary(ViewData) {{"id",@product.id}} ) 
                         </div>
                     </div><!--item holder-->
                 </div>;<!--col end-->

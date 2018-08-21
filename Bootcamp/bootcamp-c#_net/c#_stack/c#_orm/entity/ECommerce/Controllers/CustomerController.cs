@@ -107,19 +107,20 @@ namespace ECommerce.Controllers
             return View("Cart");
         }
 
-        [HttpGet("addCart/{id}")]
-        public IActionResult AddCart(int id)
+        [HttpPost("addCart/{id}")]
+        public IActionResult AddCart(Cart newItem, int id)
         {
             var product = _context.Products.FirstOrDefault(x => x.id == id);
             var price = _context.Prices.FirstOrDefault(x => x.ProductsId == id);
             int userId = (int)HttpContext.Session.GetInt32("user");
+            decimal totalItem = (decimal)price.new_price*newItem.quantity;
             if(ModelState.IsValid)
             {
                 Cart newCart = new Cart(){
                     ProductsId = (int)product.id,
                     UsersId = userId,
-                    quantity = 1,
-                    cost = (decimal)price.new_price,
+                    quantity = newItem.quantity,
+                    cost = totalItem
                 };
                 _context.Cart.Add(newCart);
                 _context.SaveChanges();

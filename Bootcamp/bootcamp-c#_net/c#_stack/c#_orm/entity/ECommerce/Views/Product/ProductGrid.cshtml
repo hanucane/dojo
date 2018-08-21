@@ -60,14 +60,10 @@
             <div class="row">
                 @foreach(var product in @ViewBag.products){
                 <div class="col-sm-4">
-                    <div class="item_holder">
+                    <div class="item_holder" style="height: 350px;">
                         <a href="/products/@product.id"><img src="@product.product_img[0].img_url" alt="" class="img-responsive"></a>
                         <div class="title">
                             <h5>@product.name</h5>
-                            <span class="price">$@product.Prices.new_price</span>
-                            <p>
-                                @product.description
-                            </p>
                         </div>
                     </div><!--item holder-->
                 </div>;<!--col end-->

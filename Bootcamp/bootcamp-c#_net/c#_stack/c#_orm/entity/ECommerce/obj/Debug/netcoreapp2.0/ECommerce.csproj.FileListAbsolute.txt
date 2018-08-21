@@ -3,9 +3,9 @@
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/ECommerce/bin/Debug/netcoreapp2.0/ECommerce.runtimeconfig.dev.json
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/ECommerce/bin/Debug/netcoreapp2.0/ECommerce.dll
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/ECommerce/bin/Debug/netcoreapp2.0/ECommerce.pdb
-/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/ECommerce/obj/Debug/netcoreapp2.0/ECommerce.csprojResolveAssemblyReference.cache
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/ECommerce/obj/Debug/netcoreapp2.0/ECommerce.csproj.CoreCompileInputs.cache
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/ECommerce/obj/Debug/netcoreapp2.0/ECommerce.AssemblyInfoInputs.cache
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/ECommerce/obj/Debug/netcoreapp2.0/ECommerce.AssemblyInfo.cs
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/ECommerce/obj/Debug/netcoreapp2.0/ECommerce.dll
 /Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/ECommerce/obj/Debug/netcoreapp2.0/ECommerce.pdb
+/Users/Eric/Documents/Comp Sci/Coding Dojo/Bootcamp/bootcamp-c#_net/c#_stack/c#_orm/entity/ECommerce/obj/Debug/netcoreapp2.0/ECommerce.csprojAssemblyReference.cache

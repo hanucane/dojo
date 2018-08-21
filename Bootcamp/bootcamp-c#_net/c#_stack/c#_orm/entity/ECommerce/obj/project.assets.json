@@ -118,6 +118,15 @@
           "lib/netstandard1.6/Microsoft.AI.DependencyCollector.dll": {}
         }
       },
+      "Microsoft.AspNet.Razor/2.0.30506": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Web.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Web.Razor.dll": {}
+        }
+      },
       "Microsoft.AspNetCore/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -2915,6 +2924,30 @@
           "lib/netstandard1.3/Pomelo.JsonObject.dll": {}
         }
       },
+      "RazorEmail/1.1.2.51": {
+        "type": "package",
+        "dependencies": {
+          "RazorEngine": "3.3.0"
+        },
+        "compile": {
+          "lib/net40/RazorEmail.dll": {}
+        },
+        "runtime": {
+          "lib/net40/RazorEmail.dll": {}
+        }
+      },
+      "RazorEngine/3.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "2.0.30506"
+        },
+        "compile": {
+          "lib/net40/RazorEngine.dll": {}
+        },
+        "runtime": {
+          "lib/net40/RazorEngine.dll": {}
+        }
+      },
       "Remotion.Linq/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -5226,6 +5259,17 @@
         "lib/netstandard1.6/Microsoft.AI.DependencyCollector.xml",
         "microsoft.applicationinsights.dependencycollector.2.4.1.nupkg.sha512",
         "microsoft.applicationinsights.dependencycollector.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Razor/2.0.30506": {
+      "sha512": "mYb3z3NZpD9ucG+UVQFSWGXDfcbL+02BxmPhiZTImm152aL/NpVVvA1FXhFaNxSj7AZN8Ij7gwStUe/9twrPhA==",
+      "type": "package",
+      "path": "microsoft.aspnet.razor/2.0.30506",
+      "files": [
+        "lib/net40/System.Web.Razor.dll",
+        "lib/net40/System.Web.Razor.xml",
+        "microsoft.aspnet.razor.2.0.30506.nupkg.sha512",
+        "microsoft.aspnet.razor.nuspec"
       ]
     },
     "Microsoft.AspNetCore/2.0.1": {
@@ -8051,6 +8095,28 @@
         "lib/netstandard1.3/Pomelo.JsonObject.dll",
         "pomelo.jsonobject.1.1.1.nupkg.sha512",
         "pomelo.jsonobject.nuspec"
+      ]
+    },
+    "RazorEmail/1.1.2.51": {
+      "sha512": "6CX5Q2aGFr5ABbu8mDTEtrJTqy0hSTZ17Fi6ELhbg23xm8uvgentFcinT07yeYVQdXA+pbMO3j0n/ny4DELgyg==",
+      "type": "package",
+      "path": "razoremail/1.1.2.51",
+      "files": [
+        "lib/net40/RazorEmail.dll",
+        "razoremail.1.1.2.51.nupkg.sha512",
+        "razoremail.nuspec"
+      ]
+    },
+    "RazorEngine/3.3.0": {
+      "sha512": "qpQFE+KvUjnXK3V4wIeMkx15GKBkIkfVrRW2ijqgGrXodW8LgjeXeWXrzIXgQ+mv2Uw5SdZiN4DaDa0FZYbVEA==",
+      "type": "package",
+      "path": "razorengine/3.3.0",
+      "files": [
+        "lib/net40/RazorEngine.XML",
+        "lib/net40/RazorEngine.dll",
+        "lib/net40/RazorEngine.pdb",
+        "razorengine.3.3.0.nupkg.sha512",
+        "razorengine.nuspec"
       ]
     },
     "Remotion.Linq/2.1.1": {
@@ -13340,7 +13406,8 @@
       "Microsoft.AspNetCore.All >= 2.0.3",
       "Microsoft.NETCore.App >= 2.0.0",
       "MySql.Data >= 8.0.9-*",
-      "Pomelo.EntityFrameworkCore.MySql >= 2.0.1"
+      "Pomelo.EntityFrameworkCore.MySql >= 2.0.1",
+      "RazorEmail >= 1.1.2.51"
     ]
   },
   "packageFolders": {
@@ -13382,22 +13449,26 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
-          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.3"
+            "version": "[2.0.3, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           },
           "MySql.Data": {
             "target": "Package",
-            "version": "8.0.9-*"
+            "version": "[8.0.9-*, )"
           },
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
-            "version": "2.0.1"
+            "version": "[2.0.1, )"
+          },
+          "RazorEmail": {
+            "target": "Package",
+            "version": "[1.1.2.51, )"
           }
         },
         "imports": [
@@ -13407,5 +13478,37 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Razor 2.0.30506' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Razor",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RazorEmail 1.1.2.51' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "RazorEmail",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RazorEngine 3.3.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "RazorEngine",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }

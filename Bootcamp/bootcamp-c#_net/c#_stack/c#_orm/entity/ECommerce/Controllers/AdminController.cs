@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using RazorEmail;
 using ECommerce.Models;
 
 namespace ECommerce.Controllers
@@ -22,6 +23,22 @@ namespace ECommerce.Controllers
         [HttpGet("contact")]
         public IActionResult Contact()
         {
+            return View("Contact");
+        }
+
+        [HttpPost("contact")]
+        public IActionResult ContactSend(string name, string email, string message)
+        {
+            var contactForm = new {
+                Name = name,
+                Email = email,
+                Message = message,
+                Link = "http://www.manifutures.com"
+            };
+            RazorMailer.Build("ForgotPassword", contactForm,"soto.ericf@gmail.com", "Eric Soto")
+                .ToMailMessage()	
+                .Send();
+            @ViewBag.success = "Message Sent! I will be in touch with you shortly.";
             return View("Contact");
         }
 

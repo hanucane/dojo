@@ -28,14 +28,14 @@
                     <div class="product-detail-desc">
                         <h3 class="title"><a href="#">@product.name</a></h3>
                         @if(@product.Prices == null){@Html.Partial("Forms/PricePartial", new ViewDataDictionary(ViewData) {{"id",@product.id}} );}     
-                        @if(@product.Prices != null){<span class="price"><del>$@product.Prices.new_price</del> $@product.Prices.used</span>;}
+                        @if(@product.Prices != null){<span class="price">New Price $@product.Prices.new_price Used Price $@product.Prices.used</span>;}
                         <span class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-half-full"></i>
-                            <a href="#">Reviews Feature Coming Soon</a>
+                            <a href="#">Reviews Feature Coming Soon!</a>
                         </span>
                         <p>
                             @product.description
@@ -43,8 +43,26 @@
                         <div class="available">
                             <p>Availability: In Stock </p>
                             @foreach(var quantity in @ViewBag.inventory){
-                                <p>@quantity.Inventory.quantity_new New Available</p>
-                                <p>@quantity.Inventory.quantity_used Used Available</p>;
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="active">
+                                            <th>New Available</th>
+                                            <th>Used Available</th>
+                                            <th>Need Maintenance</th>
+                                            <th>Sold</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="info">@quantity.Inventory.quantity_new </td>
+                                            <td class="warning">@quantity.Inventory.quantity_used </td>
+                                            <td class="danger">@quantity.Inventory.quantity_defect </td>
+                                            <td class="success">@quantity.Inventory.quantity_sold </td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+
                             }
                         </div>
                         <div class="tags clearfix">
@@ -70,12 +88,7 @@
                                 </div>
                             </form>
                         </div>
-                        
-                        <div class="add-buttons">
-                            <a href="#" class="btn btn-border btn-lg" data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i class="fa fa-heart"></i></a>
-                            <a href="#" class="btn btn-border btn-lg"  data-toggle="tooltip" data-placement="top" title="Add to Compare"><i class="fa fa-random"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart" class="btn btn-skin btn-lg"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                        </div>
+
                     </div>
                 </div>
             </div><!--single product details end-->

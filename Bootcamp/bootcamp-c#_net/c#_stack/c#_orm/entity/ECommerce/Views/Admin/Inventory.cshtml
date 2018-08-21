@@ -22,9 +22,9 @@
     <div class="table-responsive table-order-history">
         <table class="table table-bordered">
             <thead>
-                <tr>
+                <tr class="active">
                     <th></th>
-                    <th>Product Id</th>
+                    <th>Product ID</th>
                     <th>Product Name</th>
                     <th>New</th>
                     <th>Used</th>
@@ -40,11 +40,11 @@
                         <td valign="middle"><img src="@product.product_img[0].img_url" alt="" width="50"></td>
                         <td valign="middle">@product.id</td>
                         <td valign="middle"><a href="/products/@product.id">@product.name</a></td>
-                        <td valign="middle">@product.Inventory.quantity_new</td>
-                        <td valign="middle">@product.Inventory.quantity_used</td>
-                        <td valign="middle">@product.Inventory.quantity_defect</td>
-                        <td valign="middle">@product.Inventory.quantity_sold</td>
-                        <td valign="middle"><a href="/products/@product.id">Edit</a> <a href="#">Delete</a></td>
+                        <td valign="middle" class="info">@product.Inventory.quantity_new</td>
+                        <td valign="middle" class="warning">@product.Inventory.quantity_used</td>
+                        <td valign="middle" class="danger">@product.Inventory.quantity_defect</td>
+                        <td valign="middle" class="success">@product.Inventory.quantity_sold</td>
+                        <td valign="middle"><a href="/products/@product.id" class="btn btn-primary">Edit</a> <a href="#" class="btn btn-danger">Delete</a></td>
                     </tr>;
                 }
             </tbody>
