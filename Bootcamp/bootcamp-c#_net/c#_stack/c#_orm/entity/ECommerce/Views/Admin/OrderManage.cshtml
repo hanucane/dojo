@@ -26,7 +26,6 @@
                     <th></th>
                     <th>Order Id</th>
                     <th>Product Name</th>
-                    <th>Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
                     <th>Customer Name</th>
@@ -41,7 +40,6 @@
                             <td valign="middle"><img src="@product.Product.product_img[0].img_url" alt="" width="50"></td>
                             <td valign="middle">@order.id</td>
                             <td valign="middle"><a href="/products/@product.Product.id">@product.Product.name</a></td>
-                            <td>$@product.Product.Prices.new_price</td>
                             <td>@product.quantity</td>
                             <td class="total-order">$@product.cost</td>
                             <td valign="middle"><a href="/admin/useredit/@order.User.id">@order.User.first_name @order.User.last_name</a></td>
