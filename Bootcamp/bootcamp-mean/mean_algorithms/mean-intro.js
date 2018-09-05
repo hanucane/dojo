@@ -36,9 +36,3 @@ function fizzbuzz(int){
         }
     }
 }
-
-function bracesValid(str){
-    for (var x = 0; x < str.length; x++){
-        
-    }
-}

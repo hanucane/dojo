@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Objects</title>
+</head>
+<body>
+    <script>
+        let students = [
+            {name: 'Remy', cohort: 'Jan'},
+            {name: 'Genevieve', cohort: 'March'},
+            {name: 'Chuck', cohort: 'Jan'},
+            {name: 'Osmund', cohort: 'June'},
+            {name: 'Nikki', cohort: 'June'},
+            {name: 'Boris', cohort: 'June'}
+        ];
+        function printStudents(arr)
+        {
+            for(let i = 0; i < arr.length; i++){
+                let str = "";
+                str += "Name: "+arr[i]['name']+", Cohort: "+arr[i]['cohort'];
+                console.log(str);
+            }
+        }
+        printStudents(students);
+
+        let users = {
+            employees: [
+                {'first_name':  'Miguel', 'last_name' : 'Jones'},
+                {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+                {'first_name' : 'Nora', 'last_name' : 'Lu'},
+                {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+            ],
+            managers: [
+            {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+            {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+            ]
+        };
+        function printUsers(obj)
+        {
+            console.log("EMPLOYEES")
+            for(let i = 0; i < obj['employees'].length; i++)
+            {
+                let str = "" + (i+1) + " - "
+                str += obj['employees'][i]['last_name'] + ", "+obj['employees'][i]['first_name'];
+                console.log(str);
+            }
+            console.log("MANAGERS")
+            for(let i = 0; i < obj['managers'].length; i++)
+            {
+                let str = "" + (i+1) + " - "
+                str += obj['managers'][i]['last_name'] + ", "+obj['managers'][i]['first_name'];
+                console.log(str);
+            }
+        }
+        printUsers(users);
+    </script>
+</body>
+</html>

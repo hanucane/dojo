@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hunting Github</title>
+</head>
+<body>
+    <button class="toggle">Click here to see Github name</button>
+    <div class="toggle"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $.get("https://api.github.com/users/hanucane", displayName)
+        // Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+        function displayName(data) {
+            username = data.login;
+            console.log(data);
+        }    
+        $(document).ready(function(){
+            $('button.toggle').click(function(){
+                $('div.toggle').append("<h1>"+username+"</h1>");
+            });
+        });
+    </script>
+</body>
+</html>
