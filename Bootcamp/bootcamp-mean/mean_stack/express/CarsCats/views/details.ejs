@@ -10,10 +10,9 @@
     <h1>Name: <%= cats.name %></h1>
     <h4>Favorite food: <%= cats.favfood %></h4>
     <h4>Age: <%= cats.age %></h4>
-    <h4>Sleeping spots:<br>
+    <h4>Sleeping spots:</h4>
     <% for (var x in cats.sleep) { %>
-         <%= cats.sleep[x] %><br>
+        <p><%= cats.sleep[x] %></p>
     <% } %>
-    </h4>
 </body>
 </html>
