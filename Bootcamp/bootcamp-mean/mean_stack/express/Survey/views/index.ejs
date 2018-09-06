@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .container {
+            margin: 50px 100px;
+            padding: 20px;
+            background-color: lightseagreen;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-form">
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="_name">Your Name</label>
+                <input name="name" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Your E-mail</label>
+                <input name="email" class="form-control" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <label for="dojo">Dojo Location</label>
+                <select name="dojo" class="form-control">
+                    <option>San Jose</option>
+                    <option>Seattle</option>
+                    <option>Silicon Valley</option>
+                    <option>Tulsa</option>
+                    <option>Dallas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="language">Favorite Language</label>
+                <select name="language" class="form-control">
+                    <option>Python</option>
+                    <option>Javascript</option>
+                    <option>PHP</option>
+                    <option>HTML</option>
+                    <option>C#</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <small class="form-text text-muted">A comment is not required, but encouraged.</small>
+                <textarea name="comments" class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </form><br>
+    </div>
+</body>
+</html>
