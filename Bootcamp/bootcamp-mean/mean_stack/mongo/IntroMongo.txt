@@ -1,0 +1,31 @@
+use my_first_db
+db.createCollection('students')
+
+db.students.insert({name: "Eric", home_state: "NJ", lucky_num: 8, birthday: {month: 1, day: 30, year: 1991}})
+db.students.insert({name: "Riley", home_state: "WA", lucky_num: 3, birthday: {month: 11, day: 10, year: 1995}})
+db.students.insert({name: "Dan", home_state: "OH", lucky_num: 21, birthday: {month: 6, day: 21, year: 1994}})
+db.students.insert({name: "Brian", home_state: "WA", lucky_num: 12, birthday: {month: 8, day: 2, year: 1995}})
+db.students.insert({name: "Liberty", home_state: "MA", lucky_num: 7, birthday: {month: 3, day: 17, year: 1990}})
+
+db.students.find().pretty()
+
+db.students.find({home_state: "WA"}).pretty()
+
+db.students.find({lucky_num: {$gt: 3}}).pretty()
+db.students.find({lucky_num: {$lt: 10}}).pretty()
+db.students.find({lucky_num: {$gt: 1, $lt: 9}}).pretty()
+
+db.students.update({}, {$set: {interests: ['coding','brunch','MongoDB']}})
+db.students.update({name: "Riley"}, {$set: {interests: ['coding','brunch','MongoDB']}})
+db.students.update({name: "Dan"}, {$set: {interests: ['coding','brunch','MongoDB']}})
+db.students.update({name: "Brian"}, {$set: {interests: ['coding','brunch','MongoDB']}})
+db.students.update({name: "Liberty"}, {$set: {interests: ['coding','brunch','MongoDB']}})
+
+db.students.update({name: "Eric"}, {$push: {interests: 'snowboarding'}})
+db.students.update({name: "Brian"}, {$push: {interests: 'taxes'}})
+
+db.students.remove({home_state: "WA"})
+db.students.remove({name: "Liberty"})
+db.students.remove({lucky_num: {$gt: 5}}, true) //Removes first
+
+db.students.update({}, {$set: {number_of_belts: 0}})
