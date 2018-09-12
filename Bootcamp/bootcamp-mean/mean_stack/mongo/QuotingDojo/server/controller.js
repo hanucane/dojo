@@ -7,7 +7,6 @@ module.exports = {
 const Quotes = require("./model.js");
 
 function home(req,res){
-    console.log("Main Route");
     res.render("index");
 }
 
