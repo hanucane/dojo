@@ -1,0 +1,98 @@
+1. mkdir project_folder
+2. cd project_folder
+ng new public (creates Angular app)
+cd public 
+ng build (creates dist folder)
+cd ..
+3. npm init -y
+4. npm install express --save (Mac user may require "sudo")
+5. npm install path --save
+6. npm install body-parser --save
+7. npm install mongoose --save
+8. npm install moment --save
+9. npm install express-flash --save
+op. npm install express-session --save
+op. npm install ejs --save
+npm install bcryptjs
+10. touch server.js
+    op. mkdir views
+        -touch index.ejs
+12. mkdir server
+    -touch routes.js
+    -touch models.js
+    -touch controller.js
+13. mkdir static
+(to run server) nodemon server.js
+
+//register 
+(Angular app level) ng g s http (ng generate a service called http)
+app.module.ts -> 
+    import { HttpClientModule } from '@angular/common/http';
+    import { HttpService } from './http.service';
+app.module.ts -> imports: (add to array)[HttpClientModule]
+app.module.ts -> providers: [HttpService] (to register)
+http.service.ts -> import { HttpClient } from '@angular/common/http';
+    @Injectable()
+    export class HttpService {
+        constructor(private _http: HttpClient) {
+            this.getTasks();
+        }
+        getTasks(){
+        let tempObservable = this._http.get('/tasks');
+        tempObservable.subscribe(data => console.log("Got our tasks!", data));
+        }
+    }
+app.component.ts -> import { HttpService } from './http.service';
+    export class AppComponent {
+        title = 'app';
+
+        constructor(private _httpService: HttpService){
+        }
+    }
+
+//connecting to servers: 
+1. cd / (MongoDB)
+2. sudo mongod or mongod (MongoDB)
+    op. (exit) ctrl+c
+    op. (alt exit1) ps -ax | grep mongo
+    op. (alt exit2) sudo kill 84107 (the number for sudo mongod)
+3. new terminal(Angular app level): cd public -> ng build --watch
+4. new terminal: nodemon server
+
+//connecting to DB
+1. open another terminal: mongo
+2. > show db or show dbs
+3. (exit) > exit
+(switch db) > use new_db
+(drop db) > db.dropDatabase()
+(create db) > use test_app
+(show db tables) > show collections
+(create collection) > db.createCollection('ninjas')
+(drop collection) > db.ninjas.drop()
+(add to collection) > db.ninjas.insert({name: "Trey"})
+(find) > db.ninjas.find({}) or db.ninjas.find().pretty()
+(find) > db.ninjas.find({name: "Trey"})
+(destroy) > db.ninjas.remove({name: "Trey"})
+(destroy) > db.ninjas.remove({name: "Carlos"}, true)
+(update) > db.ninjas.update({name: "Trey"}, {location: "Mountain View"})
+(update) > db.ninjas.update({name: "Trey"}, {$set: {location: "Mountain View"}})
+
+//Angular:
+0. Planning
+1. Build and test backend API
+2. build dummy frontend
+3. build a service
+4. Hook it all up. 
+
+//Create and push to GitHub:
+    1. create repo in github
+    2. (at manage.py level) git init
+    3. (copied from github)git commit -m "initial commit"
+    4. (copied from github)git remote add origin https://github.com/csleong08/JS_QuotingDojo.git
+    5. (copied from github)git push -u origin master
+    6. git add .
+    7. git commit -m "first push"
+    8. git push -u origin master
+
+unique name validations
+min and max validations
