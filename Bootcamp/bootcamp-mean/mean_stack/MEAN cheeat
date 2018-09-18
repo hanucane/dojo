@@ -1,6 +1,6 @@
 1. mkdir project_folder
 2. cd project_folder
-ng new public (creates Angular app)
+ng new angular --routing (creates Angular app)
 cd public 
 ng build (creates dist folder)
 cd ..
@@ -86,7 +86,7 @@ app.component.ts -> import { HttpService } from './http.service';
 
 //Create and push to GitHub:
     1. create repo in github
-    2. (at manage.py level) git init
+    2. git init
     3. (copied from github)git commit -m "initial commit"
     4. (copied from github)git remote add origin https://github.com/csleong08/JS_QuotingDojo.git
     5. (copied from github)git push -u origin master

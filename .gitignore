@@ -8,3 +8,5 @@ misc/
 *.zip
 RapperAPI/
 RestTaskAPI/
+ngRestTaskAPI/
+RateMyCakes/
